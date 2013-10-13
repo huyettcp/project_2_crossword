@@ -22,7 +22,10 @@
 */
 
 body {
-	background-color: grey;
+	background-color: #2B2A2B;
+	color: white;
+	font-family: Arial;
+	font-size: 40px;
 }
 .oyPuzzleCell {	
 	background-color: #FFFFFF;
@@ -57,8 +60,8 @@ body {
 }		
 .oyHeader{
 	padding: 8px;
-	color: #FFFFFF;
-	background-color: grey;
+	color: #29D6BB;
+	background-color: #333333;
 }
 .oyHeaderTitle{
 	font-family: 'Trebuchet MS','Lucida Grande',Verdana,Arial,Sans-Serif;
@@ -78,7 +81,7 @@ body {
 	font-size: 70%;
 }
 .oyFrame {
-	border-collapse: collapse;		
+/*	border-collapse: collapse;*/		
 }	
 .oyCopyright{
 	padding-top: 4px;
@@ -173,24 +176,24 @@ A.oyMenuAction:hover {
 	font-weight: bold;
 	text-align: center;				
 	
-	width: 23px; 
-	height: 23px;
+	width: 46px; 
+	height: 46px;
 }	 	 	
 .oyCellEmpty {
-	border: solid 1px black;	
-	background-color: black;
+	border: solid 1px #2B2A2B;;	
+	background-color: #2B2A2B;;
 	
 	font-size: 18px;
 	font-family: Courier New; 				
 	font-weight: bold;
 	text-align: center;		
 	
-	width: 23px;
-	height: 23px;
+	width: 46px;
+	height: 46px;
 }	
 .oyCellFull{ 
 	border: solid 1px #003366;	
-	background-image: url('maddensm.png'); 
+	background-image: url('madden46.png'); 
 	/*background-color: #FFFFFF;
 	*/
 	font-size: 18px;
@@ -198,8 +201,8 @@ A.oyMenuAction:hover {
 	font-weight: bold;
 	text-align: center;				
 	
-	width: 23px; 
-	height: 23px;
+	width: 46px; 
+	height: 46px;
 }		
 .oyCellRevealed {
 	border: solid 1px #003366;	
@@ -210,8 +213,8 @@ A.oyMenuAction:hover {
 	font-weight: bold;
 	text-align: center;				
 	
-	width: 23px; 
-	height: 23px;
+	width: 46px; 
+	height: 46px;
 }		
 .oyCellGuessed {  
 	border: solid 1px #003366;	
@@ -222,8 +225,8 @@ A.oyMenuAction:hover {
 	font-weight: bold;
 	text-align: center;				
 	
-	width: 23px; 
-	height: 23px;
+	width: 46px; 
+	height: 46px;
 }	 
 .oyCellFocused {  
 	border: solid 1px #003366;	
@@ -234,8 +237,8 @@ A.oyMenuAction:hover {
 	font-weight: bold;
 	text-align: center;				
 	
-	width: 23px; 
-	height: 23px;
+	width: 46px; 
+	height: 46px;
 }	 	
 .oyCellActive {  
 	border: solid 1px #003366;	
@@ -246,6 +249,6 @@ A.oyMenuAction:hover {
 	font-weight: bold;
 	text-align: center;				
 	
-	width: 23px; 
-	height: 23px;
+	width: 46px; 
+	height: 46px;
 } 	 	

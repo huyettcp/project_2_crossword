@@ -174,8 +174,8 @@ oyCrosswordPuzzle.prototype.render = function(){
 	}	  
 	buf += "</table>"; 	  
 
-	var CELL_H_SIZE = 25;
-	var MIN_DIV_WIDTH = 400;
+	var CELL_H_SIZE = 50;
+	var MIN_DIV_WIDTH = 800;
 	var divWidth = this.w * CELL_H_SIZE; 
 	if (divWidth < MIN_DIV_WIDTH){
 		divWidth = MIN_DIV_WIDTH; 
