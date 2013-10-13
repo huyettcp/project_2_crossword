@@ -146,14 +146,14 @@ oyCrosswordPuzzle.prototype.init = function(){
 		return false; 
 	}	
   
-	var trackAction = "<img id='oygTrackAction' width='1px' height='1px'>" 	 
-	var target = document.getElementById("oygHeaderMenu");
-	target.innerHTML = trackAction + '<a id="oygHeaderMenuBtn" href=""><img style="padding: 4px;" src="' + this.appHome + '/img/whereto.gif" border="0" alt="Leave Game"></a>';
+	// var trackAction = "<img id='oygTrackAction' width='1px' height='1px'>" 	 
+	// var target = document.getElementById("oygHeaderMenu");
+	// target.innerHTML = trackAction + '<a id="oygHeaderMenuBtn" href=""><img style="padding: 4px;" src="' + this.appHome + '/img/whereto.gif" border="0" alt="Leave Game"></a>';
 	 
-	document.getElementById("oygHeaderMenuBtn").onclick = function(){
-		oThis.menu.leaveGameEarly(oThis.leaveGameURL);
-		return false; 
-	}	
+	// document.getElementById("oygHeaderMenuBtn").onclick = function(){
+	// 	oThis.menu.leaveGameEarly(oThis.leaveGameURL);
+	// 	return false; 
+	// }	
  	
 	this.footer = new oyCrosswordFooter(this);		
 	this.footer.stateBusy("Starting up...");

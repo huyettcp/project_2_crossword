@@ -22,7 +22,7 @@
 */
 
 body {
-	background-color: #E7E7E7;
+	background-color: grey;
 }
 .oyPuzzleCell {	
 	background-color: #FFFFFF;
@@ -58,11 +58,12 @@ body {
 .oyHeader{
 	padding: 8px;
 	color: #FFFFFF;
-	background-color: #5AA2DE;
+	background-color: grey;
 }
 .oyHeaderTitle{
 	font-family: 'Trebuchet MS','Lucida Grande',Verdana,Arial,Sans-Serif;
-	font-size: 125%; 
+	text-align: center;
+	font-size: 400%; 
 	font-weight: bold;
 }
 .oyHeaderDesc{
@@ -85,7 +86,7 @@ body {
 }
 .oyOuterFrame {
 	padding: 12px;
-	background-color: #FFFFFF;
+	background-color: grey;
 	border: solid 1px #808080;
 }
 A.oysTextLink{
@@ -176,8 +177,8 @@ A.oyMenuAction:hover {
 	height: 23px;
 }	 	 	
 .oyCellEmpty {
-	border: solid 1px #003366;	
-	background-color: #003366;
+	border: solid 1px black;	
+	background-color: black;
 	
 	font-size: 18px;
 	font-family: Courier New; 				
@@ -189,8 +190,9 @@ A.oyMenuAction:hover {
 }	
 .oyCellFull{ 
 	border: solid 1px #003366;	
-	background-color: #FFFFFF;
-	
+	background-image: url('maddensm.png'); 
+	/*background-color: #FFFFFF;
+	*/
 	font-size: 18px;
 	font-family: Courier New; 				
 	font-weight: bold;
