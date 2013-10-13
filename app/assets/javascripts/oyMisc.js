@@ -259,9 +259,10 @@ function oyBrowserDetection(){
 	}
 	
 	if (
-		(this.isIE && this.version>=5) || 
-		(this.isNetscape && this.version >=6) || 
-		(this.isFirefox && this.version >=1)
+		this.browser != 'Netscape'
+		// (this.isIE && this.version>=5) || 
+		// (this.isNetscape && this.version >=6) || 
+		// (this.isFirefox && this.version >=1)
 	){	
 		this.isGood = true;	
 	} 
@@ -290,7 +291,7 @@ function oygBind(puzz){
 			if (frame == null){
 				oygError = "Failed to load puzzle file.";
 			} else {
-				puzz.init();
+				puzz.init()
 				puzz.render();
 				puzz.menu.installWelcomeMenu();
 			}
