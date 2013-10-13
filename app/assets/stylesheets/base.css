@@ -169,18 +169,19 @@ A.oyMenuAction:hover {
 }		 
 .oyCellInput {     
 	border: none;	
+	color: white;
 	background-color: transparent;
-	
-	font-size: 18px;
-	font-family: Courier New; 				
+	font-size: 45px;
+	text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black, -2px -2px 0 black;
+	font-family: arial; 				
 	font-weight: bold;
 	text-align: center;				
-	
+	border-collapse: collapse;
 	width: 46px; 
 	height: 46px;
 }	 	 	
 .oyCellEmpty {
-	border: solid 1px #2B2A2B;;	
+	border: solid 3px #2B2A2B;;	
 	background-color: #2B2A2B;;
 	
 	font-size: 18px;
@@ -192,17 +193,15 @@ A.oyMenuAction:hover {
 	height: 46px;
 }	
 .oyCellFull{ 
-	border: solid 1px #003366;	
+	/*border: solid 1px #003366;	
 	background-image: url('madden46.png'); 
-	/*background-color: #FFFFFF;
-	*/
 	font-size: 18px;
 	font-family: Courier New; 				
 	font-weight: bold;
 	text-align: center;				
 	
 	width: 46px; 
-	height: 46px;
+	height: 46px;*/
 }		
 .oyCellRevealed {
 	border: solid 1px #003366;	

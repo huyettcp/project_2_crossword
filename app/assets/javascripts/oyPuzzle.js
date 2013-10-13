@@ -206,22 +206,40 @@ oyCrosswordPuzzle.prototype.render = function(){
 	
 	var target = document.getElementById("oygListV");
 	target.innerHTML = "";
-	target.className = "oyPanelDivHidden";		
+	target.className = "oyPanelDivHidden";	
 }
 
 oyCrosswordPuzzle.prototype.renderVert = function(clue){
-	for (var i=0; i < clue.len; i++){	
+	console.log(clue)
+	for (var i=0; i < clue.len; i++){
+		// console.log(oyCell)
 		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
+		// console.log(key)
 		var cell = document.getElementById(key);
-		cell.className = "oyCellFull";
+		// console.log(cell)
+		cell.className = "";
+		cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
+		// cell.css('background-image', 'url("' + https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY + '")'; background-size: 47px 50px;)';
+		// background-image: url('madden50.png')
+		// cell.style.backgroundImage="background-image: url('madden50.png') no-repeat";
+		
+		
+
 	} 
 }
 
 oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 	for (var i=0; i < clue.len; i++){	
 		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
+		// console.log(key)
 		var cell = document.getElementById(key);
-		cell.className = "oyCellFull";
+		// console.log(cell)
+		cell.className = "";
+		cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
+		// cell.css='background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY); background-size: 47px 50px;';
+		console.log(cell)
+		// console.log(cell)
+		// cell.style.backgroundImage="background-image: url('madden50.png') no-repeat";
 	}
 }
 
@@ -229,7 +247,7 @@ oyCrosswordPuzzle.prototype.fillVert = function(clue, idx){
 	for (var i=0; i < clue.len; i++){	 
 		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 		var cell = document.getElementById(key);
-	
+
 		this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
 		this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
 	}  
@@ -249,7 +267,8 @@ oyCrosswordPuzzle.prototype.fillIn = function(cell, x, y, i, idx, dir){
 	if (i == 0){    
 		cell.style.backgroundImage = "url(\"" + this.appHome + "/img/" + (idx + 1) + ".gif\")"; 
 	}     
-	cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";	
+	cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value='' style='background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY); background-repeat:no-repeat; background-size: 46px 46px; background-position: center center;'>";
+	//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
 }
 
 oyCrosswordPuzzle.prototype.bind = function(){	
@@ -447,7 +466,9 @@ oyCrosswordPuzzle.prototype.restoreCellState = function(target, x, y){
 			target.className = "oyCellEmpty";
 			break; 	
 		case 0:
-			target.className = "oyCellFull";
+			// console.log(target)
+			cell.className = "oyCellFull";
+			// target.style.background="background-image: url('madden50.png') no-repeat";
 			break; 
  		case 1: 
 			target.className = "oyCellGuessed"; 		 		
