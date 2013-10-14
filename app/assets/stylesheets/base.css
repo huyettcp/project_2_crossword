@@ -99,7 +99,11 @@ body {
 .oyOuterFrame {
 	padding: 12px;
 	background-color: #2B2A2B;
+<<<<<<< HEAD
+	border: solid 1px #2B2A2B;
+=======
 /*	border: solid 1px #808080;*/
+>>>>>>> e6e397de5960736fc95c1dfbc881a6b244daea7c
 }
 A.oysTextLink{
 	color: #0F6BA3;
@@ -166,7 +170,7 @@ A.oyMenuAction:hover {
 }	
 .oyPanelDivHidden {
 	width: 2px;
-	background-color: #FFFFFF;
+	background-color: #2B2A2B;
 }	
 .oyList {
 	cursor: pointer; cursor: hand;

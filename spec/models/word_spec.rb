@@ -11,6 +11,7 @@ describe Word do
     it "should return the correct word" do
        @word.name.should eq("Beer")
     end
+  end
 
   #   it "should reuturn a photo"
   #     @word.photos.should eq(Photo)
