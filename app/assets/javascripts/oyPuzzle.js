@@ -218,7 +218,6 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 		var cell = document.getElementById(key);
 		cell.className = "";
 		imgUrl = getUrl(i, clue, cell);
-		console.log(cell)
 	} 
 }
 
@@ -275,7 +274,7 @@ oyCrosswordPuzzle.prototype.fillVert = function(clue, idx){
 	for (var i=0; i < clue.len; i++){	 
 		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 		var cell = document.getElementById(key);
-
+		imgUrl = getUrl(i, clue, cell);
 		this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
 		this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
 	}  
