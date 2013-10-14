@@ -28,7 +28,7 @@ body {
 	font-size: 40px;
 }
 .oyPuzzleCell {	
-	background-color: #FFFFFF;
+	background-color: #2B2A2B;
 } 
 .oyPuzzle {
 	padding: 8px;
@@ -61,7 +61,7 @@ body {
 .oyHeader{
 	padding: 8px;
 	color: #29D6BB;
-	background-color: #333333;
+	background-color: #2B2A2B;
 }
 .oyHeaderTitle{
 	font-family: 'Trebuchet MS','Lucida Grande',Verdana,Arial,Sans-Serif;
@@ -75,7 +75,7 @@ body {
 	font-size: 70%;
 }	
 .oyFooter{ 
-	background-color: #F7F7FF;
+	background-color: #2B2A2B;
 	padding: 1px;
 	font-family: Arial;
 	font-size: 70%;
@@ -89,8 +89,8 @@ body {
 }
 .oyOuterFrame {
 	padding: 12px;
-	background-color: grey;
-	border: solid 1px #808080;
+	background-color: #2B2A2B;
+	border: solid 1px #2B2A2B;
 }
 A.oysTextLink{
 	color: #4282B5;
@@ -135,7 +135,7 @@ A.oyMenuAction:hover {
 .oyListCell { 
 }	
 .oyListCellDot {
-	background-color: #F7F7FF;
+	background-color: #2B2A2B;
 	color: #F9F9F9;	
 }
 .oyPanelDiv {
@@ -147,7 +147,7 @@ A.oyMenuAction:hover {
 }	
 .oyPanelDivHidden {
 	width: 2px;
-	background-color: #FFFFFF;
+	background-color: #2B2A2B;
 }	
 .oyList {
 	cursor: pointer; cursor: hand;

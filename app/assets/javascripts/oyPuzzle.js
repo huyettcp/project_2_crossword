@@ -249,7 +249,13 @@ getUrl = function(i, clue, cell){
 			// console.log(secret);
 
 			imgUrl = "http://farm"+farmId+".staticflickr.com/"+serverId+"/"+id+"_"+secret+".jpg"
-			console.log(imgUrl);
+
+			cell.style.backgroundImage="url("+imgUrl+")";
+			cell.style.backgroundSize="46px 46px";
+			cell.style.backgroundRepeat = "no-repeat";
+			//cell.innerHTML = "<img src='" + imgUrl + "'width='47px' height='50px' style='z-index: -99999;' />";
+
+			// console.log(imgUrl);
 
 			return imgUrl;
 		});
@@ -267,7 +273,10 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 		// console.log(cell)
 		cell.className = "";
 		cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
-		// console.log(cell)
+
+		imgUrl = getUrl(i, clue, cell);
+		//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
+		
 	}
 }
 
@@ -275,7 +284,9 @@ oyCrosswordPuzzle.prototype.fillVert = function(clue, idx){
 	for (var i=0; i < clue.len; i++){	 
 		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 		var cell = document.getElementById(key);
-		imgUrl = getUrl(i, clue, cell);
+
+		imgUrl = getUrl(i, clue, cell); 
+
 		this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
 		this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
 	}  
@@ -285,7 +296,7 @@ oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx){
 	for (var i=0; i < clue.len; i++){	
 		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
 		var cell = document.getElementById(key);
-
+		imgUrl = getUrl(i, clue, cell); 
 		this.fillIn(cell, clue.xpos + i, clue.ypos, i, idx, 0);
 	    this.menu.setCellState(clue.xpos + i, clue.ypos, 0);
 	}
@@ -294,8 +305,10 @@ oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx){
 oyCrosswordPuzzle.prototype.fillIn = function(cell, x, y, i, idx, dir){
 	if (i == 0){    
 		cell.style.backgroundImage = "url(\"" + this.appHome + "/img/" + (idx + 1) + ".gif\")"; 
-	}     
-	cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value='' style='background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY); background-repeat:no-repeat; background-size: 46px 46px; background-position: center center;'>";
+	} 
+	  
+	cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
+	 
 	//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
 }
 
