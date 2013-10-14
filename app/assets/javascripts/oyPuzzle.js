@@ -271,12 +271,12 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 		// console.log(key)
 		var cell = document.getElementById(key);
 		// console.log(cell)
-		cell.className = "";
+		cell.className = ""; 
 		// cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
-
-		imgUrl = getUrl(i, clue, cell);
+ 
+		imgUrl = getUrl(i, clue, cell); 
 		//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
-		
+		 
 	}
 }
 
