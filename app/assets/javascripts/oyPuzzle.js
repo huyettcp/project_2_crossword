@@ -237,7 +237,7 @@ getUrl = function(i, clue, cell){
 
 		// $.each(img_array, function(index, tag){
 			$.getJSON("http://api.flickr.com/services/rest/?format=json&sort=random&method=flickr.photos.search&tags="+img_array[img_array_index]+"&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1",function(data){
-
+			console.log(data)
 			var farmId = data.photos.photo[i].farm;
 			var serverId = data.photos.photo[i].server;
 			var id = data.photos.photo[i].id;
@@ -271,12 +271,12 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 		// console.log(key)
 		var cell = document.getElementById(key);
 		// console.log(cell)
-		cell.className = "";
-		cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
-
-		imgUrl = getUrl(i, clue, cell);
+		cell.className = ""; 
+		// cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
+ 
+		imgUrl = getUrl(i, clue, cell); 
 		//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
-		
+		 
 	}
 }
 
