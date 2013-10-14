@@ -28,13 +28,15 @@ body {
 	font-size: 40px;
 }
 .oyPuzzleCell {	
-	background-color: #FFFFFF;
+	background-color: #2B2A2B;
 } 
 .oyPuzzle {
 	padding: 8px;
+
 	border-collapse: collapse;	
 } 				
 .oyPuzzleFooter{
+	background-color: #2B2A2B;
 	padding: 8px; 
 	font-family: Arial;
 	text-align: center;		
@@ -43,7 +45,9 @@ body {
 .ousStateOk {
 	text-align: left;		
 	font-family: Arial;
-	font-size: smaller;
+	font-size: 0;
+	margin:0 auto;
+	background-color: #2B2A2B;
 	/*color: #008000;*/
 }
 .ousStateBusy {
@@ -61,7 +65,7 @@ body {
 .oyHeader{
 	padding: 8px;
 	color: #29D6BB;
-	background-color: #333333;
+	background-color: #2B2A2B;
 }
 .oyHeaderTitle{
 	font-family: 'Trebuchet MS','Lucida Grande',Verdana,Arial,Sans-Serif;
@@ -75,7 +79,7 @@ body {
 	font-size: 70%;
 }	
 .oyFooter{ 
-	background-color: #F7F7FF;
+	background-color: #2B2A2B;
 	padding: 1px;
 	font-family: Arial;
 	font-size: 70%;
@@ -89,8 +93,8 @@ body {
 }
 .oyOuterFrame {
 	padding: 12px;
-	background-color: grey;
-	border: solid 1px #808080;
+	background-color: #2B2A2B;
+/*	border: solid 1px #808080;*/
 }
 A.oysTextLink{
 	color: #4282B5;
@@ -133,10 +137,15 @@ A.oyMenuAction:hover {
 	border: solid 1px #808080;	
 }	
 .oyListCell { 
+	visibility: hidden;
+	width: 0;
+	height:0;
 }	
 .oyListCellDot {
-	background-color: #F7F7FF;
+	background-color: #2B2A2B;
 	color: #F9F9F9;	
+	width: 0;
+	height:0;
 }
 .oyPanelDiv {
 	font-family:Arial;				
@@ -144,6 +153,11 @@ A.oyMenuAction:hover {
 	padding: 4px;
 	text-align: center;
 	font-weight: bold;
+	visibility: hidden;
+	width: 0;
+	height:0;
+}	
+}	
 }	
 .oyPanelDivHidden {
 	width: 2px;

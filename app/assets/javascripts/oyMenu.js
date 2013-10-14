@@ -131,11 +131,11 @@ oyCrosswordMenu.prototype.installWelcomeMenu = function(){
 			
 			document.getElementById("oygStatic").innerHTML = "";
 			
-			oThis.footer.stateOk("Enjoy the game!");
+			oThis.footer.stateOk("");
 		}
 	);	
 
-	this.footer.stateOk("Ready to begin!");
+	this.footer.stateOk("");
 	 
 	this.server.trackAction(this.puzz.uid, "wlm");
 }
