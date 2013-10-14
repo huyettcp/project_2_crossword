@@ -18,7 +18,7 @@ development:
   database: crossword_development
   pool: 5
   host: localhost
-  username: test
+  username: adammccabe
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
