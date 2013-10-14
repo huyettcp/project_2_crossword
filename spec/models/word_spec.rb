@@ -12,10 +12,10 @@ describe Word do
        @word.name.should eq("Beer")
     end
 
-    it "should reuturn a photo"
-      @word.photos.should eq(Photo)
+  #   it "should reuturn a photo"
+  #     @word.photos.should eq(Photo)
 
-  end
+  # end
 
 
 

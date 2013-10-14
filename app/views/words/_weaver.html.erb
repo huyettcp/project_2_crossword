@@ -7,6 +7,11 @@
 // Posted 11/19/2009 www.startup-something.com
 //
 
+// Comments Marked MG by Glumac
+
+
+// MG - setting univeral variables.  This is where we will use ruby to feed the wordlist, which is an array of strings. 
+
 var board = Array();
 var wordlist = [
 	'Abstract', 'Builder', 'Factory', 'Prototype', 'Singleton', 'Adapter', 'Bridge', 
@@ -22,6 +27,7 @@ var Horizontal = Array();
 var Vertical = Array();
  
 
+// MG - builds the empty board. 
 function ClearBoard(){
    board = Array();
    for(x=0;x<board_width;x++){
@@ -32,7 +38,6 @@ function ClearBoard(){
     }
 }
 
- 
 function MatchedLetters(Word){
   var Locations = Array(); 
    for(x=0;x<board_width;x++){
@@ -46,6 +51,7 @@ function MatchedLetters(Word){
   return Locations;
 }
 
+// MG - Sets a blank crossword cell before word so words don't ajoin on same row or column.  
 function BlankPrior(x,y,dx,dy,word){
   dx=dx*-1; dy=dy*-1;
   x=x+dx; y=y+dy;
@@ -55,7 +61,7 @@ function BlankPrior(x,y,dx,dy,word){
   return true; 
 }
 
-
+// MG - Sets a blank crossword cell after word so words don't ajoin on same row or column.  
 function BlankAfter(x,y,dx,dy,word){
   dx=dx*(word.length+1); dy=dy*(word.length+1);
   x=x+dx ; y=y+dy ;
@@ -190,6 +196,7 @@ function PlaceAtBestCrossing(places,word){
 }
 
 //1. Loops 
+
 
 function BuildCrossword(){
 ClearBoard(); unconnected=0;
