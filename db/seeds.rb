@@ -15,20 +15,32 @@
 Photo.delete_all
 Word.delete_all
 
-complaint_record = HTTParty.get('http://data.cityofnewyork.us/resource/erm2-nwe9.json')
+var img_array = [
+	'Abstract', 'Builder', 'Factory', 'Prototype', 'Singleton', 'Adapter', 'Bridge', 
+	'Composite', 'Decorator', 'Facade', 'Flyweight', 'Proxy', 'Responsibility', 'Command',
+	'Interpreter', 'Iterator', 'Mediator', 'Memento', 'Observer', 'State', 'Strategy',
+	'Template', 'Visitor']
 
+count = img_array.length
+img_array_index = 0
 
-complaint_record.each do |complaint_record|
+	while img_array_index < count
+		photos = HTTParty.get('http://api.flickr.com/services/rest/?format=json&sort=random&method=flickr.photos.search&tags=#{img_array[img_array_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1')
+				i = 0
+				temp_word = Word.create(name: img_array[img_array_index])
+				
+				while i < img_array[img_array_index].length
+					var farmId = photos['photos']['photo'][i]['farm']
+					var serverId = photos['photos']['photo'][i]['server']
+					var id = photos['photos']['photo'][i]['id'];
+					var secret = photos['photos']['photo'][i]['secret']     
 
-	new_complaint = Complaint.new
+					imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
 
-	new_complaint.address = complaint_record['incident_address']
-	new_complaint.zip = complaint_record['incident_zip']
-	new_complaint.latitude = complaint_record['latitude']
-	new_complaint.longitude = complaint_record['longitude']
-	new_complaint.descriptor = complaint_record['descriptor']
-
-	unless new_complaint.save 
-		puts "complaint ingnored"
+					
+					temp_word.photos << Photo.create(url: imgUrl)
+					i += 1
+				end
+		img_array_index += 1
 	end
 end
