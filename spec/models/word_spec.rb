@@ -28,3 +28,5 @@ describe Word do
   it { should have_many(:photos) }
 end
 
+ 
+

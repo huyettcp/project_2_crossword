@@ -19,3 +19,5 @@ describe Photo do
    it { should allow_value("https://www.google.com/").for(:url) }
 end
 
+ 
+
