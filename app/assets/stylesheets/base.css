@@ -28,10 +28,13 @@ body {
 	font-size: 40px;
 }
 .oyPuzzleCell {	
+/*	border: solid 3px #2B2A2B;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;*/
 	background-color: #2B2A2B;
 } 
 .oyPuzzle {
-	padding: 8px;
+	padding: Opx;
 
 	border-collapse: collapse;	
 } 				
@@ -83,6 +86,8 @@ body {
 	padding: 1px;
 	font-family: Arial;
 	font-size: 70%;
+	color: #425F70;
+
 }
 .oyFrame {
 /*	border-collapse: collapse;*/		
@@ -97,7 +102,7 @@ body {
 /*	border: solid 1px #808080;*/
 }
 A.oysTextLink{
-	color: #4282B5;
+	color: #0F6BA3;
 	text-decoration: none;
 }
 A.oysTextLink:hover{
@@ -123,7 +128,7 @@ A.oysTextLink:hover{
 .oyMenuActionNone{
 	padding-left: 4px;
 	padding-right: 4px; 
-	color: #000000; 
+	color: #6DDDCB; 
 	font-size: smaller;
 }
 A.oyMenuAction {
@@ -133,7 +138,7 @@ A.oyMenuActionDis {
 	text-decoration: none;
 }		
 A.oyMenuAction:hover {
-	background-color: #6699FF;
+	background-color: #425F70;
 	border: solid 1px #808080;	
 }	
 .oyListCell { 
@@ -181,8 +186,8 @@ A.oyMenuAction:hover {
 	color: #000000;
 	background-color: #E0E0E0;
 }		 
-.oyCellInput {     
-	border: none;	
+.oyCellInput {
+/**/
 	color: white;
 	background-color: transparent;
 	font-size: 45px;
@@ -195,9 +200,9 @@ A.oyMenuAction:hover {
 	height: 46px;
 }	 	 	
 .oyCellEmpty {
-	border: solid 3px #2B2A2B;;	
-	background-color: #2B2A2B;;
-	
+	border: solid 3px #2B2A2B;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	font-size: 18px;
 	font-family: Courier New; 				
 	font-weight: bold;
@@ -218,7 +223,9 @@ A.oyMenuAction:hover {
 	height: 46px;*/
 }		
 .oyCellRevealed {
-	border: solid 1px #003366;	
+	border: solid 3px #2B2A2B;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	background-color: #FFC0C0;
 	
 	font-size: 18px;
