@@ -19,7 +19,8 @@ development:
   database: crossword_development
   pool: 5
   host: localhost
-  username: adammccabe
+  # username: christopherhuyett
+  username: test
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -40,13 +41,32 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+<<<<<<< HEAD
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: crossword_test
+#   pool: 5
+#   host: localhost
+#   username: christopherhuyett
+#   password:
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: crossword_production
+#   pool: 5
+#   host: localhost
+#   username: christopherhuyett
+#   password:
+=======
 test:
   adapter: postgresql
   encoding: unicode
   database: crossword_test
   pool: 5
   host: localhost
-  username: adammccabe
+  username: christopherhuyett
   password:
 
 production:
@@ -55,5 +75,6 @@ production:
   database: crossword_production
   pool: 5
   host: localhost
-  username: adammccabe
+  username: christopherhuyett
   password:
+>>>>>>> c0421109334cbddce0a22eb4e05bd5d52fea208a

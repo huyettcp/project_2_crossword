@@ -13,4 +13,7 @@ describe Photo do
 
 end
 
-
+describe Photo do 
+   it { should belong_to(:word) }
+   it { validate_presence_of(:url) }
+end
