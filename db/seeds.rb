@@ -12,35 +12,46 @@
 #   Word.create(name: name)
 # end
 
+require 'open-uri'
+
 Photo.delete_all
 Word.delete_all
 
-var img_array = [
-	'Abstract', 'Builder', 'Factory', 'Prototype', 'Singleton', 'Adapter', 'Bridge', 
-	'Composite', 'Decorator', 'Facade', 'Flyweight', 'Proxy', 'Responsibility', 'Command',
-	'Interpreter', 'Iterator', 'Mediator', 'Memento', 'Observer', 'State', 'Strategy',
-	'Template', 'Visitor']
+img_array = ['Abstract','Builder','Factory','Prototype','Singleton','Adapter','Bridge','Composite','Decorator','Facade','Flyweight','Proxy','Responsibility','Command','Interpreter','Iterator','Mediator','Memento','Observer','State','Strategy','Template','Visitor']
 
 count = img_array.length
 img_array_index = 0
 
-	while img_array_index < count
-		photos = HTTParty.get('http://api.flickr.com/services/rest/?format=json&sort=random&method=flickr.photos.search&tags=#{img_array[img_array_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1')
-				i = 0
-				temp_word = Word.create(name: img_array[img_array_index])
-				
-				while i < img_array[img_array_index].length
-					var farmId = photos['photos']['photo'][i]['farm']
-					var serverId = photos['photos']['photo'][i]['server']
-					var id = photos['photos']['photo'][i]['id'];
-					var secret = photos['photos']['photo'][i]['secret']     
+while img_array_index < count
 
-					imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
+	photos = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=random&method=flickr.photos.search&tags=#{img_array[img_array_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+	sleep(2)	
+		puts photos['photos']['photo'].length
+			i = 0
+			temp_word = Word.create(name: img_array[img_array_index])
+			unless photos.empty?
+				while i < img_array[img_array_index].length
+
+					if photos['photos'] && photos['photos']['photo'] && photos['photos']['photo'][i]
+						farmId = photos['photos']['photo'][i]['farm']
+
+						serverId = photos['photos']['photo'][i]['server']
+								 
+						id = photos['photos']['photo'][i]['id'];
+
+						secret = photos['photos']['photo'][i]['secret']
+						           
+
+						imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
+
 
 					
-					temp_word.photos << Photo.create(url: imgUrl)
+					# if HTTParty.get()
+						temp_word.photos << Photo.create(url: imgUrl)
+					end
 					i += 1
+
 				end
-		img_array_index += 1
-	end
+			end
+	img_array_index += 1
 end
