@@ -59,7 +59,7 @@
 	</div>  
 
 
-  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
 <link href="/assets/base.css?body=1" media="all" rel="stylesheet" type="text/css" />
 <link href="/assets/words.css?body=1" media="all" rel="stylesheet" type="text/css" />
 <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
@@ -141,12 +141,104 @@
 //*****************************************************************************************************
 //*****************************************************************************************************
 var board = [];
-var wordlist = [
-	'Abstract', 'Builder', 'Factory', 'Prototype', 'Singleton', 'Adapter', 'Bridge', 
-	'Composite', 'Decorator', 'Facade', 'Flyweight', 'Proxy', 'Responsibility', 'Command',
-	'Interpreter', 'Iterator', 'Mediator', 'Memento', 'Observer', 'State', 'Strategy',
-	'Template', 'Visitor'
-]; 
+var wordlist = ["leadin",
+"basketball",
+"chief",
+"collideop",
+"apple",
+"avert",
+"asiachina",
+"women",
+"quake",
+"iran",
+"novel",
+"sportmore",
+"hits",
+"bhutan",
+"behindis",
+"national",
+"shutdown",
+"ready",
+"hires",
+"tuesdaychallenge",
+"accorda",
+"left",
+"strong",
+"doubtpanetta",
+"military",
+"albanyin",
+"hurts",
+"becoming",
+"nuclear",
+"readiness",
+"scores",
+"talks",
+"disagreementsthe",
+"richly",
+"debt",
+"into",
+"house",
+"challengethe",
+"reaches",
+"american",
+"russia",
+"gazeleaving",
+"early",
+"strike",
+"dispatchesindustry",
+"untreatedwegman",
+"endin",
+"leaders",
+"immigrant",
+"republican",
+"nail",
+"ceiling",
+"france",
+"estimates",
+"with",
+"still",
+"deal",
+"quarterly",
+"area",
+"weimaraner",
+"againmichael",
+"compassionsenate",
+"changing",
+"familysharing",
+"senate",
+"says",
+"earth",
+"push",
+"what",
+"fungus",
+"when",
+"peahen",
+"killed",
+"draft",
+"bloomingdale",
+"misses",
+"offer",
+"rail",
+"abilities",
+"know",
+"citi",
+"ugly",
+"philippines",
+"retail",
+"spent",
+"heartache",
+"effort",
+"need",
+"passion",
+"gould",
+"from",
+"profit",
+"news",
+"casino",
+"burberry",
+"gains",
+"game",
+"turning"]
 
  
 var board_width = 20;
@@ -161,9 +253,9 @@ var clues = [];
 // MG - builds the empty board. 
 function ClearBoard(){
    board = [];
-   for(x=0;x<board_width;x++){
+   for(x = 0; x < board_width; x++){
        board.push([]);
-     for(y=0;y<board_width;y++){
+     for(y = 0; y <board_width; y++){
        board[x].push(' ');    
      }
     }
@@ -171,7 +263,7 @@ function ClearBoard(){
 
 function MatchedLetters(Word){
   var Locations = []; 
-   for(x=0;x<board_width;x++){
+   for(x = 0; x < board_width;  x++){
      for(y=0;y<board_width;y++){
        var c = board[x][y].toUpperCase();
        if (Word.indexOf(c)>-1){
@@ -187,7 +279,10 @@ function BlankPrior(x,y,dx,dy,word){
   dx=dx*-1; dy=dy*-1;
   x=x+dx; y=y+dy;
   if(board[x]){
-   if (board[x][y]==" "){ return true; } else {return false;}  
+   if (board[x][y]==" "){ 
+   	return true; 
+   } else {
+   	return false;}  
   }  
   return true; 
 }
@@ -197,7 +292,10 @@ function BlankAfter(x,y,dx,dy,word){
   dx=dx*(word.length+1); dy=dy*(word.length+1);
   x=x+dx ; y=y+dy ;
   if(board[x]){
-   if (board[x][y]==" "){ return true; } else {return false;}  
+   if (board[x][y]==" "){ 
+   	return true; 
+   } else {
+   	return false;}  
   }  
   return true; 
 }
@@ -328,12 +426,17 @@ function PathIsClear(x,y,dx,dy,word){
 }
 
 function PlaceAtRandom(word){  
-  var trynum=0; var keeptrying=true;
+  var trynum = 0; 
+  var keeptrying = true;
   while(keeptrying){
       var x=Math.floor(Math.random()*board_width);
       var y=Math.floor(Math.random()*board_width);
       var HorV = Math.floor(Math.random()*20);
-      if(HorV % 2 == 0){ dx=0; dy=1;} else { dx=1; dy=0;}
+      if(HorV % 2 == 0){ 
+      	dx=0; dy=1;
+      } else { 
+      	dx=1; dy=0;
+      }
       keeptrying = ((trynum<board_width*board_board) && (!PathIsClear(x,y,dx,dy,word)));
       trynum++;
   } //  document.write(word+":random("+(trynum+1)+")<br>");
@@ -420,9 +523,6 @@ function CrosswordTable(){
 }
 
 
-// window.onload = function() {
-
-// 
 
 console.log(oygCrosswordPuzzle);
 // console.log(clues.length);

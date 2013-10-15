@@ -34,14 +34,9 @@ while img_array_index < count
 
 					if photos['photos'] && photos['photos']['photo'] && photos['photos']['photo'][i]
 						farmId = photos['photos']['photo'][i]['farm']
-
-						serverId = photos['photos']['photo'][i]['server']
-								 
+						serverId = photos['photos']['photo'][i]['server']		 
 						id = photos['photos']['photo'][i]['id'];
-
 						secret = photos['photos']['photo'][i]['secret']
-						           
-
 						imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
 
 
