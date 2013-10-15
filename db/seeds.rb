@@ -25,7 +25,7 @@ img_array_index = 0
 while img_array_index < count
 
 	photos = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=random&method=flickr.photos.search&tags=#{img_array[img_array_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
-	sleep(2)	
+	#sleep(2)	
 		# puts photos['photos']['photo'].length
 			i = 0
 			temp_word = Word.create(name: img_array[img_array_index])
