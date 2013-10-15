@@ -508,7 +508,7 @@ oyCrosswordPuzzle.prototype.restoreCellState = function(target, x, y){
 			break; 	
 		case 0:
 			// console.log(target)
-			cell.className = "oyCellFull";
+			target.className = "oyCellFull";
 			// target.style.background="background-image: url('madden50.png') no-repeat";
 			break; 
  		case 1: 
