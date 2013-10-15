@@ -12,16 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require oyPrologue.js
-//= require oyJsrAjax.js
-//= require oyClue.js
-//= require oyMenu.js
-//= require oyPuzzle.js
-//= require oyServer.js
-//= require oySign.js
-//= require oyMisc.js
-//= require_self
-//= require oyEpilogue.js
+// = require oyPrologue.js
+// = require oyJsrAjax.js
+// = require oyClue.js
+// = require oyMenu.js
+// = require oyPuzzle.js
+// = require oyServer.js
+// = require oySign.js
+// = require oyMisc.js
+// = require weaver.js
+// = require oyEpilogue.js
 
 
 	
