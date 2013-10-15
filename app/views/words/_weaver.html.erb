@@ -1,4 +1,4 @@
-<div id="crosswordWeaver" align="center" style="width:100%;">
+<!-- <div id="crosswordWeaver" align="center" style="width:100%;">
 <script>
 
 //
@@ -25,6 +25,7 @@ var board_board = 20;
 
 var Horizontal = Array();
 var Vertical = Array();
+var clues = Array();
  
 
 // MG - builds the empty board. 
@@ -148,6 +149,13 @@ function CrossablePlaces(word){
 } 
  
 function PlaceWord(x,y,dx,dy,word){
+  console.log(word);
+  console.log("x="+x);
+  console.log("y="+y);
+  console.log("dx="+dx);
+  console.log("dy="+dy);
+  clues.push(new oyCrosswordClue(word.length, "", word, " ", dy, x, y));
+  console.log(clues)
   var size = word.length;
   for(var i=0;i<size;i++){
    if(board[x]){
@@ -161,6 +169,20 @@ function PlaceWord(x,y,dx,dy,word){
   
   return true;
 }
+
+function CallGame(){
+  var oygCrosswordPuzzle = new oyCrosswordPuzzle (
+      "5748185539682739085",
+      "./oy-cword-1.0",
+      "/a/a",
+      "FLOSSWORDS",
+      "An Infinite Flickr Puzzle Game.",
+      clues,
+      20,
+      20
+    );
+}
+
 
 function PathIsClear(x,y,dx,dy,word){
   var size = word.length;
@@ -260,8 +282,6 @@ function CrosswordTable(){
 }
 
 
-
-
 //**********************************************************
 BuildCrossword();
 CrosswordTable();
@@ -269,3 +289,4 @@ CrosswordTable();
 </script>
 
 </div>
+ -->
