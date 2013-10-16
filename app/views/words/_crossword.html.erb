@@ -139,111 +139,115 @@
 		
 
 
+
 //********************************************WEAVER***************************************************
 //*****************************************************************************************************
 //*****************************************************************************************************
 //*****************************************************************************************************
-var board = [];
-var wordlist = ["leadin",
-"basketball",
-"chief",
-"collideop",
-"apple",
-"avert",
-"asiachina",
-"women",
-"quake",
-"iran",
-"novel",
-"sportmore",
-"hits",
-"bhutan",
-"behindis",
-"national",
-"shutdown",
-"ready",
-"hires",
-"tuesdaychallenge",
-"accorda",
-"left",
-"strong",
-"doubtpanetta",
-"military",
-"albanyin",
-"hurts",
-"becoming",
-"nuclear",
-"readiness",
-"scores",
-"talks",
-"disagreementsthe",
-"richly",
-"debt",
-"into",
-"house",
-"challengethe",
-"reaches",
-"american",
-"russia",
-"gazeleaving",
-"early",
-"strike",
-"dispatchesindustry",
-"untreatedwegman",
-"endin",
-"leaders",
-"immigrant",
-"republican",
-"nail",
-"ceiling",
-"france",
-"estimates",
-"with",
-"still",
-"deal",
-"quarterly",
-"area",
-"weimaraner",
-"againmichael",
-"compassionsenate",
-"changing",
-"familysharing",
-"senate",
-"says",
-"earth",
-"push",
-"what",
-"fungus",
-"when",
-"peahen",
-"killed",
-"draft",
-"bloomingdale",
-"misses",
-"offer",
-"rail",
-"abilities",
-"know",
-"citi",
-"ugly",
-"philippines",
-"retail",
-"spent",
-"heartache",
-"effort",
-"need",
-"passion",
-"gould",
-"from",
-"profit",
-"news",
-"casino",
-"burberry",
-"gains",
-"game",
-"turning"]
 
- 
+var board = [];
+var wordlist = word_list
+console.log(wordlist)
+// var wordlist = ["leadin",
+// "basketball",
+// "chief",
+// "collideop",
+// "apple",
+// "avert",
+// "asiachina",
+// "women",
+// "quake",
+// "iran",
+// "novel",
+// "sportmore",
+// "hits",
+// "bhutan",
+// "behindis",
+// "national",
+// "shutdown",
+// "ready",
+// "hires",
+// "tuesdaychallenge",
+// "accorda",
+// "left",
+// "strong",
+// "doubtpanetta",
+// "military",
+// "albanyin",
+// "hurts",
+// "becoming",
+// "nuclear",
+// "readiness",
+// "scores",
+// "talks",
+// "disagreementsthe",
+// "richly",
+// "debt",
+// "into",
+// "house",
+// "challengethe",
+// "reaches",
+// "american",
+// "russia",
+// "gazeleaving",
+// "early",
+// "strike",
+// "dispatchesindustry",
+// "untreatedwegman",
+// "endin",
+// "leaders",
+// "immigrant",
+// "republican",
+// "nail",
+// "ceiling",
+// "france",
+// "estimates",
+// "with",
+// "still",
+// "deal",
+// "quarterly",
+// "area",
+// "weimaraner",
+// "againmichael",
+// "compassionsenate",
+// "changing",
+// "familysharing",
+// "senate",
+// "says",
+// "earth",
+// "push",
+// "what",
+// "fungus",
+// "when",
+// "peahen",
+// "killed",
+// "draft",
+// "bloomingdale",
+// "misses",
+// "offer",
+// "rail",
+// "abilities",
+// "know",
+// "citi",
+// "ugly",
+// "philippines",
+// "retail",
+// "spent",
+// "heartache",
+// "effort",
+// "need",
+// "passion",
+// "gould",
+// "from",
+// "profit",
+// "news",
+// "casino",
+// "burberry",
+// "gains",
+// "game",
+// "turning"]
+
+
 var board_width = 20;
 var board_board = 20;
 
@@ -253,7 +257,7 @@ var clues = [];
 
  
 
-// MG - builds the empty board. 
+// MG - builds the empty board.
 function ClearBoard(){
    board = [];
    for(x = 0; x < board_width; x++){
@@ -521,6 +525,7 @@ function BuildCrossword(){
 	}  
 }
 
+
 function ScreenDumpCrossword() {
    // document.write("!<pre>");  
    for(x = 0; x < board_width; x++) {
@@ -596,7 +601,7 @@ CrosswordTable();
 //****************************************END-WEAVER***************************************************
 oygCrosswordPuzzle.canTalkToServer = false;
 
-	
+
 	--></script>	
 
 </script>

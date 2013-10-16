@@ -125,13 +125,7 @@ oyCrosswordMenu.prototype.installWelcomeMenu = function(){
 	this.addAction( 
 		target, "Start Now", "Starting...", "strt",
 		function(){				 
-			oThis.puzz.bind();	
-			oThis.puzz.hlist.clickItem(0);			
-			oThis.installContextMenu();
-			
-			document.getElementById("oygStatic").innerHTML = "";
-			
-			oThis.footer.stateOk("");
+			databaseGrab();	
 		}
 	);	
 
