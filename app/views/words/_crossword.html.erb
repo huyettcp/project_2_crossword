@@ -395,7 +395,7 @@ function CrossablePlaces(word){
      for(y = 0; y < board_width; y++) {
         Hscore = ScorePath(x,y,1,0,word);
         Vscore = ScorePath(x,y,0,1,word); 
-       document.write(word+" ("+x+","+y+") H="+Hscore+"  V="+Vscore+" <br>");
+       // document.write(word+" ("+x+","+y+") H="+Hscore+"  V="+Vscore+" <br>");
         if(Hscore> bestscore) { 
             bestscore = Hscore;
             bestx = x;
@@ -413,7 +413,7 @@ function CrossablePlaces(word){
      }  
   }
   if(bestscore > 0){
-     document.write(word+" - "+bestscore+"("+bestx+","+besty+")-("+bestdx+","+bestdy+")<br>");
+     // document.write(word+" - "+bestscore+"("+bestx+","+besty+")-("+bestdx+","+bestdy+")<br>");
       Places.push(new Array(bestscore,bestx,besty,bestdx,bestdy));
    }
   return Places;
@@ -472,11 +472,11 @@ function PlaceAtRandom(word) {
       var y = Math.floor(Math.random() * board_width);
       var HorV = Math.floor(Math.random() * 20);
       if(HorV % 2 == 0) { 
-      	dx = 0;
-      	dy = 1;
+      		dx = 0;
+      		dy = 1;
       } else { 
-      	dx = 1;
-      	dy = 0;
+      		dx = 1;
+      		dy = 0;
       }
       keeptrying = ((trynum<board_width*board_board) && (!PathIsClear(x,y,dx,dy,word)));
       trynum++;
@@ -521,51 +521,51 @@ function BuildCrossword(){
 	}  
 }
 
-function ScreenDumpCrossword(){
-   document.write("!<pre>");  
+function ScreenDumpCrossword() {
+   // document.write("!<pre>");  
    for(x = 0; x < board_width; x++) {
      for(y = 0; y < board_width; y++) {
        var c = board[x][y];       
-       document.write(c);
+       // document.write(c);
      }
-      document.write(x+"\r\n");
+      // document.write(x+"\r\n");
     }
-    document.write("</pre>");
+    // document.write("</pre>");
  
- document.write('Down:<br>');
+ // document.write('Down:<br>');
  for(var i = 0; i < Vertical.length; i++) {
- 	document.write((i+1)+'. ('+Vertical[i]+')<br>');
+ 	// document.write((i+1)+'. ('+Vertical[i]+')<br>');
  }
- document.write('Across:<br>');
+ // document.write('Across:<br>');
  for(var i = 0; i < Horizontal.length; i++) {
- 	document.write((i+1)+'. ('+Horizontal[i]+')<br>');
+ 	// document.write((i+1)+'. ('+Horizontal[i]+')<br>');
  }
 }
 
 function CrosswordTable() {
-       document.write('<table border=1 cellspacing=0 cellpadding=2>');  
+       // document.write('<table border=1 cellspacing=0 cellpadding=2>');  
    for(x = 0; x < board_width; x++) {
-       document.write("<tr>");  
+       // document.write("<tr>");  
      for(y = 0; y < board_width; y++) {
        var c = board[x][y]; 
        if( c == " ") {
-       	document.write('<td style="background:#000">'); 
+       	// document.write('<td style="background:#000">'); 
        } else {  
-       	document.write("<td>");        
+       	// document.write("<td>");        
        }
-       document.write(c);
-       document.write("</td>");  
+       // document.write(c);
+       // document.write("</td>");  
      }
-       document.write("</tr>");  
+       // document.write("</tr>");  
     }
-       document.write("</table>");
-	   document.write('Down:<br>');
+       // document.write("</table>");
+	   // document.write('Down:<br>');
 	 for(var i = 0; i < Vertical.length; i++) { 
-	 	document.write((i+1)+'. ('+Vertical[i]+')<br>'); 
+	 	// document.write((i+1)+'. ('+Vertical[i]+')<br>'); 
 	 }
-	 	document.write('Across:<br>');
+	 	// document.write('Across:<br>');
 	 for(var i = 0; i < Horizontal.length; i++) {
-	 	document.write((i+1)+'. ('+Horizontal[i]+')<br>'); 
+	 	// document.write((i+1)+'. ('+Horizontal[i]+')<br>'); 
 	 }
 
 
@@ -578,7 +578,7 @@ function CrosswordTable() {
 BuildCrossword();
 CrosswordTable();
 
-	console.log(clues)
+	// console.log(clues)
 
 	var oygCrosswordPuzzle = new oyCrosswordPuzzle (
 	      "5748185539682739085",

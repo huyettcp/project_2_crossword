@@ -3,4 +3,6 @@ Crossword::Application.routes.draw do
 
   resources :words
 
+  get '/photos', to: 'photos#index'
+
 end

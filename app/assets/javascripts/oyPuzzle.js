@@ -212,105 +212,202 @@ oyCrosswordPuzzle.prototype.render = function(){
 	target.className = "oyPanelDivHidden";	
 }
 
-oyCrosswordPuzzle.prototype.renderVert = function(clue){
-	console.log(clue)
-	for (var i=0; i < clue.len; i++){
-		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
-		var cell = document.getElementById(key);
-		cell.className = "";
-		imgUrl = getUrl(i, clue, cell);
-	} 
+// getUrl = function(i, clue, cell){
+// //*********************************Grabbing Flickr Images*******************************************
+// //*************************************************************************************************
+// //*************************************************************************************************
+	
+// 	img_array_index = clue.len;
+// 	var img_array = [
+// 	'Abstract', 'Builder', 'Factory', 'Prototype', 'Singleton', 'Adapter', 'Bridge', 
+// 	'Composite', 'Decorator', 'Facade', 'Flyweight', 'Proxy', 'Responsibility', 'Command',
+// 	'Interpreter', 'Iterator', 'Mediator', 'Memento', 'Observer', 'State', 'Strategy',
+// 	'Template', 'Visitor'];
+// 		// var img_array2 = ["beach", "train", "duck", "snake", "beer", "drugs", "peaople", "sky"]
+
+// 		// $.each(img_array, function(index, tag){
+// 			$.getJSON("http://api.flickr.com/services/rest/?format=json&sort=random&method=flickr.photos.search&tags="+img_array[img_array_index]+"&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1",function(data){
+// 			// console.log(data)
+// 			var farmId = data.photos.photo[i].farm;
+// 			var serverId = data.photos.photo[i].server;
+// 			var id = data.photos.photo[i].id;
+// 			var secret = data.photos.photo[i].secret;     //binds photo URL elements to variables
+
+// 			// console.log(farmId);
+// 			// console.log(serverId);
+// 			// console.log(id);
+// 			// console.log(secret);
+
+// 			imgUrl = "http://farm"+farmId+".staticflickr.com/"+serverId+"/"+id+"_"+secret+".jpg"
+
+// 			cell.style.backgroundImage="url("+imgUrl+")";
+// 			cell.style.backgroundSize="46px 46px";
+// 			cell.style.backgroundRepeat = "no-repeat";
+// 			//cell.innerHTML = "<img src='" + imgUrl + "'width='47px' height='50px' style='z-index: -99999;' />";
+
+// 			// console.log(imgUrl);
+
+// 			return imgUrl;
+// 		});
+// //*************************************************************************************************
+// //*************************************************************************************************
+// //*************************************************************************************************
+// }
+
+databaseGrab = function(fnc) {
+	var return_data; 
+		$.ajax({
+				dataType: "json",
+				type: "GET",
+				url: "/photos",
+				success: function(data) {
+					return_data = data
+					fnc(data)
+			}
+			
+		});
+	// return return_data;
 }
 
-getUrl = function(i, clue, cell){
-//*********************************Grabbing Flickr Images*******************************************
-//*************************************************************************************************
-//*************************************************************************************************
-	
-	img_array_index = clue.len;
-	var img_array = [
-	'Abstract', 'Builder', 'Factory', 'Prototype', 'Singleton', 'Adapter', 'Bridge', 
-	'Composite', 'Decorator', 'Facade', 'Flyweight', 'Proxy', 'Responsibility', 'Command',
-	'Interpreter', 'Iterator', 'Mediator', 'Memento', 'Observer', 'State', 'Strategy',
-	'Template', 'Visitor'];
-		// var img_array2 = ["beach", "train", "duck", "snake", "beer", "drugs", "peaople", "sky"]
-
-		// $.each(img_array, function(index, tag){
-			$.getJSON("http://api.flickr.com/services/rest/?format=json&sort=random&method=flickr.photos.search&tags="+img_array[img_array_index]+"&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1",function(data){
-			console.log(data)
-			var farmId = data.photos.photo[i].farm;
-			var serverId = data.photos.photo[i].server;
-			var id = data.photos.photo[i].id;
-			var secret = data.photos.photo[i].secret;     //binds photo URL elements to variables
-
-			// console.log(farmId);
-			// console.log(serverId);
-			// console.log(id);
-			// console.log(secret);
-
-			imgUrl = "http://farm"+farmId+".staticflickr.com/"+serverId+"/"+id+"_"+secret+".jpg"
-
-			cell.style.backgroundImage="url("+imgUrl+")";
-			cell.style.backgroundSize="46px 46px";
-			cell.style.backgroundRepeat = "no-repeat";
-			//cell.innerHTML = "<img src='" + imgUrl + "'width='47px' height='50px' style='z-index: -99999;' />";
-
-			// console.log(imgUrl);
-
-			return imgUrl;
+oyCrosswordPuzzle.prototype.renderVert = function(clue){
+	// console.log(clue)
+	// $.ajax({
+	// 		dataType: "json",
+	// 		type: "GET",
+	// 		url: "/photos",
+	// 		success: function(data) {
+				// console.log(data)
+		databaseGrab(function(data){
+		for (var i = 0; i < clue.len; i++) {
+			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
+			var cell = document.getElementById(key);
+			cell.className = "oyCellFull";
+			//cell.className = "";
+			// console.log(data[i].url)
+			
+				cell.style.backgroundImage="url("+data[i].url+")";
+				cell.style.backgroundSize="46px 46px";
+				cell.style.backgroundRepeat = "no-repeat";
+			
+			// imgUrl = getUrl(i, clue, cell);
+			} 
 		});
-//*************************************************************************************************
-//*************************************************************************************************
-//*************************************************************************************************
+	// 	}
+	// });
 
 }
 
 oyCrosswordPuzzle.prototype.renderHorz = function(clue){
-	for (var i=0; i < clue.len; i++){	
-		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
-		// console.log(key)
-		var cell = document.getElementById(key);
-		// console.log(cell)
-		cell.className = ""; 
-		// cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
- 
-		imgUrl = getUrl(i, clue, cell); 
-		//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
-		 
-	}
+	// $.ajax({
+	// 		dataType: "json",
+	// 		type: "GET",
+	// 		url: "/photos",
+	// 		success: function(data) {
+				// console.log(data)
+		databaseGrab(function(data){
+		for (var i = 0; i < clue.len; i++){	
+			var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
+			// console.log(key)
+			var cell = document.getElementById(key);
+			cell.className = "oyCellFull";
+			// console.log(cell)
+			//cell.className = ""; 
+			
+			// console.log(data[i].url)
+			
+				console.log(data)
+				cell.style.backgroundImage="url("+data[i].url+")";
+				cell.style.backgroundSize="46px 46px";
+				cell.style.backgroundRepeat = "no-repeat";
+			
+			
+			// imgUrl = getUrl(i, clue, cell); 
+			}
+		});
+	// 	}
+	// });
 }
 
 oyCrosswordPuzzle.prototype.fillVert = function(clue, idx){
-	for (var i=0; i < clue.len; i++){	 
-		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
-		var cell = document.getElementById(key);
+	
 
-		imgUrl = getUrl(i, clue, cell); 
+	// var _this = this;
 
-		this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
-		this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
-	}  
+	// $.ajax({
+	// 		dataType: "json",
+	// 		type: "GET",
+	// 		url: "/photos",
+	// 		success: function(data) {
+	// 			// console.log(data)
+	//*******************************************************
+		//databaseGrab(function(data){
+		for (var i = 0; i < clue.len; i++) {
+			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
+			var cell = document.getElementById(key);
+
+			// console.log(data[i].url)
+			// console.log(cell)
+				// cell.style.backgroundImage="url("+data[i].url+")";
+				// cell.style.backgroundSize="46px 46px";
+				// cell.style.backgroundRepeat = "no-repeat";
+			
+				this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
+				this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
+
+				// imgUrl = getUrl(i, clue, cell); 
+			} 
+	
+		//};
+	
+	// 	}
+	// }); 
 }
 
 oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx){
-	for (var i=0; i < clue.len; i++){	
-		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
-		var cell = document.getElementById(key);
-		imgUrl = getUrl(i, clue, cell); 
+	//var _this = this;
+	// $.ajax({
+	// 		dataType: "json",
+	// 		type: "GET",
+	// 		url: "/photos",
+	// 		success: function(data) {
+				// console.log(data)
+	//*******************************************************
+		//databaseGrab(function(data){
+		for (var i = 0; i < clue.len; i++){
+			var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
+			var cell = document.getElementById(key);
+			// console.log(data[i].url)
+			
+				// console.log(data)
+				// cell.style.backgroundImage="url("+data[i].url+")";
+				// cell.style.backgroundSize="46px 46px";
+				// cell.style.backgroundRepeat = "no-repeat";
+			
 		this.fillIn(cell, clue.xpos + i, clue.ypos, i, idx, 0);
-	    this.menu.setCellState(clue.xpos + i, clue.ypos, 0);
-	}
+		this.menu.setCellState(clue.xpos + i, clue.ypos, 0);
+			// imgUrl = getUrl(i, clue, cell); 
+
+			//}
+		}
+	// 	}
+	// }); 
 }
 
 oyCrosswordPuzzle.prototype.fillIn = function(cell, x, y, i, idx, dir){
-	if (i == 0){    
-		cell.style.backgroundImage = "url(\"" + this.appHome + "/img/" + (idx + 1) + ".gif\")"; 
-	} 
-	  
+	// if (i == 0){    
+	// 	cell.style.backgroundImage = "url(\"" + this.appHome + "/img/" + (idx + 1) + ".gif\")"; 
+	// } 
+	databaseGrab(function(data){
+		cell.style.backgroundImage="url("+data[i].url+")";
+		cell.style.backgroundSize="46px 46px";
+		cell.style.backgroundRepeat = "no-repeat";
+	});
+
 	cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
 	 
 	//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
 }
+
 
 oyCrosswordPuzzle.prototype.bind = function(){	
 	
@@ -468,13 +565,15 @@ oyCrosswordPuzzle.prototype.focusNewCell = function(x, y, focus, clue){
 		);		
 	}
 	  
-	var target = document.getElementById("oyCell" + x + "_" + y);			
-	if (target != null){   
+	var target = document.getElementById("oyCell" + x + "_" + y);
+		console.log(target)			
+	if (target != null){
 		target.className = "oyCellActive";	 	
 		this.focusLists(x, y);
 		 
 		if (focus){
-			var target = this.inputCache.getElement(x, y);		
+			var target = this.inputCache.getElement(x, y);
+			console.log(this.inputCache)		
 			target.focus();
 		}
 	}
