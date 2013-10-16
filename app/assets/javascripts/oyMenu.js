@@ -125,7 +125,7 @@ oyCrosswordMenu.prototype.installWelcomeMenu = function(){
 	this.addAction( 
 		target, "Start Now", "Starting...", "strt",
 		function(){				 
-			databaseGrab();	
+			databaseGrab(oThis);	
 		}
 	);	
 

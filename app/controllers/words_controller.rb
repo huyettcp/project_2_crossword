@@ -1,12 +1,12 @@
 class WordsController < ApplicationController
   
-  def index
+ def index
       @words = Word.all
       @words_array = []
 
       @words.each do |word_obj|
-        words_list = {word: word_obj.name, photos: word_obj.photos}
-  end
+      @words_array << word_obj.name
+    end
   
   end
 
