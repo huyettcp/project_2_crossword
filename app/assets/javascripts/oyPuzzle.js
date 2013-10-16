@@ -213,7 +213,7 @@ oyCrosswordPuzzle.prototype.render = function(){
 }
 
 // getUrl = function(i, clue, cell){
-// //*********************************Grabbing Flickr Images*******************************************
+// //*********************************Not Grabbing Flickr Images Anymore******************************
 // //*************************************************************************************************
 // //*************************************************************************************************
 	
@@ -257,140 +257,68 @@ oyCrosswordPuzzle.prototype.render = function(){
 databaseGrab = function(fnc) {
 	var return_data; 
 		$.ajax({
-				dataType: "json",
-				type: "GET",
-				url: "/photos",
-				success: function(data) {
-					return_data = data
-					fnc(data)
-			}
-			
+			dataType: "json",
+			type: "GET",
+			url: "/photos",
+			success: function(data) {
+				return_data = data
+				fnc(data)
+			}	
 		});
 	// return return_data;
 }
 
 oyCrosswordPuzzle.prototype.renderVert = function(clue){
-	// console.log(clue)
-	// $.ajax({
-	// 		dataType: "json",
-	// 		type: "GET",
-	// 		url: "/photos",
-	// 		success: function(data) {
-				// console.log(data)
-		databaseGrab(function(data){
+	databaseGrab(function(data){
 		for (var i = 0; i < clue.len; i++) {
 			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 			var cell = document.getElementById(key);
 			cell.className = "oyCellFull";
-			//cell.className = "";
-			// console.log(data[i].url)
 			
-				cell.style.backgroundImage="url("+data[i].url+")";
-				cell.style.backgroundSize="46px 46px";
-				cell.style.backgroundRepeat = "no-repeat";
-			
+			cell.style.backgroundImage="url("+data[i].url+")";
+			cell.style.backgroundSize="46px 46px";
+			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell);
-			} 
-		});
-	// 	}
-	// });
-
+		} 
+	});
 }
 
 oyCrosswordPuzzle.prototype.renderHorz = function(clue){
-	// $.ajax({
-	// 		dataType: "json",
-	// 		type: "GET",
-	// 		url: "/photos",
-	// 		success: function(data) {
-				// console.log(data)
-		databaseGrab(function(data){
-		for (var i = 0; i < clue.len; i++){	
-			var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
-			// console.log(key)
-			var cell = document.getElementById(key);
-			cell.className = "oyCellFull";
-			// console.log(cell)
-			//cell.className = ""; 
+	databaseGrab(function(data){
+	for (var i = 0; i < clue.len; i++){	
+		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
+		var cell = document.getElementById(key);
+		cell.className = "oyCellFull";
 			
-			// console.log(data[i].url)
-			
-				console.log(data)
-				cell.style.backgroundImage="url("+data[i].url+")";
-				cell.style.backgroundSize="46px 46px";
-				cell.style.backgroundRepeat = "no-repeat";
-			
-			
-			// imgUrl = getUrl(i, clue, cell); 
-			}
-		});
-	// 	}
-	// });
+		cell.style.backgroundImage="url("+data[i].url+")";
+		cell.style.backgroundSize="46px 46px";
+		cell.style.backgroundRepeat = "no-repeat";
+		// imgUrl = getUrl(i, clue, cell); 
+		}
+	});
 }
 
 oyCrosswordPuzzle.prototype.fillVert = function(clue, idx){
-	
+	console.log(clue)
+	for (var i = 0; i < clue.len; i++) {
+		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
+		var cell = document.getElementById(key);
 
-	// var _this = this;
-
-	// $.ajax({
-	// 		dataType: "json",
-	// 		type: "GET",
-	// 		url: "/photos",
-	// 		success: function(data) {
-	// 			// console.log(data)
-	//*******************************************************
-		//databaseGrab(function(data){
-		for (var i = 0; i < clue.len; i++) {
-			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
-			var cell = document.getElementById(key);
-
-			// console.log(data[i].url)
-			// console.log(cell)
-				// cell.style.backgroundImage="url("+data[i].url+")";
-				// cell.style.backgroundSize="46px 46px";
-				// cell.style.backgroundRepeat = "no-repeat";
-			
-				this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
-				this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
-
-				// imgUrl = getUrl(i, clue, cell); 
-			} 
-	
-		//};
-	
-	// 	}
-	// }); 
+		this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
+		this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
+			// imgUrl = getUrl(i, clue, cell); 
+	} 
 }
 
 oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx){
-	//var _this = this;
-	// $.ajax({
-	// 		dataType: "json",
-	// 		type: "GET",
-	// 		url: "/photos",
-	// 		success: function(data) {
-				// console.log(data)
-	//*******************************************************
-		//databaseGrab(function(data){
-		for (var i = 0; i < clue.len; i++){
-			var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
-			var cell = document.getElementById(key);
-			// console.log(data[i].url)
-			
-				// console.log(data)
-				// cell.style.backgroundImage="url("+data[i].url+")";
-				// cell.style.backgroundSize="46px 46px";
-				// cell.style.backgroundRepeat = "no-repeat";
-			
+	for (var i = 0; i < clue.len; i++){
+		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
+		var cell = document.getElementById(key);
+		
 		this.fillIn(cell, clue.xpos + i, clue.ypos, i, idx, 0);
 		this.menu.setCellState(clue.xpos + i, clue.ypos, 0);
-			// imgUrl = getUrl(i, clue, cell); 
-
-			//}
-		}
-	// 	}
-	// }); 
+		// imgUrl = getUrl(i, clue, cell); 
+	}
 }
 
 oyCrosswordPuzzle.prototype.fillIn = function(cell, x, y, i, idx, dir){
@@ -407,7 +335,6 @@ oyCrosswordPuzzle.prototype.fillIn = function(cell, x, y, i, idx, dir){
 	 
 	//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
 }
-
 
 oyCrosswordPuzzle.prototype.bind = function(){	
 	
@@ -565,15 +492,13 @@ oyCrosswordPuzzle.prototype.focusNewCell = function(x, y, focus, clue){
 		);		
 	}
 	  
-	var target = document.getElementById("oyCell" + x + "_" + y);
-		console.log(target)			
+	var target = document.getElementById("oyCell" + x + "_" + y);			
 	if (target != null){
 		target.className = "oyCellActive";	 	
 		this.focusLists(x, y);
 		 
 		if (focus){
-			var target = this.inputCache.getElement(x, y);
-			console.log(this.inputCache)		
+			var target = this.inputCache.getElement(x, y);	
 			target.focus();
 		}
 	}
