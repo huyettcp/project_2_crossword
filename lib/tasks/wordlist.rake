@@ -53,7 +53,7 @@ namespace :wordlist do
     # end
       
       front_page = Nokogiri::HTML(open("http://www.nytimes.com/"))
-      front_story_text = front_page.css('h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
+      front_story_text = front_page.css('h1','h2', 'h5', 'h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
       front_arr = []
       front_arr.push front_story_text.split(" ")
       front_arr = front_arr.flatten.uniq
