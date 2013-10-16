@@ -5,4 +5,6 @@ Crossword::Application.routes.draw do
 
   get '/photos', to: 'photos#index'
 
+  #post '/highscores', to: ''
+
 end
