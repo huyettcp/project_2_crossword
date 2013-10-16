@@ -274,7 +274,8 @@ databaseGrab = function() {
 	// return return_data;
 }
 
-databaseRenderGrab = function() {
+databaseRenderGrab = function(fnc) {
+	var return_data;
 	$.ajax({
 		dataType: "json",
 		type: "GET",
@@ -282,14 +283,16 @@ databaseRenderGrab = function() {
 		success: function(data) {
 			console.log(data)
 			return_data = data
+			fnc(data)
 			}	
 	});
-	// return return_data;
+	return return_data;
 }
 
 
 
 oyCrosswordPuzzle.prototype.renderVert = function(clue){
+	console.log('hi')
 	databaseRenderGrab(function(data){
 		console.log(return_data)
 		for (var i = 0; i < clue.len; i++) {
@@ -297,7 +300,7 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 			var cell = document.getElementById(key);
 			cell.className = "oyCellFull";
 			
-			cell.style.backgroundImage="url("+data[i].url+")";
+			cell.style.backgroundImage="url("+data[i].photos[i]+")";
 			cell.style.backgroundSize="46px 46px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell);
@@ -305,19 +308,20 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 		});
 	}
 oyCrosswordPuzzle.prototype.renderHorz = function(clue){
+	console.log('hi')
 	databaseRenderGrab(function(data){
 		for (var i = 0; i < clue.len; i++){	
 			var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
 			var cell = document.getElementById(key);
 			cell.className = "oyCellFull";
-				
-			cell.style.backgroundImage="url("+data[2].url+")";
+			
+			cell.style.backgroundImage="url("+data[i].photos[i]+")";
 			cell.style.backgroundSize="46px 46px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell); 
 			}
 		});
-}
+	}
 oyCrosswordPuzzle.prototype.fillVert = function(clue, idx){
 	for (var i = 0; i < clue.len; i++) {
 		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
@@ -342,15 +346,15 @@ oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx){
 
 oyCrosswordPuzzle.prototype.fillIn = function(cell, clue, x, y, i, idx, dir){
 	console.log('hi')
-	databaseGrab(function(data) {
-		
+	
 		while (data[i].word != clue.answer) {
 			i++
 		}
-		cell.style.backgroundImage="url("+data[i].url+")";
+
+		cell.style.backgroundImage="url("+data[i].photos[i]+")";
 		cell.style.backgroundSize="46px 46px";
 		cell.style.backgroudRepeat = "no-repeat";
-	});
+	// };
 
 	cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
 }

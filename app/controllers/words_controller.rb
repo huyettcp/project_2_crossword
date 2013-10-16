@@ -1,5 +1,15 @@
 class WordsController < ApplicationController
   
+  def index
+      @words = Word.all
+      @words_array = []
+
+      @words.each do |word_obj|
+        words_list = {word: word_obj.name, photos: word_obj.photos}
+  end
+  
+  end
+
   def show
       @words = Word.all
       @words_array = []
@@ -14,3 +24,5 @@ class WordsController < ApplicationController
     render json: @words_array
   end
 end
+ 
+
