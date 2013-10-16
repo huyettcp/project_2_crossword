@@ -252,19 +252,23 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 		msg += " (rank <b>" +  this.rank + "</b>)";
 	}  
 	msg += ".";
-	//Write ajax here
-	// $.ajax({
-	// 	url: '/highscores',
-	// 	dataType: 'json',
-	// 	type: 'POST',
-	// 	data: {
-	// 		user_name: dispName
-	// 		score: this.score
-	// 	},
-	// 	complete: function(data){
-	// 		console.log(data)
-	// 	}
-	// })
+
+	$.ajax({
+		url: '/scores',
+		dataType: 'json',
+		type: 'POST',
+		data: {
+			score: {
+				game_score: this.score,
+				user_name: dispName 
+
+
+			}
+		},
+		complete: function(data){
+			console.log(data)
+		}
+	});
 	this.addNoneWordAction(target, msg);	  
 	this.addNewLine(target); 
 	
