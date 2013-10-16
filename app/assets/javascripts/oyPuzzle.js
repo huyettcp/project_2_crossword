@@ -326,6 +326,7 @@ oyCrosswordPuzzle.prototype.fillIn = function(cell, x, y, i, idx, dir){
 	// 	cell.style.backgroundImage = "url(\"" + this.appHome + "/img/" + (idx + 1) + ".gif\")"; 
 	// } 
 	databaseGrab(function(data){
+		console.log(data[i].word)
 		cell.style.backgroundImage="url("+data[i].url+")";
 		cell.style.backgroundSize="46px 46px";
 		cell.style.backgroundRepeat = "no-repeat";
