@@ -247,7 +247,7 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 	}  
 	msg += ".";
 
-	$.ajax({
+	$({
 		url: '/scores',
 		dataType: 'json',
 		type: 'POST',
