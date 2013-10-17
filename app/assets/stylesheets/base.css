@@ -256,7 +256,7 @@ A.oyMenuAction:hover {
 .oyCellGuessed {  
 	border: solid 1px #003366;	
 	background-color: #C0FFC0;
-	
+	border-collapse: separate;
 	font-size: 18px;
 	font-family: Courier New; 				
 	font-weight: bold;
@@ -266,7 +266,7 @@ A.oyMenuAction:hover {
 	height: 46px;
 }	 
 .oyCellFocused {  
-	border: solid 1px #003366;	
+	border: solid 1px #FFFFBB;
 	background-color: #FFFFBB;
 	
 	font-size: 18px;
