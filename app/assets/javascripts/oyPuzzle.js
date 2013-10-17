@@ -292,7 +292,6 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 		for (var i = 0; i < clue.len; i++) {
 			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 			var cell = document.getElementById(key);
-			console.log(cell)
 			cell.className = "oyCellFull";
 			cell.style.backgroundImage="url("+data[i].photos[4]+")";
 			cell.style.backgroundSize="75px";

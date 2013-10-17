@@ -46,10 +46,10 @@ test:
   pool: 5
   host: localhost
 
+
 production:
   adapter: postgresql
   encoding: unicode
   database: crossword_production
   pool: 5
   host: localhost
-
