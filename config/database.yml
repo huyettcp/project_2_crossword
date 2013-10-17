@@ -19,6 +19,8 @@ development:
   database: crossword_development
   pool: 5
   host: localhost
+  username: test
+  password:
 
 
   # hello! Connect on a TCP socket. Omitted by default since the client uses a
@@ -61,17 +63,22 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: crossword_test
+  database: crossword_development
   pool: 5
   host: localhost
+  username: test
+  password:
+
 
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: crossword_production
+  database: crossword_development
   pool: 5
   host: localhost
- 
+  username: test
+  password:
+
 
 

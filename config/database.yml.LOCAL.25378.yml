@@ -45,7 +45,7 @@ test:
   database: crossword_test
   pool: 5
   host: localhost
-  
+
 
 production:
   adapter: postgresql
@@ -53,4 +53,3 @@ production:
   database: crossword_production
   pool: 5
   host: localhost
-  

@@ -308,10 +308,10 @@ oyCrosswordMenu.prototype.leaveGameEarly = function(url){
 
 	var canLeave = true;
 	if (this.puzz.started && !this.over){
-		canLeave = confirm("Game is in progress. Do you want to leave the game?");
+		canLeave = confirm("Do you want to start a new Flosswords game?");
 	}	  
 	if (canLeave){ 
-		window.location = url;
+		window.location = '/';
 	}
 	
 	this.footer.stateOk("Done");
@@ -578,20 +578,21 @@ oyCrosswordMenu.prototype.checkWord = function(clue){
 	var status = this.checkWordStatus(clue);	  
 	if (!status.isComplete){
 		this.footer.stateError("The word [" + status.buf + "] is incomplete!");
+		setTimeout('$("#oygState").hide()',3000);
 	} else { 
 		this.checks++; 
 		this.deducts += this.getDeductionForCheck(clue);			
 		if (status.wrong != 0){		  
 			this.footer.stateError("[" + status.buf + "] didn't match!");
+			setTimeout('$("#oygState").hide()',3000);
 		} else { 
 			this.matches++; 
 			this.showAnswer(clue, 1);	 	
 			this.score += this.getScoreForMatch(clue);
-			 
 			clue.revealed = false; 	
 			clue.matched = true; 	 
-			
-			this.footer.stateOk("[" + status.buf + "] matched!");
+			this.footer.stateError("[" + status.buf + "] matched!");
+			setTimeout('$("#oygState").hide()',3000);
 		}
 	}
 }
