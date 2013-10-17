@@ -8,21 +8,34 @@
 
 <%= render partial: "crossword" %>
 
-<!-- // script*****
-// $.ajax({
-//   url: '/highscores',
-//   method: 'GET',
-//   dataType: 'json',
-//   }).done(function(data) {
-//   console.log(data); 
-// })
+<script>
+var word_list = <%= @words_array.to_json.html_safe %>
 
+$(function(){
+$.ajax({
+  url: '/highscores',
+  method: 'GET',
+  dataType: 'json',
 
+  }).done(function(data){
+    int = x 
+    x = 0
 
+    while( x < 10 ){
+      
+      $("#high_score").append("<p>" + data[x].game_score + " " + data[x].user_name + "</p>");
+      x++;
+    }
 
+  })
+})
+  
+</script>
 
-// script*****
- -->
+<div id ="high_score">
+
+  <div>
+
 
 <!-- data[0].game_score -->
 <!-- def show
