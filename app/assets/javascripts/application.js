@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 // = require jquery.qtip.js
-//= require twitter/bootstrap
 // = require oyPrologue.js
 // = require oyJsrAjax.js
 // = require oyClue.js
