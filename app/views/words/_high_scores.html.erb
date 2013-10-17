@@ -14,7 +14,7 @@ $.ajax({
 
     while( x < 10 ){
       
-      $("#high_score").append("<p>" + data[x].game_score + " " + data[x].user_name + "</p>");
+      $("#high_score").append("<tr><td>" + data[x].game_score + "</td> <td>" + data[x].user_name + "</td></tr>");
       x++;
     }
 
