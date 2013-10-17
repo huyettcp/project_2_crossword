@@ -1,20 +1,28 @@
 class WordsController < ApplicationController
-  def index
+  
+ def index
+      @words = Word.all
+      @words_array = []
+
+      @words.each do |word_obj|
+      @words_array << word_obj.name
+    end
+  
   end
 
   def show
-    
-  end
+      @words = Word.all
+      @words_array = []
 
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+      @words.each do |word_obj|
+        @photo_urls = []
+        word_obj.photos.each do |photo|
+          @photo_urls << photo.url
+        end
+        @words_array << {word: word_obj.name, photos: @photo_urls}
+    end
+    render json: @words_array
   end
 end
+ 
+
