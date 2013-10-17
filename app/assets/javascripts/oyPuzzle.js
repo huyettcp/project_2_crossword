@@ -25,8 +25,6 @@
 // This is a typical puzzle
 //
 
-var imgUrl;
-
 function oyCrosswordPuzzle(
 	guid,	// universal identifier for this puzzle in your system, i.e. "12345"
 	home,	// relative location of js libraries and image files relative to the main HTML file where puzzle is embedded, i.e. "./oy-cword-1.0"
@@ -254,95 +252,119 @@ oyCrosswordPuzzle.prototype.render = function(){
 // //*************************************************************************************************
 // }
 
-databaseGrab = function(fnc) {
-	var return_data; 
-		$.ajax({
-			dataType: "json",
-			type: "GET",
-			url: "/photos",
-			success: function(data) {
-				return_data = data
-				fnc(data)
+var return_data
+databaseGrab = function(oThis) {
+	$.ajax({
+		dataType: "json",
+		type: "GET",
+		url: "/word_urls",
+		success: function(data) {
+			return_data = data
+			oThis.puzz.bind();	
+
+			oThis.puzz.hlist.clickItem(0);			
+			oThis.installContextMenu();
+			
+			document.getElementById("oygStatic").innerHTML = "";
+			
+			oThis.footer.stateOk("");
 			}	
-		});
+	});
 	// return return_data;
 }
 
+databaseRenderGrab = function(fnc) {
+	var return_data;
+	$.ajax({
+		dataType: "json",
+		type: "GET",
+		url: "/word_urls",
+		success: function(data) {
+			return_data = data
+			fnc(data)
+			}	
+	});
+	return return_data;
+}
+
 oyCrosswordPuzzle.prototype.renderVert = function(clue){
-	databaseGrab(function(data){
+	databaseRenderGrab(function(data){
 		for (var i = 0; i < clue.len; i++) {
 			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 			var cell = document.getElementById(key);
+			console.log(cell)
 			cell.className = "oyCellFull";
-			
-			cell.style.backgroundImage="url("+data[i].url+")";
+			cell.style.backgroundImage="url("+data[i].photos[4]+")";
 			cell.style.backgroundSize="46px 46px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell);
-		} 
-	});
-}
-
+			} 
+		});
+	}
 oyCrosswordPuzzle.prototype.renderHorz = function(clue){
-	databaseGrab(function(data){
-	for (var i = 0; i < clue.len; i++){	
-		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
-		var cell = document.getElementById(key);
-		cell.className = "oyCellFull";
+	databaseRenderGrab(function(data){
+		for (var i = 0; i < clue.len; i++){	
+			var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
+			var cell = document.getElementById(key);
+			cell.className = "oyCellFull";
 			
-		cell.style.backgroundImage="url("+data[i].url+")";
-		cell.style.backgroundSize="46px 46px";
-		cell.style.backgroundRepeat = "no-repeat";
-		// imgUrl = getUrl(i, clue, cell); 
-		}
-	});
-}
-
-oyCrosswordPuzzle.prototype.fillVert = function(clue, idx){
-	// console.log(clue)
-	for (var i = 0; i < clue.len; i++) {
-		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
-		var cell = document.getElementById(key);
-		cell.className += " oy-cell-cool";
-		cell.rel = "popover";
-		cell.style = " margin-top: 300px";
-		// cell.className += " btn large primary";
-
-
-		this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
-		this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
+			cell.style.backgroundImage="url("+data[i].photos[3]+")";
+			cell.style.backgroundSize="46px 46px";
+			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell); 
-	} 
-}
+			}
+		});
+	}
 
-oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx){
-	for (var i = 0; i < clue.len; i++){
-		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
-		var cell = document.getElementById(key);
-		cell.className += " oy-cell-cool";
-		cell.rel = "popover";
-		cell.style = " margin-top: 300px";
-		// cell.className += " btn large primary";
-		
-		this.fillIn(cell, clue.xpos + i, clue.ypos, i, idx, 0);
-		this.menu.setCellState(clue.xpos + i, clue.ypos, 0);
-		// imgUrl = getUrl(i, clue, cell); 
+
+oyCrosswordPuzzle.prototype.fillVert = function(clue, idx) {
+	
+	for (var j = 0; j < return_data.length; j++) {
+
+		if (return_data[j].word == clue.answer) {
+
+			for (var i = 0; i < clue.len; i++) {
+				var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
+				var cell = document.getElementById(key);
+				cell.className += " oy-cell-cool";
+
+				this.fillIn(cell, clue, clue.xpos, clue.ypos + i, i, j, idx, 1);
+				this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
+			} 
+		}
 	}
 }
 
-oyCrosswordPuzzle.prototype.fillIn = function(cell, x, y, i, idx, dir){
-	// if (i == 0){    
-	// 	cell.style.backgroundImage = "url(\"" + this.appHome + "/img/" + (idx + 1) + ".gif\")"; 
-	// } 
-	databaseGrab(function(data){
-		cell.style.backgroundImage="url("+data[i].url+")";
-		cell.style.backgroundSize="46px 46px";
-		cell.style.backgroundRepeat = "no-repeat";
-	});
+
+oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx) {
+	
+	for (var j = 0; j < return_data.length; j++) {
+
+
+		if (return_data[j].word == clue.answer) {
+
+
+			for (var i = 0; i < clue.len; i++) {
+				var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos;
+				var cell = document.getElementById(key);
+				cell.className += " oy-cell-cool";
+				this.fillIn(cell, clue, clue.xpos + i, clue.ypos, i, j, idx, 0);
+				this.menu.setCellState(clue.xpos + i, clue.ypos, 0);
+			}
+		}
+	}
+}
+
+
+
+oyCrosswordPuzzle.prototype.fillIn = function(cell, clue, x, y, i, j, idx, dir) {
+
+	cell.style.backgroundImage="url("+return_data[j].photos[i]+")";
+	cell.style.backgroundSize="46px 46px";
+	cell.style.backgroudRepeat = "no-repeat";
+
 
 	cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
-	 
-	//cell.innerHTML = "<img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQMf2bQC_7UBys5t0XpwmwEtPAvgoU-STBWEJeQ9RCVW7_up9TY' width='47px' height='50px' />";
 }
 
 oyCrosswordPuzzle.prototype.bind = function(){	

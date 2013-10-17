@@ -23,5 +23,3 @@
 // = require oyMisc.js
 // = require weaver.js
 // = require oyEpilogue.js
-
-	

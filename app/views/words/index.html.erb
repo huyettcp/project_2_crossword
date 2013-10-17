@@ -1,9 +1,44 @@
 <!-- <h1>Welcome to the Crossword</h1> -->
 
-<%= render partial: "weaver" %>
+
+<script>
+	var word_list = <%= @words_array.to_json.html_safe %>
+</script>
+
+
 <%= render partial: "crossword" %>
 
+<script>
+$.ajax({
+  url: '/highscores',
+  method: 'GET',
+  dataType: 'json',
+  }).done(function(data) {
+  console.log(data); 
+})
 
 
+
+
+
+</script>
+
+
+<!-- data[0].game_score -->
+<!-- def show
+      @words = Word.all
+      @words_array = []
+
+      @words.each do |word_obj|
+        @photo_urls = []
+        word_obj.photos.each do |photo|
+          @photo_urls << photo.url
+        end
+        @words_array << {word: word_obj.name, photos: @photo_urls}
+    end
+    render json: @words_array
+  end
+end
+ -->
 
 
