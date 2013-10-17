@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+// = require progress_bar.js
 // = require jquery.qtip.js
 // = require oyPrologue.js
 // = require oyJsrAjax.js

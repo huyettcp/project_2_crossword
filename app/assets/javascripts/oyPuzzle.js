@@ -268,7 +268,9 @@ databaseGrab = function(oThis) {
 			document.getElementById("oygStatic").innerHTML = "";
 			
 			oThis.footer.stateOk("");
-			}	
+
+			startLoad();	
+		}
 	});
 	// return return_data;
 }
@@ -292,9 +294,10 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 		for (var i = 0; i < clue.len; i++) {
 			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 			var cell = document.getElementById(key);
+			console.log(cell)
 			cell.className = "oyCellFull";
 			cell.style.backgroundImage="url("+data[i].photos[4]+")";
-			cell.style.backgroundSize="75px";
+			cell.style.backgroundSize="46px 46px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell);
 			} 
@@ -308,7 +311,7 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 			cell.className = "oyCellFull";
 			
 			cell.style.backgroundImage="url("+data[i].photos[3]+")";
-			cell.style.backgroundSize="75px";
+			cell.style.backgroundSize="46px 46px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell); 
 			}
@@ -358,12 +361,16 @@ oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx) {
 
 oyCrosswordPuzzle.prototype.fillIn = function(cell, clue, x, y, i, j, idx, dir) {
 
-	cell.style.backgroundImage="url("+return_data[j].photos[i]+")";
-	cell.style.backgroundSize="46px 46px";
-	cell.style.backgroudRepeat = "no-repeat";
+	// var $tag = $('<img>').attr('src', return_data[j].photos[i])
+	// $tag.load( function() {
+		cell.style.backgroundImage="url("+return_data[j].photos[i]+")";
+		cell.style.backgroundSize="46px 46px";
+		cell.style.backgroudRepeat = "no-repeat";
 
 
-	cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
+		cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
+
+	// });
 }
 
 oyCrosswordPuzzle.prototype.bind = function(){	
@@ -522,13 +529,15 @@ oyCrosswordPuzzle.prototype.focusNewCell = function(x, y, focus, clue){
 		);		
 	}
 	  
-	var target = document.getElementById("oyCell" + x + "_" + y);			
+	var target = document.getElementById("oyCell" + x + "_" + y);
+	console.log(target)		
 	if (target != null){
 		target.className = "oyCellActive";	 	
 		this.focusLists(x, y);
 		 
 		if (focus){
-			var target = this.inputCache.getElement(x, y);	
+			var target = this.inputCache.getElement(x, y);
+			
 			target.focus();
 		}
 	}
