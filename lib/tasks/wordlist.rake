@@ -21,7 +21,7 @@ namespace :wordlist do
 
         
         exclude_words = ["a", "and", "are", "but", "it", "I", "you", "he", "they", "we", "she", "who", "them", "me", "him", "one", "her", "us", "something", "nothing", "anything", "himself", "everything", "someone", "themselves", "everyone", "itself", "anyone", "myself",'the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he','as','you','do','at','this','but','his','by','from','they','we','say','her','she','or','an','will','my','one','all','would','there','their','what','so','up','out','if','about','who','get','which','go','me','when','make','can','like','time','no','just','him','know','take','person','into','year','your','good','some','could','them','see','other','than','then','now','look','only','come','its','over','think','also','back','after','use','two','how','our','work','first','well','way','even','new','want','because','any','these','give','day','most','us']
-        sampler = (0..30).to_a
+    
         
         front_page = Nokogiri::HTML(open("http://www.nytimes.com/"))
         front_story_text = front_page.css('h1','h2', 'h5', 'h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
@@ -32,6 +32,8 @@ namespace :wordlist do
         front_arr = front_arr.sample(150)
         count_front = front_arr.length
         front_arr_index = 0
+
+    
         
         
         while front_arr_index < count_front
@@ -41,7 +43,8 @@ namespace :wordlist do
               front_word = Word.create(name: front_arr[front_arr_index])
               unless photos_front.empty?
                 while counter_front < front_arr[front_arr_index].length
-                  if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][samp]
+                  if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][counter_front]
+                    sampler = (0..30).to_a;
                     samp = sampler.sample;
                     farmId = photos_front['photos']['photo'][samp]['farm']
                     serverId = photos_front['photos']['photo'][samp]['server']    
@@ -66,9 +69,9 @@ namespace :wordlist do
         google_arr = google_arr.sample(150)
         count_google = google_arr.length
         google_arr_index = 0
-        #sampler = (0..99).to_a
+     
         
-        while google_arr_index < google_front
+        while google_arr_index < count_google
 
             photos_google = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&per_page=50&page=1&method=flickr.photos.search&tags=#{google_arr[google_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
               counter_google = 0
@@ -76,6 +79,7 @@ namespace :wordlist do
               unless photos_google.empty?
                 while counter_google < google_arr[google_arr_index].length
                   if photos_google['photos'] && photos_google['photos']['photo'] && photos_google['photos']['photo'][counter_google]
+                    sampler = (0..30).to_a;
                     samp = sampler.sample;
                     farmId = photos_google['photos']['photo'][samp]['farm']
                     serverId = photos_google['photos']['photo'][samp]['server']    
