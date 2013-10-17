@@ -1,9 +1,17 @@
 <!-- <h1>Welcome to the Crossword</h1> -->
 
+
+<div id="high_score" >
+  <h3>High Score:</h3>
+</div>
 <%= render partial: "weaver" %>
 <%= render partial: "crossword" %>
 
+
+
 <script>
+
+$(function(){
 $.ajax({
   url: '/highscores',
   method: 'GET',
@@ -12,16 +20,25 @@ $.ajax({
   }).done(function(data){
     int = x 
     x = 0
+
     while( x < 10 ){
-      console.log(data[x].game_score, data[x].user_name);
+      
+      $("#high_score").append("<p>" + data[x].game_score + " " + data[x].user_name + "</p>");
       x++;
     }
 
-})
+  })
 
 
+
+});
 
 </script>
+
+
+
+
+
 
 
 <!-- data[0].game_score -->
