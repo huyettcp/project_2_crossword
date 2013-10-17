@@ -17,12 +17,17 @@
 	display: none;
 
 	max-width: 280px;
-	min-width: 50px;
+	min-width: 280px;
+
+	min-height: 280px;
+	max-height: 280px;
+
 	
 	font-size: 10.5px;
 	line-height: 12px;
 
 	direction: ltr;
+	overflow: hidden;
 
 	box-shadow: none;
 	padding: 0;
