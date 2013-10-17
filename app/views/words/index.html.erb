@@ -8,8 +8,15 @@ $.ajax({
   url: '/highscores',
   method: 'GET',
   dataType: 'json',
-  }).done(function(data) {
-  console.log(data); 
+
+  }).done(function(data){
+    int = x 
+    x = 0
+    while( x < 10 ){
+      console.log(data[x].game_score, data[x].user_name);
+      x++;
+    }
+
 })
 
 
@@ -33,5 +40,8 @@ $.ajax({
   end
 end
  -->
-
+<!-- {
+    for(x = 0 : x < 10 : x++ ){
+      console.log(data[x].game_score)
+    } -->
 
