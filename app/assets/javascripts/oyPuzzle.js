@@ -299,10 +299,15 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 }
 
 oyCrosswordPuzzle.prototype.fillVert = function(clue, idx){
-	console.log(clue)
+	// console.log(clue)
 	for (var i = 0; i < clue.len; i++) {
 		var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 		var cell = document.getElementById(key);
+		cell.className += " oy-cell-cool";
+		cell.rel = "popover";
+		cell.style = " margin-top: 300px";
+		// cell.className += " btn large primary";
+
 
 		this.fillIn(cell, clue.xpos, clue.ypos + i, i, idx, 1);
 		this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
@@ -314,6 +319,10 @@ oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx){
 	for (var i = 0; i < clue.len; i++){
 		var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
 		var cell = document.getElementById(key);
+		cell.className += " oy-cell-cool";
+		cell.rel = "popover";
+		cell.style = " margin-top: 300px";
+		// cell.className += " btn large primary";
 		
 		this.fillIn(cell, clue.xpos + i, clue.ypos, i, idx, 0);
 		this.menu.setCellState(clue.xpos + i, clue.ypos, 0);

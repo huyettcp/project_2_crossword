@@ -6,6 +6,8 @@
 	-->
 
 
+<img src="http://home.comcast.net/~littlemoe85/thumbhover/example1_s.jpg">
+
 
 	<div id="oygContext" align="center" style="width:100%;">
 		<table class="oyOuterFrame" border="0" cellpadding="0" cellspacing="0">
@@ -604,3 +606,73 @@ oygCrosswordPuzzle.canTalkToServer = false;
 <script src="/assets/oyEpilogue.js?body=1" type="text/javascript"></script>
 
 </body>  
+
+
+<script>
+
+  // $(function(){
+  //   $("img[src*='_s.jpg']").thumbPopup({
+  //     imgSmallFlag: "_s",
+  //     imgLargeFlag: "_l"
+  //   });
+  // });
+
+  $(document).on('mouseover', ".oy-cell-cool", function(){
+      var imageUrl = $(this).css('background-image');
+      imageUrl2 = imageUrl.replace('url(','').replace(')','');
+      console.log (imageUrl2)
+  });
+
+
+// $(document).ready(function()
+// {
+//     $('.oyCellFull').qtip({
+//         content: {
+//             text: "TESTSETSETSETSETSET"
+//         },
+//     });
+// });
+
+
+$(document).on('mouseover', ".oyCellFull", function(){
+  var imageUrl = $(this).css('background-image');
+  imageUrl2 = imageUrl.replace('url(','').replace(')','');
+    $(".oy-cell-cool").qtip({
+        content: {
+            text: '<img src="' + imageUrl2 + '" />'
+        },
+    });
+});
+
+
+
+
+
+// $(document).on('mouseover', ".oy-cell-cool", function(){
+//       var imageUrl = $(this).css('background-image');
+//       imageUrl2 = imageUrl.replace('url(','\"').replace(')','\"');
+//       this.qtip( {content: imageUrl2 }
+//       console.log (imageUrl2)
+//   });
+
+
+ // $(document).ready(function()
+ // {
+ //     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+ //     $(".oy-cell-cool".qtip({
+
+ //      content: 'bad'
+ //         // Your config here
+ //     });
+ // });
+
+
+</script>
+
+
+
+
+
+
+
+

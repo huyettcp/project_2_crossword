@@ -21,6 +21,17 @@
 
 */
 
+filter: <filter-function> [<filter-function>]* | none
+
+body { filter: grayscale(50%) }
+
+/* gray all images by 50% and blur by 10px */
+img {
+  filter: grayscale(0.5) blur(10px);
+}
+
+
+
 body {
 	background-color: #2B2A2B;
 	color: white;
@@ -211,20 +222,21 @@ A.oyMenuAction:hover {
 	font-family: Courier New; 				
 	font-weight: bold;
 	text-align: center;		
-	
+	visibility: hidden;
 	width: 46px;
 	height: 46px;
 }	
 .oyCellFull{ 
-	/*border: solid 1px #003366;	
-	background-image: url('madden46.png'); 
+	border: solid 1px #003366;	
+/*	background-image: url('madden46.png'); */
 	font-size: 18px;
 	font-family: Courier New; 				
 	font-weight: bold;
-	text-align: center;				
-	
+	text-align: center;			
 	width: 46px; 
-	height: 46px;*/
+	height: 46px;
+	
+	/*z-index: 10000;*/
 }		
 .oyCellRevealed {
 	border: solid 3px #2B2A2B;
