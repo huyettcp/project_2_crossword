@@ -148,7 +148,7 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 		this.addNoneWordAction(target, "Reveal Disabled");
 	} else {			
 		if (hidx != -1){
-			var caption = "Reveal <b>" + (hidx + 1) + "A</b>"
+			var caption = "Reveal Selected Across</b>"
 			if (!this.hlist.clues[hidx].completed()){
 				this.addRevealWordAction(
 					this.hlist.clues[hidx], target, caption
@@ -158,7 +158,7 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 			}
 		}
 		if (vidx != -1){
-			var caption = "Reveal <b>" + (vidx + 1) + "D</b>";
+			var caption = "Reveal Selected Down</b>";
 			if (!this.vlist.clues[vidx].completed()){	
 				this.addRevealWordAction( 
 					this.vlist.clues[vidx], target, caption
@@ -173,7 +173,7 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 	if (!this.canCheck){
 		this.addNoneWordAction(target, "Check Disabled");
 	} else {
-		var caption = "Check <b>" + (hidx + 1) + "A</b>";
+		var caption = "Check Selected Across</b>";
 		if (hidx != -1){
 			if (!this.hlist.clues[hidx].completed()){
 				this.addCheckWordAction(
@@ -184,7 +184,7 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 			}
 		}
 		
-		var caption = "Check <b>" + (vidx + 1) + "D</b>";
+		var caption = "Check Selected Down</b>";
 		if (vidx != -1){
 			if (!this.vlist.clues[vidx].completed()){	 
 				this.addCheckWordAction(
@@ -247,7 +247,7 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 	}  
 	msg += ".";
 
-	$({
+	$.ajax({
 		url: '/scores',
 		dataType: 'json',
 		type: 'POST',
@@ -308,10 +308,10 @@ oyCrosswordMenu.prototype.leaveGameEarly = function(url){
 
 	var canLeave = true;
 	if (this.puzz.started && !this.over){
-		canLeave = confirm("Game is in progress. Do you want to leave the game?");
+		canLeave = confirm("Do you want to start a new Flosswords game?");
 	}	  
 	if (canLeave){ 
-		window.location = url;
+		window.location = '/';
 	}
 	
 	this.footer.stateOk("Done");
@@ -578,20 +578,21 @@ oyCrosswordMenu.prototype.checkWord = function(clue){
 	var status = this.checkWordStatus(clue);	  
 	if (!status.isComplete){
 		this.footer.stateError("The word [" + status.buf + "] is incomplete!");
+		setTimeout('$("#oygState").hide()',3000);
 	} else { 
 		this.checks++; 
 		this.deducts += this.getDeductionForCheck(clue);			
 		if (status.wrong != 0){		  
 			this.footer.stateError("[" + status.buf + "] didn't match!");
+			setTimeout('$("#oygState").hide()',3000);
 		} else { 
 			this.matches++; 
 			this.showAnswer(clue, 1);	 	
 			this.score += this.getScoreForMatch(clue);
-			 
 			clue.revealed = false; 	
 			clue.matched = true; 	 
-			
-			this.footer.stateOk("[" + status.buf + "] matched!");
+			this.footer.stateError("[" + status.buf + "] matched!");
+			setTimeout('$("#oygState").hide()',3000);
 		}
 	}
 }

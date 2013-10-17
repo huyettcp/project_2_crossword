@@ -292,10 +292,9 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 		for (var i = 0; i < clue.len; i++) {
 			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 			var cell = document.getElementById(key);
-			console.log(cell)
 			cell.className = "oyCellFull";
 			cell.style.backgroundImage="url("+data[i].photos[4]+")";
-			cell.style.backgroundSize="46px 46px";
+			cell.style.backgroundSize="75px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell);
 			} 
@@ -309,7 +308,7 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 			cell.className = "oyCellFull";
 			
 			cell.style.backgroundImage="url("+data[i].photos[3]+")";
-			cell.style.backgroundSize="46px 46px";
+			cell.style.backgroundSize="75px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell); 
 			}
@@ -326,6 +325,7 @@ oyCrosswordPuzzle.prototype.fillVert = function(clue, idx) {
 			for (var i = 0; i < clue.len; i++) {
 				var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 				var cell = document.getElementById(key);
+				cell.className += " oy-cell-cool";
 
 				this.fillIn(cell, clue, clue.xpos, clue.ypos + i, i, j, idx, 1);
 				this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
@@ -334,17 +334,19 @@ oyCrosswordPuzzle.prototype.fillVert = function(clue, idx) {
 	}
 }
 
+
 oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx) {
-	// console.log(clue)
-	// console.log(return_data)
+	
 	for (var j = 0; j < return_data.length; j++) {
 
+
 		if (return_data[j].word == clue.answer) {
+
 
 			for (var i = 0; i < clue.len; i++) {
 				var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos;
 				var cell = document.getElementById(key);
-				
+				cell.className += " oy-cell-cool";
 				this.fillIn(cell, clue, clue.xpos + i, clue.ypos, i, j, idx, 0);
 				this.menu.setCellState(clue.xpos + i, clue.ypos, 0);
 			}
