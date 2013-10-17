@@ -99,17 +99,17 @@ body {
 .oyOuterFrame {
 	padding: 12px;
 	background-color: #2B2A2B;
-<<<<<<< HEAD
+
 	border: solid 1px #2B2A2B;
-=======
 /*	border: solid 1px #808080;*/
->>>>>>> e6e397de5960736fc95c1dfbc881a6b244daea7c
 }
-A.oysTextLink{
+
+.oysTextLink{
 	color: #0F6BA3;
 	text-decoration: none;
 }
-A.oysTextLink:hover{
+
+.oysTextLink:hover{
 	color: #808080;
 	text-decoration: underline;
 }
