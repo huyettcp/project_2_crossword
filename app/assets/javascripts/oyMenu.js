@@ -107,7 +107,7 @@ oyCrosswordMenu.prototype.installWelcomeMenu = function(){
 
 	var oThis = this;	
 	
-	var dispName = escape(this.name);
+	dispName = escape(this.name);
 	dispName = dispName.replace(/%20/g, " ");
 	this.addNoneWordAction( 
 		target, 
@@ -241,13 +241,28 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 	 
 	this.addNoneWordAction(target, "Game Over!");	 
 	this.addNewLine(target);	     
-	
-	var msg = "You have <b>" + this.score + "</b> points";
+	var msg = "<b id='player_name'>" + dispName + "</b>" + ", you scored <b id='player_score'>" + this.score + "</b> points!";
 	if (this.rank != -1){
 		msg += " (rank <b>" +  this.rank + "</b>)";
 	}  
 	msg += ".";
-	
+
+	$.ajax({
+		url: '/scores',
+		dataType: 'json',
+		type: 'POST',
+		data: {
+			score: {
+				game_score: this.score,
+				user_name: dispName 
+
+
+			}
+		},
+		complete: function(data){
+			console.log(data)
+		}
+	});
 	this.addNoneWordAction(target, msg);	  
 	this.addNewLine(target); 
 	
@@ -596,3 +611,5 @@ oyCrosswordMenu.prototype.submitScore = function(){
 		this.footer.stateBusy("Submitting score...");
 	}
 }  
+
+
