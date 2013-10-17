@@ -19,8 +19,86 @@ namespace :wordlist do
         #  end
 
 
-        exclude_words = ["a", "and", "are", "but", "it", "I", "you", "he", "they", "we", "she", "who", "them", "me", "him", "one", "her", "us", "something", "nothing", "anything", "himself", "everything", "someone", "themselves", "everyone", "itself", "anyone", "myself",'the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he','as','you','do','at','this','but','his','by','from','they','we','say','her','she','or','an','will','my','one','all','would','there','their','what','so','up','out','if','about','who','get','which','go','me','when','make','can','like','time','no','just','him','know','take','person','into','year','your','good','some','could','them','see','other','than','then','now','look','only','come','its','over','think','also','back','after','use','two','how','our','work','first','well','way','even','new','want','because','any','these','give','day','most','us']
         
+        exclude_words = ["a", "and", "are", "but", "it", "I", "you", "he", "they", "we", "she", "who", "them", "me", "him", "one", "her", "us", "something", "nothing", "anything", "himself", "everything", "someone", "themselves", "everyone", "itself", "anyone", "myself",'the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he','as','you','do','at','this','but','his','by','from','they','we','say','her','she','or','an','will','my','one','all','would','there','their','what','so','up','out','if','about','who','get','which','go','me','when','make','can','like','time','no','just','him','know','take','person','into','year','your','good','some','could','them','see','other','than','then','now','look','only','come','its','over','think','also','back','after','use','two','how','our','work','first','well','way','even','new','want','because','any','these','give','day','most','us']
+        sampler = (0..30).to_a
+        
+        front_page = Nokogiri::HTML(open("http://www.nytimes.com/"))
+        front_story_text = front_page.css('h1','h2', 'h5', 'h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
+        front_arr = []
+        front_arr.push front_story_text.split(" ")
+        front_arr = front_arr.flatten.uniq
+        front_arr.delete_if { |x| x.length <= 3 || exclude_words.include?(x)}
+        front_arr = front_arr.sample(150)
+        count_front = front_arr.length
+        front_arr_index = 0
+        
+        
+        while front_arr_index < count_front
+
+            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&per_page=50&page=1&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+              counter_front = 0
+              front_word = Word.create(name: front_arr[front_arr_index])
+              unless photos_front.empty?
+                while counter_front < front_arr[front_arr_index].length
+                  if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][samp]
+                    samp = sampler.sample;
+                    farmId = photos_front['photos']['photo'][samp]['farm']
+                    serverId = photos_front['photos']['photo'][samp]['server']    
+                    id = photos_front['photos']['photo'][samp]['id'];
+                    secret = photos_front['photos']['photo'][samp]['secret']
+                    imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
+                  
+                    front_word.photos << Photo.create(url: imgUrl)
+                  end
+                counter_front += 1
+                end
+          end
+          front_arr_index += 1
+        end
+
+        google_news = Nokogiri::HTML(open("https://news.google.com/"))
+        google_news_text = google_news.css(".titletext").text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
+        google_arr = []
+        google_arr.push google_news_text.split(" ")
+        google_arr = google_arr.flatten.uniq
+        google_arr.delete_if { |x| x.length <= 3 || exclude_words.include?(x)}
+        google_arr = google_arr.sample(150)
+        count_google = google_arr.length
+        google_arr_index = 0
+        #sampler = (0..99).to_a
+        
+        while google_arr_index < google_front
+
+            photos_google = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&per_page=50&page=1&method=flickr.photos.search&tags=#{google_arr[google_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+              counter_google = 0
+              google_word = Word.create(name: google_arr[google_arr_index])
+              unless photos_google.empty?
+                while counter_google < google_arr[google_arr_index].length
+                  if photos_google['photos'] && photos_google['photos']['photo'] && photos_google['photos']['photo'][counter_google]
+                    samp = sampler.sample;
+                    farmId = photos_google['photos']['photo'][samp]['farm']
+                    serverId = photos_google['photos']['photo'][samp]['server']    
+                    id = photos_google['photos']['photo'][samp]['id'];
+                    secret = photos_google['photos']['photo'][samp]['secret']
+                    imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
+                  
+                    google_word.photos << Photo.create(url: imgUrl)
+                  end
+                counter_google += 1
+                end
+          end
+          google_arr_index += 1
+        end
+
+
+
+
+
+
+
+
+
     #     sports_page = Nokogiri::HTML(open("http://www.nytimes.com/pages/sports/index.html"))
     #     sports_story_text = sports_page.css('h1','h2', 'h5', 'h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
     #     sports_arr = []
@@ -52,39 +130,37 @@ namespace :wordlist do
     #     sports_arr_index += 1
     # end
       
-      front_page = Nokogiri::HTML(open("http://www.nytimes.com/"))
-      front_story_text = front_page.css('h1','h2', 'h5', 'h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
-      front_arr = []
-      front_arr.push front_story_text.split(" ")
-      front_arr = front_arr.flatten.uniq
-      front_arr.delete_if { |x| x.length <= 3 || exclude_words.include?(x)}
-      count_front = front_arr.length
-      front_arr_index = 0
-      sampler = (0..30).to_a
-
+    #   front_page = Nokogiri::HTML(open("http://www.nytimes.com/"))
+    #   front_story_text = front_page.css('h1','h2', 'h5', 'h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
+    #   front_arr = []
+    #   front_arr.push front_story_text.split(" ")
+    #   front_arr = front_arr.flatten.uniq
+    #   front_arr.delete_if { |x| x.length <= 3 || exclude_words.include?(x)}
+    #   count_front = front_arr.length
+    #   front_arr_index = 0
+    #   sampler = (0..99).to_a
       
-      while front_arr_index < count_front
-                                      # http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=37b8015d3475358816892a3dd159ebe1&tags=OBAMA&sort=relevance&per_page=50&page=1&format=rest&auth_token=72157636658845806-5c98d34b6b237490&api_sig=ce6dc7ceef5472f348e1daab0b8546c0
-          photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&per_page=50&page=1&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
-            counter_front = 0
-            front_word = Word.create(name: front_arr[front_arr_index])
-            unless photos_front.empty?
-              while counter_front < front_arr[front_arr_index].length
-                if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][counter_front]
-                  samp = sampler.sample;
-                  farmId = photos_front['photos']['photo'][samp]['farm']
-                  serverId = photos_front['photos']['photo'][samp]['server']    
-                  id = photos_front['photos']['photo'][samp]['id'];
-                  secret = photos_front['photos']['photo'][samp]['secret']
-                  imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
+    #   while front_arr_index < count_front
+
+    #       photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=random&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+    #         counter_front = 0
+    #         front_word = Word.create(name: front_arr[front_arr_index])
+    #         unless photos_front.empty?
+    #           while counter_front < front_arr[front_arr_index].length
+    #             if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][counter_front]
+    #               farmId = photos_front['photos']['photo'][counter_front]['farm']
+    #               serverId = photos_front['photos']['photo'][counter_front]['server']    
+    #               id = photos_front['photos']['photo'][counter_front]['id'];
+    #               secret = photos_front['photos']['photo'][counter_front]['secret']
+    #               imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
                 
-                  front_word.photos << Photo.create(url: imgUrl)
-                end
-              counter_front += 1
-              end
-        end
-        front_arr_index += 1
-    end
+    #               front_word.photos << Photo.create(url: imgUrl)
+    #             end
+    #           counter_front += 1
+    #           end
+    #     end
+    #     front_arr_index += 1
+    # end
  
     # business_page = Nokogiri::HTML(open("http://www.nytimes.com/pages/business/index.html"))
     # business_story_text = business_page.css('h1','h2', 'h5', 'h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
