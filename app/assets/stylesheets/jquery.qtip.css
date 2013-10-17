@@ -30,7 +30,7 @@
 
 	.qtip-content{
 		position: relative;
-		padding: 5px 9px;
+		/*padding: 5px 9px;*/
 		overflow: hidden;
 
 		text-align: left;
@@ -243,15 +243,15 @@
 .qtip-rounded,
 .qtip-tipsy,
 .qtip-bootstrap{
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 .qtip-rounded .qtip-titlebar{
-	-moz-border-radius: 4px 4px 0 0;
-	-webkit-border-radius: 4px 4px 0 0;
-	border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
 }
 
 /* Youtube tooltip style */
