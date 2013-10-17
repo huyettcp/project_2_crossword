@@ -2,12 +2,12 @@ class WordsController < ApplicationController
   
  def index
       @words = Word.all
-      @words_array = []
+      @words_array_large = []
 
       @words.each do |word_obj|
-      @words_array << word_obj.name
+      @words_array_large << word_obj.name
     end
-  
+      @words_array = @words_array_large.sample(30)
   end
 
   def show

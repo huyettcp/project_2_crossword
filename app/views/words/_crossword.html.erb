@@ -616,11 +616,11 @@ oygCrosswordPuzzle.canTalkToServer = false;
   //   });
   // });
 
-  $(document).on('mouseover', ".oy-cell-cool", function(){
-      var imageUrl = $(this).css('background-image');
-      imageUrl2 = imageUrl.replace('url(','').replace(')','');
-      console.log (imageUrl2)
-  });
+  // $(document).on('mouseover', ".oy-cell-cool", function(){
+  //     var imageUrl = $(this).css('background-image');
+  //     imageUrl2 = imageUrl.replace('url(','').replace(')','');
+  //     console.log (imageUrl2)
+  // });
 
 
 // $(document).ready(function()
@@ -633,15 +633,15 @@ oygCrosswordPuzzle.canTalkToServer = false;
 // });
 
 
-$(document).on('mouseover', ".oyCellFull", function(){
-  var imageUrl = $(this).css('background-image');
-  imageUrl2 = imageUrl.replace('url(','').replace(')','');
-    $(".oy-cell-cool").qtip({
-        content: {
-            text: '<img src="' + imageUrl2 + '" />'
-        },
-    });
-});
+// $(document).on('mouseover', ".oyCellFull .oyCellInput .oyCellFocused .oy-cell-cool", function(){
+//   var imageUrl = $(this).css('background-image');
+//   imageUrl2 = imageUrl.replace('url(','').replace(')','');
+//     $(".oy-cell-cool").qtip({
+//         content: {
+//             text: '<img src="' + imageUrl2 + '" />'
+//         },
+//     });
+// });
 
 
 
@@ -676,6 +676,69 @@ $(document).on('mouseover', ".oyCellFull", function(){
  //         // Your config here
  //     });
  // });
+
+
+// $('ul:last li.active').qtip({
+//    content: 'This is an active list element',
+//    show: 'mouseover',
+//    hide: 'mouseout'
+// })
+// $(function() {
+// 	$('td.oyCellFull td.oyCellInput td.oyCellFocused td.oy-cell-cool').qtip({
+// 	   content: 'This works!',
+// 	   show: 'mouseover',
+// 	   hide: 'mouseout'
+// 	})
+// });
+
+cleanUrl = function(_this) {
+	var imageUrl = $(_this).css('background-image');
+	var clean_imageUrl = imageUrl.replace('url(','').replace(')','');
+	return clean_imageUrl
+}
+
+
+
+$(document).on('mouseover', ".oyCellFull", function(){
+	var _this = this;
+	$(this).qtip({
+	   overwrite: false,
+	   content: '<img src="' + cleanUrl(_this) + '" />',
+	   show: 'mouseover',
+	   hide: 'mouseout'
+	})
+});
+
+$(document).on('mouseover', ".oyCellInput", function(){
+	var _this = this;
+	$(this).qtip({
+	   overwrite: false,
+	   content: '<img src="' + cleanUrl(_this) + '" />',
+	   show: 'mouseover',
+	   hide: 'mouseout'
+	})
+});
+
+$(document).on('mouseover', ".oyCellFocused", function(){
+	var _this = this;
+	$(this).qtip({
+	   overwrite: false,
+	   content: '<img src="' + cleanUrl(_this) + '" />',
+	   show: 'mouseover',
+	   hide: 'mouseout'
+	})
+});
+
+$(document).on('mouseover', ".oyCellFocused", function(){
+	var _this = this;
+	$(this).qtip({
+	   overwrite: false,
+	   content: '<img src="' + cleanUrl(_this) + '" />',
+	   show: 'mouseover',
+	   hide: 'mouseout'
+	})
+});
+
 
 
 </script>
