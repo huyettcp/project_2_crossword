@@ -7,34 +7,13 @@
 
 
 <%= render partial: "crossword" %>
+<%= render partial: "high_scores" %>
 
-<script>
-var word_list = <%= @words_array.to_json.html_safe %>
 
-$(function(){
-$.ajax({
-  url: '/highscores',
-  method: 'GET',
-  dataType: 'json',
 
-  }).done(function(data){
-    int = x 
-    x = 0
-
-    while( x < 10 ){
-      
-      $("#high_score").append("<p>" + data[x].game_score + " " + data[x].user_name + "</p>");
-      x++;
-    }
-
-  })
-})
-  
-</script>
-
-<div id ="high_score">
-
-  <div>
+<div style"display:none;" id ="high_score">
+  @{ Html.RenderPartial("high_scores");}
+</div>
 
 
 <!-- data[0].game_score -->
