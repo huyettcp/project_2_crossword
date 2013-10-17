@@ -295,7 +295,7 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 			console.log(cell)
 			cell.className = "oyCellFull";
 			cell.style.backgroundImage="url("+data[i].photos[4]+")";
-			cell.style.backgroundSize="46px 46px";
+			cell.style.backgroundSize="75px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell);
 			} 
@@ -309,7 +309,7 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 			cell.className = "oyCellFull";
 			
 			cell.style.backgroundImage="url("+data[i].photos[3]+")";
-			cell.style.backgroundSize="46px 46px";
+			cell.style.backgroundSize="75px";
 			cell.style.backgroundRepeat = "no-repeat";
 			// imgUrl = getUrl(i, clue, cell); 
 			}

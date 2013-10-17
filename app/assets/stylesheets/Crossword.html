@@ -1,3 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crossword</title>
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/base.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/jquery.qtip.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/words.css?body=1" media="all" rel="stylesheet" type="text/css" />
+ <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.qtip.js?body=1" type="text/javascript"></script>
+<script src="/assets/oyPrologue.js?body=1" type="text/javascript"></script>
+<script src="/assets/oyJsrAjax.js?body=1" type="text/javascript"></script>
+<script src="/assets/oyClue.js?body=1" type="text/javascript"></script>
+<script src="/assets/oyMenu.js?body=1" type="text/javascript"></script>
+<script src="/assets/oyPuzzle.js?body=1" type="text/javascript"></script>
+<script src="/assets/oyServer.js?body=1" type="text/javascript"></script>
+<script src="/assets/oySign.js?body=1" type="text/javascript"></script>
+<script src="/assets/oyMisc.js?body=1" type="text/javascript"></script>
+<script src="/assets/weaver.js?body=1" type="text/javascript"></script>
+<script src="/assets/oyEpilogue.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="V060q6eIvZKXhMM6jRnQ0i/lUxLdaQ+DAamcdXS9Eyc=" name="csrf-token" />
+</head>
+<body>
+<!-- <h1>Welcome to the Crossword</h1> -->
+
+
+<script>
+	var word_list = ["Singleton","Adapter","Bridge","Composite","Decorator","Facade","Flyweight","Proxy","Responsibility","Command","Interpreter","Iterator","Mediator","Memento","Observer","State","Strategy","Template","Visitor","Abstract","Builder","Factory","Prototype"]
+</script>
+
+
 	<!-- 
 		here we have oygContext top DOM element to which the play area will be bound;
 		the HTML template has more binding sites for various visual parts of the puzzle: 
@@ -642,19 +677,9 @@ $(document).on('mouseover', ".oyCellFull", function(){
         content: {
             text: '<img src="' + imageUrl2 + '" />'
         },
-         style: {
-        classes: 'qtip-dark qtip-rounded'
-  }
     });
 });
 
-
-// $('.selector').qtip({
-//   content: 'Hello World!'
-//   style: {
-//     classes: 'qtip-bootstrap'
-//   }
-// })
 
 
 // $(document).on('mouseover', ".oyCellFull", function(){
@@ -699,3 +724,42 @@ $(document).on('mouseover', ".oyCellFull", function(){
 
 
 
+
+
+<script>
+$.ajax({
+  url: '/highscores',
+  method: 'GET',
+  dataType: 'json',
+  }).done(function(data) {
+  console.log(data); 
+})
+
+
+
+
+
+</script>
+
+
+<!-- data[0].game_score -->
+<!-- def show
+      @words = Word.all
+      @words_array = []
+
+      @words.each do |word_obj|
+        @photo_urls = []
+        word_obj.photos.each do |photo|
+          @photo_urls << photo.url
+        end
+        @words_array << {word: word_obj.name, photos: @photo_urls}
+    end
+    render json: @words_array
+  end
+end
+ -->
+
+
+
+</body>
+</html>
