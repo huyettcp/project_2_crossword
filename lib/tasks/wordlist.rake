@@ -243,6 +243,44 @@ namespace :wordlist do
           google_arr_index += 1
         end
 
+
+
+
+        front_page = Nokogiri::HTML(open("http://www.nytimes.com/"))
+        front_story_text = front_page.css('h1','h2', 'h5', 'h3').text.gsub("\"", " ").gsub("\n"," ").gsub!(/\W+/, " ").gsub(/(?<=[a-z])(?=[A-Z])/, " ").downcase
+        front_arr = []
+        front_arr.push front_story_text.split(" ")
+        front_arr = front_arr.flatten.uniq
+        front_arr.delete_if { |x| x.length <= 4 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
+        front_arr = front_arr.sample(150)
+        count_front = front_arr.length
+        front_arr_index = 0
+
+    
+        
+        
+        while front_arr_index < count_front
+
+            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+              counter_front = 0
+              front_word = Word.create(name: front_arr[front_arr_index])
+              unless photos_front.empty?
+                while counter_front < front_arr[front_arr_index].length
+                  if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][counter_front]
+                    farmId = photos_front['photos']['photo'][counter_front]['farm']
+                    serverId = photos_front['photos']['photo'][counter_front]['server']    
+                    id = photos_front['photos']['photo'][counter_front]['id'];
+                    secret = photos_front['photos']['photo'][counter_front]['secret']
+                    imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
+                  
+                    front_word.photos << Photo.create(url: imgUrl)
+                  end
+                counter_front += 1
+                end
+          end
+          front_arr_index += 1
+        end
+
    #     photos_business = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{business_arr[business_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
     #       counter_business = 0
     #       business_word = Word.create(name: business_arr[business_arr_index])
