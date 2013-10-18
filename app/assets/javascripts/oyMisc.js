@@ -88,7 +88,7 @@ oyCrosswordFooter.prototype.update = function(){
 	if (!this.puzz.started){
 		buf += "Game has not yet started!";
 	} else {
-		buf += "Score: <b>" + this.puzz.menu.score + "</b> points"; 		
+		buf += "Score: <b>" + this.puzz.menu.score; 		
 		if(this.puzz.menu.rank != -1){
 			buf += " (rank <b>" + this.puzz.menu.rank + "</b>)"; 		
 		}

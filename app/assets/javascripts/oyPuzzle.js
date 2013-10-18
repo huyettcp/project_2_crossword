@@ -130,7 +130,7 @@ oyCrosswordPuzzle.prototype.init = function(){
 				 
 	var buf = "<table border='0' cellspacing='0' cellpadding='0' width='100%'><tr>";
 	buf += "<td class='oyFooter' id='oygFooterStatus' align='left'></td>";
-	buf += "<td class='oyFooter' id='oygFooterClock' align='right'></td>";  
+	buf += "<td class='oyFooter' id='oygFooterClock' align='left'></td>";  
 	buf += "</tr>";
 
 	var cr = "&nbsp;";	
