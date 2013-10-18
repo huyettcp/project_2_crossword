@@ -4624,8 +4624,8 @@ Searching 612 files for "score"
   ...
   493  	var oldName = this.name;
   494  	this.name = window.prompt(  
-  495: 		score + "Enter your NICK NAME or E-MAIL.\n" +  
-  496: 		"Without e-mail, the score is recorded, but you aren't eligible for the prizes.",
+  495: 		score + "Please enter your name:\n"  +  
+  496: 		"",
   497  		this.name 
   498  	);
   ...
@@ -5215,8 +5215,8 @@ Searching 612 files for "score"
   ...
   484  	var oldName = this.name;
   485  	this.name = window.prompt(  
-  486: 		score + "Enter your NICK NAME or E-MAIL.\n" +  
-  487: 		"Without e-mail, the score is recorded, but you aren't eligible for the prizes.",
+  486: 		score + "Please enter your name:\n"  +  
+  487: 		"",
   488  		this.name 
   489  	);
   ...
@@ -5386,8 +5386,8 @@ Searching 612 files for "score"
   ...
   484  	var oldName = this.name;
   485  	this.name = window.prompt(  
-  486: 		score + "Enter your NICK NAME or E-MAIL.\n" +  
-  487: 		"Without e-mail, the score is recorded, but you aren't eligible for the prizes.",
+  486: 		score + "Please enter your name:\n"  +  
+  487: 		"",
   488  		this.name 
   489  	);
   ...
@@ -5671,8 +5671,8 @@ Searching 612 files for "Score"
   ...
   493  	var oldName = this.name;
   494  	this.name = window.prompt(  
-  495: 		score + "Enter your NICK NAME or E-MAIL.\n" +  
-  496: 		"Without e-mail, the score is recorded, but you aren't eligible for the prizes.",
+  495: 		score + "Please enter your name:\n"  +  
+  496: 		"",
   497  		this.name 
   498  	);
   ...
@@ -6262,8 +6262,8 @@ Searching 612 files for "Score"
   ...
   484  	var oldName = this.name;
   485  	this.name = window.prompt(  
-  486: 		score + "Enter your NICK NAME or E-MAIL.\n" +  
-  487: 		"Without e-mail, the score is recorded, but you aren't eligible for the prizes.",
+  486: 		score + "Please enter your name:\n"  +  
+  487: 		"",
   488  		this.name 
   489  	);
   ...
@@ -6433,8 +6433,8 @@ Searching 612 files for "Score"
   ...
   484  	var oldName = this.name;
   485  	this.name = window.prompt(  
-  486: 		score + "Enter your NICK NAME or E-MAIL.\n" +  
-  487: 		"Without e-mail, the score is recorded, but you aren't eligible for the prizes.",
+  486: 		score + "Please enter your name:\n"  +  
+  487: 		"",
   488  		this.name 
   489  	);
   ...
