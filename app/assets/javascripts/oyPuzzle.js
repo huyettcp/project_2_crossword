@@ -368,7 +368,7 @@ oyCrosswordPuzzle.prototype.fillIn = function(cell, clue, x, y, i, j, idx, dir) 
 	// $tag.load( function() {
 		cell.style.backgroundImage="url("+return_data[j].photos[i]+")";
 		cell.style.backgroundSize="46px 46px";
-		cell.style.filter="blur(2px) grayscale(100%); -webkit-filter: blur(2px) grayscale(100%); -moz-filter: blur(2px) grayscale(100%)";
+		// cell.style.filter="blur(2px) grayscale(100%); -webkit-filter: blur(2px) grayscale(100%); -moz-filter: blur(2px) grayscale(100%)";
 
 
 		// cell.style.backgroudRepeat = "no-repeat";
