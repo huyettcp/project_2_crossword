@@ -1,0 +1,25 @@
+html, body {
+  background-color: #000000;
+}
+#progress-bar {
+  background-color: #29D6BB;
+  height: 30px;
+  left: 0px;
+  position: absolute;
+  top: 48%;
+  width: 0%;
+  z-index: 999999;
+}
+#container {
+  margin: auto;
+  position: relative;
+  width: 940px;
+}
+.image {
+  float: left;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.image img {
+  width: 300px;
+}

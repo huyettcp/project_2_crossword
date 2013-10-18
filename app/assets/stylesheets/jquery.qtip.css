@@ -16,13 +16,18 @@
 	top: -28000px;
 	display: none;
 
-	max-width: 280px;
-	min-width: 280px;
+	
 
-	min-height: 280px;
-	max-height: 280px;
+	max-width: 600px;
+	min-width: 100px;
+
+	min-height: 100px;
+	max-height: 400px;
 
 	
+	
+	
+
 	font-size: 10.5px;
 	line-height: 12px;
 
@@ -30,17 +35,26 @@
 	overflow: hidden;
 
 	box-shadow: none;
-	padding: 0;
+	padding-right: 0px;
 }
 
 	.qtip-content{
+
+/*		margin-left: 10px;
+		margin-right: auto;*/
 		position: relative;
 		/*padding: 5px 9px;*/
+<<<<<<< HEAD
 		overflow: hidden;
 		position: center;
 		margin-left: -50px;
     margin-right: -50px;
 		text-align: left;
+=======
+		overflow: hidden;*/
+
+		text-align: center;
+>>>>>>> 1a88f12e6f55a989eb8559c097e8d1241330b24d
 		word-wrap: break-word;
 	}
 
