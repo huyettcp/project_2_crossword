@@ -99,9 +99,9 @@ filter: blur(.03px) grayscale(100%);
 -moz-filter: blur(2px) grayscale(100%)
 }
 #logo {
-	width: 300px;
-	/*height: 200px;*/
-	margin-left: 13px;
+	width: 200px;
+	height: 200px;
+	margin-left: 25px;
 	margin-top: 60px;
 }
 
@@ -318,8 +318,8 @@ A.oyMenuAction:hover {
 	color: #F9F9F9;	*/
 	visibility: hidden;
 	width: 0;
-	height:0;
-	text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
+	height: 0;
+	/*text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;*/
 }
 .oyPanelDiv {
 	font-family:Arial;				
@@ -334,7 +334,7 @@ A.oyMenuAction:hover {
 
 .oyPanelDivHidden {
 	width: 2px;
-	background-color: #2B2A2B;
+	/*background-color: #2B2A2B;*/
 }	
 .oyList {
 	cursor: pointer; cursor: hand;

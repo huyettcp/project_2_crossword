@@ -44,17 +44,16 @@
 		margin-right: auto;*/
 		position: relative;
 		/*padding: 5px 9px;*/
-<<<<<<< HEAD
+
 		overflow: hidden;
 		position: center;
 		margin-left: -50px;
-    margin-right: -50px;
+    	margin-right: -50px;
 		text-align: left;
-=======
-		overflow: hidden;*/
+
+		overflow: hidden;
 
 		text-align: center;
->>>>>>> 1a88f12e6f55a989eb8559c097e8d1241330b24d
 		word-wrap: break-word;
 	}
 
