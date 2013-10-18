@@ -72,7 +72,7 @@ body {
 
 .right {
 /*    background-color: Aqua;*/
-		float: left;
+	float: left;
     margin: auto;
     height: 200%;
     z-index: 1;
@@ -113,7 +113,9 @@ filter: blur(.03px) grayscale(100%);
 .info {
 	color: #29d6bb;
 	font-size: 15px;
-	margin-left: 15px;
+	padding-left: 20px;
+	padding-top: 10px;
+	margin-left: 50px;
 	font-family: arial;
 }
 
@@ -126,8 +128,8 @@ filter: blur(.03px) grayscale(100%);
 
 
 div img {
-	width: 100%;
-	height: 280px;
+	/*width: 100%;*/
+	height: 320px;
 	/*margin-left: 50px;
 	margin-top: 60px;*/
 }
@@ -158,6 +160,7 @@ div img {
 } 				
 .oyPuzzleFooter{
 	/*background-color: #2B2A2B;*/
+	margin-top: 10px;
 	padding: 20px; 
 	font-family: Arial;
 	text-align: left;		
@@ -288,7 +291,7 @@ div img {
 	padding-right: 4px;
 	padding-top: 4px;
 	padding-bottom: 4px;
-	margin-left: 4px;
+	margin-left: 16px;
 	margin-right: 4px;
 	margin-top: 4px;
 	margin-bottom: 4px;
