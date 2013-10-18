@@ -1,6 +1,6 @@
 onLoad = function() {
   // Cache selector for the progress bar
-  // var $progress_bar = $('#progress-bar');
+  var $progress_bar = $('#progress-bar');
   // Initialize our loading progress counter
   var done = 0;
   // Grab all the images
@@ -44,13 +44,14 @@ onLoad = function() {
     // If we've loaded all the images
     if(done == count) {
       // // Set the progress bar to full width
-      // $progress_bar.css('width', '0%');
+      $progress_bar.css('width', '0%');
       // // Fade out the progress bar
-      // $progress_bar.fadeOut(1000);
+      $progress_bar.fadeOut(500);
       // // Fade in the loaded images
-      $pics.fadeIn(300);
+      $pics.fadeIn(1000);
       // Run masonry on the image containers for super shnazzy layout
     } else {
+
       // Move progress bar
       //$progress_bar.css('width', ((done / $images.length) * 100) + '%');
       // Move progress bar smoothly
@@ -112,7 +113,7 @@ startLoad = function() {
       // Set the progress bar to full width
       $progress_bar.css('width', '0%');
       // Fade out the progress bar
-      $progress_bar.fadeOut(1000);
+      $progress_bar.fadeOut(3000);
       // Fade in the loaded images
       $pics.fadeIn(5000);
       // Run masonry on the image containers for super shnazzy layout

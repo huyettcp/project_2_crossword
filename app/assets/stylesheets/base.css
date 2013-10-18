@@ -42,6 +42,10 @@ body {
 	height: 100%;
 }
 
+#progress-bar {
+	color: #ffffff;
+}
+
 .bg {
 	
 	/*background-image:url("assault.png");*/
