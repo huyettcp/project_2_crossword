@@ -7,21 +7,11 @@
 
 
 <%= render partial: "crossword" %>
-
-<script>
-$.ajax({
-  url: '/highscores',
-  method: 'GET',
-  dataType: 'json',
-  }).done(function(data) {
-  console.log(data); 
-})
+<%= render partial: "high_scores" %>
 
 
 
-
-
-</script>
+<div id ="high_score"></div>
 
 
 <!-- data[0].game_score -->

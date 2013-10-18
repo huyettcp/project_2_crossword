@@ -1870,7 +1870,7 @@ QTIP.defaults = {
 		at: 'bottom right',
 		target: FALSE,
 		container: FALSE,
-		viewport: FALSE,
+		viewport: $(window),
 		adjust: {
 			x: 0, y: 0,
 			mouse: TRUE,
