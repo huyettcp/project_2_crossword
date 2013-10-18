@@ -113,7 +113,7 @@ startLoad = function() {
       // Set the progress bar to full width
       $progress_bar.css('width', '0%');
       // Fade out the progress bar
-      $progress_bar.fadeOut(3000);
+      $progress_bar.fadeOut(500);
       // Fade in the loaded images
       $pics.fadeIn(5000);
       // Run masonry on the image containers for super shnazzy layout
