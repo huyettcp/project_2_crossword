@@ -297,6 +297,7 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 			var cell = document.getElementById(key);
 			// console.log(cell)
 			cell.className = "oyCellFull";
+			cell.className += " black_and_white";
 			cell.style.backgroundImage="url("+data[i].photos[4]+")";
 			cell.style.backgroundSize="46px 46px";
 			// cell.style.backgroundRepeat = "no-repeat";
@@ -310,7 +311,7 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 			var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
 			var cell = document.getElementById(key);
 			cell.className = "oyCellFull";
-			
+			cell.className += " black_and_white";
 			cell.style.backgroundImage="url("+data[i].photos[3]+")";
 			cell.style.backgroundSize="46px 46px";
 			// cell.style.backgroundRepeat = "no-repeat";
@@ -330,7 +331,7 @@ oyCrosswordPuzzle.prototype.fillVert = function(clue, idx) {
 				var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 				var cell = document.getElementById(key);
 				cell.className += " oy-cell-cool";
-
+				cell.classList.remove("black_and_white");
 				this.fillIn(cell, clue, clue.xpos, clue.ypos + i, i, j, idx, 1);
 				this.menu.setCellState(clue.xpos, clue.ypos + i, 0);
 			} 
@@ -351,6 +352,7 @@ oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx) {
 				var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos;
 				var cell = document.getElementById(key);
 				cell.className += " oy-cell-cool";
+				cell.classList.remove("black_and_white");
 				this.fillIn(cell, clue, clue.xpos + i, clue.ypos, i, j, idx, 0);
 				this.menu.setCellState(clue.xpos + i, clue.ypos, 0);
 			}

@@ -31,28 +31,31 @@ body { filter: grayscale(50%) }
 }
 */
 body {
+	background: url('classy_fabric.png');
 /*	background-image: url('newspaper2bw.jpg'); 
   background-size: 100%;
 	background-color: #2B2A2B;
 	color: white;
 	font-family: Arial;*/
+
 	font-size: 30px;
 	height: 100%;
 }
 
 .bg {
-	background-image:url("assault.png");
+	
+	/*background-image:url("assault.png");*/
   position: fixed;
-  width: 100%;
-  height: 100%;
+  /*width: 100%;
+  height: 100%;*/
   top: 0;
   left: 0;
   z-index: -1;
-  filter: blur(2px);
+  /*filter: blur(2px);
 	-webkit-filter: blur(2px);
 	-moz-filter: blur(2px);
 	-o-filter: blur(2px);
-	-ms-filter: blur(2px);
+	-ms-filter: blur(2px);*/
 }
 
 
@@ -72,7 +75,7 @@ body {
     /* filter: blur(2px) grayscale(100%); -webkit-filter: blur(2px) grayscale(100%); -moz-filter: blur(2px) grayscale(100%)*/
 	}
 
-.right .bg2 {
+/*.right .bg2 {
   	position: absolute;
     z-index: -1;
     top: 0;
@@ -83,10 +86,46 @@ body {
     opacity: .98;
     width: 100%;
     height: 100%;
+}*/
+
+/*.black_and_white {
+	filter: grayscale(100%); 
+	-webkit-filter: grayscale(100%);
+	-moz-filter: Ïgrayscale(100%)
+}*/
+.black_and_white {
+filter: blur(.03px) grayscale(100%);
+-webkit-filter: blur(.03px) grayscale(100%);
+-moz-filter: blur(2px) grayscale(100%)
+}
+#logo {
+	width: 300px;
+	/*height: 200px;*/
+	margin-left: 13px;
+	margin-top: 60px;
+}
+
+.info {
+	color: #29d6bb;
+	font-size: 15px;
+	margin-left: 15px;
+	font-family: arial;
+}
+
+.high_score {
+	color: #29d6bb;
+	font-size: 15px;
+	margin-left: 15px;
+	font-family: arial;
 }
 
 
-
+div img {
+	width: 100%;
+	height: 280px;
+	/*margin-left: 50px;
+	margin-top: 60px;*/
+}
 
 .oyPuzzleCell {	
 /*	outline: solid 3px #2B2A2B;
@@ -170,16 +209,22 @@ body {
 	clear: both;
 	float: left;
 	border-radius: 5px;
-	/*padding-left: 4px;*/
+	padding-left: 4px;
 	padding-right: 4px;
 	padding-top: 4px;
 	padding-bottom: 4px;
-	margin-left: 4px;
+	margin-left: 8px;
 	margin-right: 4px;
 	margin-top: 4px;
 	margin-bottom: 4px;
 
 }
+#oygFooterClock {
+	margin-left:  -.3px;
+}
+/*#oygFooterStatus {
+	margin-right: 100px;
+}*/
 .oyFrame {
 /*	border-collapse: collapse;*/		
 }	

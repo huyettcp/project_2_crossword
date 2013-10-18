@@ -9,7 +9,7 @@
 
 <div class="left">
   <div class"logo">
-    <img src="/crosswordlogo1.jpg">
+    <img id='logo' src="flosswordsbwclearedgreen4.png">
   </div>
     <class="oyOuterFrame" border="0" cellpadding="0" cellspacing="0">
                 <tr class="oyHeader">
@@ -48,6 +48,8 @@
           <tr>
             <td colspan="5" class="oyFooter"> 
               <div id="oygFooter"></div>
+              <div class='info'>Instructions</div>
+              <div class='high_score'>High Scores</div>
             </td>
           </tr>     
         </table>
@@ -650,8 +652,6 @@ cleanUrl = function(_this) {
 	return clean_imageUrl
 }
 
-
-
 $(document).on('mouseover', ".oyCellFull", function(){
 	var _this = this;
 	$(this).qtip({
@@ -696,6 +696,32 @@ $(document).on('mouseover', ".oyCellFocused", function(){
 	$(this).qtip({
 	   overwrite: false,
 	   content: '<img src="' + cleanUrl(_this) + '" />',
+	    style: {
+        classes: 'qtip-dark qtip-rounded'
+  },
+	   show: 'mouseover',
+	   hide: 'mouseout'
+	})
+});
+
+$(document).on('mouseover', ".info", function(){
+	var _this = this;
+	$(this).qtip({
+	   overwrite: false,
+	   content: 'Do I reallly have to tell you how to tell you how to solve a crossword puzzle?',
+	    style: {
+        classes: 'qtip-dark qtip-rounded'
+  },
+	   show: 'mouseover',
+	   hide: 'mouseout'
+	})
+});
+
+$(document).on('mouseover', ".high_score", function(){
+	var _this = this;
+	$(this).qtip({
+	   overwrite: false,
+	   content: 'Coming soon...',
 	    style: {
         classes: 'qtip-dark qtip-rounded'
   },

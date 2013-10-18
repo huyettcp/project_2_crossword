@@ -48,7 +48,7 @@ onLoad = function() {
       // // Fade out the progress bar
       // $progress_bar.fadeOut(1000);
       // // Fade in the loaded images
-      $pics.fadeIn(5000);
+      $pics.fadeIn(300);
       // Run masonry on the image containers for super shnazzy layout
     } else {
       // Move progress bar
