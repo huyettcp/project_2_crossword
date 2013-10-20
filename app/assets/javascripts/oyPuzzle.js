@@ -269,7 +269,7 @@ databaseGrab = function(oThis) {
 			
 			oThis.footer.stateOk("");
 
-			// startLoad();	
+			startLoad();	
 		}
 	});
 	// return return_data;

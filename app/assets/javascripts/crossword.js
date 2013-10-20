@@ -1,192 +1,3 @@
-	<!-- 
-		here we have oygContext top DOM element to which the play area will be bound;
-		the HTML template has more binding sites for various visual parts of the puzzle: 
-		oygHeader, oygHeaderMenu, oygState, oygPuzzle, oygPuzzleFooter, oygListH, oygListV, oygFooter;
-		all element names for binding are prefixed with "oyg"
-	-->
-
-<div class="bg"></div>
-
-<div class="left">
-  <div class"logo">
-    <img id='logo' src="flosswords5.png">
-  </div>
-  <!-- <div class"H2">
-    <h2> An ininite Flickr puzzle.<h2>
-  </div> -->
-    <class="oyOuterFrame" border="0" cellpadding="0" cellspacing="0">
-                <tr class="oyHeader">
-                  <td class="oyHeader">
-                    <div id="oygHeader"></div>
-                    <div id= 
-                  </td>
-                  <td align="right">  
-                    <div id="oygHeaderMenu"></div> 
-                   
-                  </td> 
-                </tr>         
-              </table>
-            </td>  
-          </tr>
-          <tr style="height: 4px;">
-            <td colspan="5"></td>
-          </tr>
-          <tr>  
-           <!--  <td rowspan="3" class="oyPuzzleCell" align="center" valign="top">  -->
-              <div id="oygState"></div>
-              <!-- <div class="oyPuzzle" id="oygPuzzle"></div> -->
-              <div class="oyPuzzleFooter" id="oygPuzzleFooter"></div>     
-            </td>  
-            <td class="oyListCellDot"></td>    
-            <td class="oyListCell" valign="top" id="oygListH"></td>
-          </tr>
-          <tr style="height: 4px;">
-            <td colspan="4"></td>
-          </tr>   
-          <tr>  
-            <td class="oyListCellDot"></td>   
-            <td class="oyListCell" valign="top" id="oygListV"></td>         
-          </tr>
-          <tr style="height: 4px;">
-            <td colspan="5"></td>
-          </tr>     
-          <tr>
-            <td colspan="5" class="oyFooter"> 
-              <div id="oygFooter"></div>
-              <div class='info'>Instructions</div>
-              <div id="high_score" class='high_score info'>High Scores</div>
-            </td>
-          </tr> 
-
-        </table>
-      </td></tr>
-
-
-    </table>
-
-    <div id="oygStatic" align="center" style="font-size: 10px; color: #4282B5; font-family: Arial;"></div>
-  
-  </div>  
-</div>
-
-
-
-<div class="right">
-	<div id="progress-bar"></div>
-  <div class="bg2"></div>
-  <div id="oygContext" align="left" style="width:100%;">
-    <table class="oyOuterFrame" border="0" cellpadding="0" cellspacing="0">
-      <tr><td align="center">
-        <table class="oyFrame" border="0" cellpadding="0" cellspacing="0">
-          <tr>
-            <td colspan="5">
-              <table class="oyFrame" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr class="oyHeader">
-                  <td class="oyHeader">
-                    <div id="oygHeader"></div>
-                  
-                  </td>
-                  <td align="right">  
-                    <div id="oygHeaderMenu"></div>  
-                                
-                  </td> 
-                </tr>         
-              </table>
-            </td>  
-          </tr>
-          <tr style="height: 4px;">
-            <td colspan="5"></td>
-          </tr>
-          <tr>  
-            <td rowspan="3" class="oyPuzzleCell" align="center" valign="top"> 
-              <div id="oygState"></div>
-              <div class="oyPuzzle" id="oygPuzzle"></div>
-              
-              <div class="oyPuzzleFooter" id="oygPuzzleFooter"></div>     
-            </td>  
-            <td class="oyListCellDot"></td>    
-            <td class="oyListCell" valign="top" id="oygListH"></td>
-          </tr>
-          <tr style="height: 4px;">
-            <td colspan="4"></td>
-          </tr>   
-          <tr>  
-            <td class="oyListCellDot"></td>   
-            <td class="oyListCell" valign="top" id="oygListV"></td>         
-          </tr>
-          <tr style="height: 4px;">
-            <td colspan="5"></td>
-          </tr>     
-          <tr>
-          <!--   <td colspan="5" class="oyFooter"> 
-              <div id="oygFooter"></div>
-            </td> -->
-          </tr>     
-        </table>
-
-      </td></tr>
-    </table>
-    <div id="oygStatic" align="center" style="font-size: 10px; color: #4282B5; font-family: Arial;"></div>
-</div>
-  
-
-<!-- 
-<div id="progress-bar">Loading...</div>
-<div id="container">
-	<div id="oygContext" align="center" style="width:100%;">
-		<table class="oyOuterFrame" border="0" cellpadding="0" cellspacing="0">
-			<tr><td align="center">
-				<table class="oyFrame" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td colspan="5">
-							<table class="oyFrame" border="0" cellpadding="0" cellspacing="0" width="100%">
-								<tr class="oyHeader">
-									<td class="oyHeader">
-										<div id="oygHeader"></div>
-									</td>
-									<td align="right">	
-										<div id="oygHeaderMenu"></div>								
-									</td> 
-								</tr>					
-							</table>
-						</td>  
-					</tr>
-					<tr style="height: 4px;">
-						<td colspan="5"></td>
-					</tr>
-					<tr>  
-						<td rowspan="3" class="oyPuzzleCell" align="center" valign="top"> 
-							<div id="oygState"></div>
-							<div class="oyPuzzle" id="oygPuzzle"></div>
-							<div class="oyPuzzleFooter" id="oygPuzzleFooter"></div>			
-						</td>  
-						<td class="oyListCellDot"></td>    
-						<td class="oyListCell" valign="top" id="oygListH"></td>
-					</tr>
-					<tr style="height: 4px;">
-						<td colspan="4"></td>
-					</tr>		
-					<tr>  
-						<td class="oyListCellDot"></td>   
-						<td class="oyListCell" valign="top" id="oygListV"></td>					
-					</tr>
-					<tr style="height: 4px;">
-						<td colspan="5"></td>
-					</tr>			
-					<tr>
-						<td colspan="5" class="oyFooter"> 
-							<div id="oygFooter"></div>
-						</td>
-					</tr>			
-				</table>
-			</td></tr>
-		</table>
-		<div id="oygStatic" align="center" style="font-size: 10px; color: #4282B5; font-family: Arial;"></div>
-	</div>  
-
-</div>
- -->
-
 <script type="text/javascript"><!--
 
 //********************************************WEAVER***************************************************
@@ -725,7 +536,7 @@ $(document).on('mouseover', ".info", function(){
 	   overwrite: false,
 	   content: 'Do I reallly have to tell you how to tell you how to solve a crossword puzzle?',
 	    style: {
-        classes: 'qtip-dark qtip-rounded'
+        classes: 'qtip-dark .qtip-content'
   },
 	   show: 'mouseover',
 	   hide: 'mouseout'
@@ -733,11 +544,10 @@ $(document).on('mouseover', ".info", function(){
 });
 
 $(document).on('mouseover', ".high_score", function(){
-	
-  var _this = this;
+	var _this = this;
 	$(this).qtip({
 	   overwrite: false,
-	   content: 'coming soon',
+	   content: 'Coming soon...',
 	    style: {
         classes: 'qtip-dark .qtip-content'
   },
@@ -754,13 +564,7 @@ $(document).on('mouseover', ".high_score", function(){
 //   function parallax() {
 //     var scrolled = $(window).scrollTop();
 //     $('.bg').css('top', -(scrolled * 0.15) + 'px');
-//   }
-
-
-
-</script>
-<!-- 
-<script>
+// 
 
 function repos(imgs) {
     imgs.each(function (i, o) {

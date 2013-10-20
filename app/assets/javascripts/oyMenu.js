@@ -126,7 +126,7 @@ oyCrosswordMenu.prototype.installWelcomeMenu = function(){
 		target, "Start Now", "Starting...", "strt",
 		function(){		 
 			databaseGrab(oThis);	
-		}
+		}	
 	);	
 
 	this.footer.stateOk("");
@@ -148,7 +148,7 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 		this.addNoneWordAction(target, "Reveal Disabled");
 	} else {			
 		if (hidx != -1){
-			var caption = "Reveal Across</b>"
+			var caption = "Reveal Selected Across</b>"
 			if (!this.hlist.clues[hidx].completed()){
 				this.addRevealWordAction(
 					this.hlist.clues[hidx], target, caption
@@ -158,7 +158,7 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 			}
 		}
 		if (vidx != -1){
-			var caption = "Reveal Down</b>";
+			var caption = "Reveal Selected Down</b>";
 			if (!this.vlist.clues[vidx].completed()){	
 				this.addRevealWordAction( 
 					this.vlist.clues[vidx], target, caption
@@ -173,7 +173,7 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 	if (!this.canCheck){
 		this.addNoneWordAction(target, "Check Disabled");
 	} else {
-		var caption = "Check Across</b>";
+		var caption = "Check Selected Across</b>";
 		if (hidx != -1){
 			if (!this.hlist.clues[hidx].completed()){
 				this.addCheckWordAction(
@@ -184,7 +184,7 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 			}
 		}
 		
-		var caption = "Check Down</b>";
+		var caption = "Check Selected Down</b>";
 		if (vidx != -1){
 			if (!this.vlist.clues[vidx].completed()){	 
 				this.addCheckWordAction(
