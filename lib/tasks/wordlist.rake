@@ -264,9 +264,10 @@ namespace :wordlist do
             photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
               counter_front = 0
               front_word = Word.create(name: front_arr[front_arr_index])
-              unless photos_front.empty?
+              
+            unless photos_front.empty?
+                
                 while counter_front < front_arr[front_arr_index].length
-                  
                   if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][counter_front]
                     farmId = photos_front['photos']['photo'][counter_front]['farm']
                     serverId = photos_front['photos']['photo'][counter_front]['server']    
@@ -276,21 +277,15 @@ namespace :wordlist do
                     puts imgUrl
                     puts imgUrl.length
                     
-                    if imgUrl
-                        front_word.photos << Photo.create(url: imgUrl)
-                    else
-                        front_word.destroy
-                        counter_front = front_arr[front_arr_index].length
-                    end
-                 
+                    front_word.photos << Photo.create(url: imgUrl)
                   end
-
-                  if front_word.photos.empty?
-                        front_word.destroy
-                  end
-                counter_front += 1
+                  counter_front += 1
                 end
-          end
+
+                if front_word.photos.empty?
+                    front_word.destroy
+                end
+            end
           front_arr_index += 1
         end
 
