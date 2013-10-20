@@ -266,6 +266,7 @@ namespace :wordlist do
               front_word = Word.create(name: front_arr[front_arr_index])
               unless photos_front.empty?
                 while counter_front < front_arr[front_arr_index].length
+                  
                   if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][counter_front]
                     farmId = photos_front['photos']['photo'][counter_front]['farm']
                     serverId = photos_front['photos']['photo'][counter_front]['server']    
@@ -274,13 +275,18 @@ namespace :wordlist do
                     imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
                     puts imgUrl
                     puts imgUrl.length
-                    if imgUrl.length >45
+                    
+                    if imgUrl
                         front_word.photos << Photo.create(url: imgUrl)
                     else
                         front_word.destroy
                         counter_front = front_arr[front_arr_index].length
                     end
                  
+                  end
+
+                  if front_word.photos.empty?
+                        front_word.destroy
                   end
                 counter_front += 1
                 end
