@@ -298,7 +298,7 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 			// console.log(cell)
 			cell.className = "oyCellFull";
 			cell.className += " black_and_white";
-			cell.style.backgroundImage="url("+data[i].photos[4]+")";
+			cell.style.backgroundImage="url("+data[i].photos[i]+")";
 			cell.style.backgroundSize="46px 46px";
 			} 
 		});
@@ -310,7 +310,7 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 			var cell = document.getElementById(key);
 			cell.className = "oyCellFull";
 			cell.className += " black_and_white";
-			cell.style.backgroundImage="url("+data[i].photos[3]+")";
+			cell.style.backgroundImage="url("+data[i].photos[i]+")";
 			cell.style.backgroundSize="46px 46px";
 			}
 		});

@@ -62,7 +62,7 @@ function oyCrosswordMenu(puzz){
 	
 	this.name = oyGetCookie("OYG_NICK_NAME"); 
 	if (this.name == null || this.name == ""){
-		this.name = "Anonymous";
+		this.name = "Click to enter your name";
 	}
 	
 	this.server = new oyServer(this.puzz.appHome, this.puzz.ns, this.puzz.canTalkToServer);
@@ -507,7 +507,7 @@ oyCrosswordMenu.prototype.askNickName = function(score){
 		oySetCookieForPeriod("OYG_NICK_NAME", this.name, 1000*60*60*24*360, "/");
 		return result;
 	} else {  
-		this.name = "Anonymous";
+		this.name = "Click to enter you name";
 		return false; 
 	}
 }
