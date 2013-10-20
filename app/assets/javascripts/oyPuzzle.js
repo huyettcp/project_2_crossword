@@ -300,8 +300,6 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 			cell.className += " black_and_white";
 			cell.style.backgroundImage="url("+data[i].photos[4]+")";
 			cell.style.backgroundSize="46px 46px";
-			// cell.style.backgroundRepeat = "no-repeat";
-			// imgUrl = getUrl(i, clue, cell);
 			} 
 		});
 	}
@@ -311,11 +309,9 @@ oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 			var key = "oyCell" + (clue.xpos + i) + "_" + clue.ypos
 			var cell = document.getElementById(key);
 			cell.className = "oyCellFull";
-			cell.className += " black_and_white";
+			cell.className += "black_and_white";
 			cell.style.backgroundImage="url("+data[i].photos[3]+")";
 			cell.style.backgroundSize="46px 46px";
-			// cell.style.backgroundRepeat = "no-repeat";
-			// imgUrl = getUrl(i, clue, cell); 
 			}
 		});
 	}
@@ -359,7 +355,6 @@ oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx) {
 		}
 	}
 }
-
 
 
 oyCrosswordPuzzle.prototype.fillIn = function(cell, clue, x, y, i, j, idx, dir) {
