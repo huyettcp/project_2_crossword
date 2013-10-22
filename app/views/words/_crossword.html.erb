@@ -132,62 +132,6 @@
 </div>
   
 
-<!-- 
-<div id="progress-bar">Loading...</div>
-<div id="container">
-	<div id="oygContext" align="center" style="width:100%;">
-		<table class="oyOuterFrame" border="0" cellpadding="0" cellspacing="0">
-			<tr><td align="center">
-				<table class="oyFrame" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td colspan="5">
-							<table class="oyFrame" border="0" cellpadding="0" cellspacing="0" width="100%">
-								<tr class="oyHeader">
-									<td class="oyHeader">
-										<div id="oygHeader"></div>
-									</td>
-									<td align="right">	
-										<div id="oygHeaderMenu"></div>								
-									</td> 
-								</tr>					
-							</table>
-						</td>  
-					</tr>
-					<tr style="height: 4px;">
-						<td colspan="5"></td>
-					</tr>
-					<tr>  
-						<td rowspan="3" class="oyPuzzleCell" align="center" valign="top"> 
-							<div id="oygState"></div>
-							<div class="oyPuzzle" id="oygPuzzle"></div>
-							<div class="oyPuzzleFooter" id="oygPuzzleFooter"></div>			
-						</td>  
-						<td class="oyListCellDot"></td>    
-						<td class="oyListCell" valign="top" id="oygListH"></td>
-					</tr>
-					<tr style="height: 4px;">
-						<td colspan="4"></td>
-					</tr>		
-					<tr>  
-						<td class="oyListCellDot"></td>   
-						<td class="oyListCell" valign="top" id="oygListV"></td>					
-					</tr>
-					<tr style="height: 4px;">
-						<td colspan="5"></td>
-					</tr>			
-					<tr>
-						<td colspan="5" class="oyFooter"> 
-							<div id="oygFooter"></div>
-						</td>
-					</tr>			
-				</table>
-			</td></tr>
-		</table>
-		<div id="oygStatic" align="center" style="font-size: 10px; color: #4282B5; font-family: Arial;"></div>
-	</div>  
-
-</div>
- -->
 
 <script type="text/javascript"><!--
 
@@ -238,11 +182,11 @@ function BlankPrior(x,y,dx,dy,word){
   x = x + dx;
   y = y + dy;
   if(board[x]) {
-	if (board[x][y] == " ") { 
-	   	return true; 
-	   } else {
-	   	return false;
-	   }  
+  if (board[x][y] == " ") { 
+      return true; 
+     } else {
+      return false;
+     }  
   }  
   return true; 
 }
@@ -253,11 +197,11 @@ function BlankAfter(x,y,dx,dy,word){
   x = x + dx;
   y = y + dy;
   if(board[x]) {
-	   if (board[x][y] == " ") { 
-	   	return true; 
-	   } else {
-	   	return false;
-	   }  
+     if (board[x][y] == " ") { 
+      return true; 
+     } else {
+      return false;
+     }  
   }  
   return true; 
 }
@@ -271,9 +215,9 @@ function ScorePath(x,y,dx,dy,word){
    px = x - dx;
    py = y - dy;
     if(board[px]) {
-		if (board[px][py] != " ") {
-			return -1;
-		}
+    if (board[px][py] != " ") {
+      return -1;
+    }
     }
 
 
@@ -281,9 +225,9 @@ function ScorePath(x,y,dx,dy,word){
    if (((x<board_width) && (y<board_board) && (x>-1) && (y>-1))) {
      if (board[x][y] != " ") {
          if(board[x][y] == word[i]) { 
-         	score+=1; 
+          score+=1; 
          } else {
-         	return -1;
+          return -1;
          }
      } else blank += 1;
 
@@ -291,30 +235,30 @@ function ScorePath(x,y,dx,dy,word){
        if (dx == 1) {
            var subscore = 0; 
            if(board[x][y-1]) {
-           		if(board[x][y - 1] == " ")  subscore+=1
-           		} else subscore += 1;
+              if(board[x][y - 1] == " ")  subscore+=1
+              } else subscore += 1;
            if(board[x][y + 1]) {
-           		if(board[x][y + 1]==" ") subscore+=1
-           		} else  subscore += 1;
+              if(board[x][y + 1]==" ") subscore+=1
+              } else  subscore += 1;
            if (subscore==2) {
-           		score += 1
+              score += 1
            } else {
-           		return -1;
+              return -1;
            }
          }
        if(dy == 1){
            var subscore = 0; 
            if(board[x-1]) {
-           		if(board[x - 1][y] == " ") subscore += 1
-           	} else  subscore+=1;
+              if(board[x - 1][y] == " ") subscore += 1
+            } else  subscore+=1;
            if(board[x + 1]) {
-           		if(board[x + 1][y] == " ") subscore += 1
-           	} else  subscore+=1;
+              if(board[x + 1][y] == " ") subscore += 1
+            } else  subscore+=1;
            if (subscore == 2) {
-           	  	score+=1
-           	} else {
-           		return -1;
-           	}
+                score+=1
+            } else {
+              return -1;
+            }
          }
         }
 
@@ -325,7 +269,7 @@ function ScorePath(x,y,dx,dy,word){
    
     if(board[x]) {
       if (board[x][y] != " ") {
-      	return -1;
+        return -1;
       }
     }
 
@@ -381,23 +325,23 @@ function PlaceWord(x,y,dx,dy,word){
   // console.log("dx="+dx);
   // console.log("dy="+dy);
   if (x != null && y != null && dx != null && dy != null && word != null) {
-  	clues.push(new oyCrosswordClue(word.length, "", word, "", dy, x, y));
+    clues.push(new oyCrosswordClue(word.length, "", word, "", dy, x, y));
   }
   // console.log(clues.length);
   var size = word.length;
   for(var i = 0; i < size; i++) {
-   	if(board[x]) {
-      	board[x][y] = word[i];
+    if(board[x]) {
+        board[x][y] = word[i];
     }
     x = x + dx;
     y = y + dy;
   }
 
   if (dx == 1) {
-  	Horizontal.push(new Array(x,y,word));
+    Horizontal.push(new Array(x,y,word));
   }
   if(dy == 1) {
-  	Vertical.push(new Array(x,y,word));
+    Vertical.push(new Array(x,y,word));
   }
   return true;
 }
@@ -405,13 +349,13 @@ function PlaceWord(x,y,dx,dy,word){
 function PathIsClear(x,y,dx,dy,word){
   var size = word.length;
   for(var i = 0; i < size; i++) {
-	   if(board[x]) {
-	    	if (board[x][y] != " ") { 
-	    		return false; 
-	    	}
-	    		if (ScorePath(x,y,dx,dy,word) < 0) {
-	    			return false;
-	    		}
+     if(board[x]) {
+        if (board[x][y] != " ") { 
+          return false; 
+        }
+          if (ScorePath(x,y,dx,dy,word) < 0) {
+            return false;
+          }
    } else return false;
     x = x + dx;
     y = y + dy;
@@ -427,11 +371,11 @@ function PlaceAtRandom(word) {
       var y = Math.floor(Math.random() * board_width);
       var HorV = Math.floor(Math.random() * 20);
       if(HorV % 2 == 0) { 
-      		dx = 0;
-      		dy = 1;
+          dx = 0;
+          dy = 1;
       } else { 
-      		dx = 1;
-      		dy = 0;
+          dx = 1;
+          dy = 0;
       }
       keeptrying = ((trynum<board_width*board_board) && (!PathIsClear(x,y,dx,dy,word)));
       trynum++;
@@ -453,27 +397,27 @@ function PlaceAtBestCrossing(places,word){
 
 
 function BuildCrossword(){
-	ClearBoard();
-	unconnected = 0;
-	xwordlist = wordlist;  
-	var Retry = [];
-	var Retry2 = [];
-	while(xwordlist.length > 0) {
-	  var word = xwordlist.pop(); 
-	  var places = CrossablePlaces(word);
-	    if (places.length > 0) {   
-	   // document.write(word+":best("+places.length+" results)<br>");
-	     PlaceAtBestCrossing(places,word);  //so Mia could cross both Mike and Ann..
-	   } else {
-	     if (Retry.indexOf(word) == -1) {
-	     	Retry.push(word); xwordlist.push(word);
-	     } else if (Retry2.indexOf(word)==-1) {
-	     	Retry2.push(word); xwordlist.push(word);
-	     } else {
-	       PlaceAtRandom(word); 
-	   	}
-	   }
-	}  
+  ClearBoard();
+  unconnected = 0;
+  xwordlist = wordlist;  
+  var Retry = [];
+  var Retry2 = [];
+  while(xwordlist.length > 0) {
+    var word = xwordlist.pop(); 
+    var places = CrossablePlaces(word);
+      if (places.length > 0) {   
+     // document.write(word+":best("+places.length+" results)<br>");
+       PlaceAtBestCrossing(places,word);  //so Mia could cross both Mike and Ann..
+     } else {
+       if (Retry.indexOf(word) == -1) {
+        Retry.push(word); xwordlist.push(word);
+       } else if (Retry2.indexOf(word)==-1) {
+        Retry2.push(word); xwordlist.push(word);
+       } else {
+         PlaceAtRandom(word); 
+      }
+     }
+  }  
 }
 
 
@@ -490,11 +434,11 @@ function ScreenDumpCrossword() {
  
  // document.write('Down:<br>');
  for(var i = 0; i < Vertical.length; i++) {
- 	// document.write((i+1)+'. ('+Vertical[i]+')<br>');
+  // document.write((i+1)+'. ('+Vertical[i]+')<br>');
  }
  // document.write('Across:<br>');
  for(var i = 0; i < Horizontal.length; i++) {
- 	// document.write((i+1)+'. ('+Horizontal[i]+')<br>');
+  // document.write((i+1)+'. ('+Horizontal[i]+')<br>');
  }
 }
 
@@ -505,9 +449,9 @@ function CrosswordTable() {
      for(y = 0; y < board_width; y++) {
        var c = board[x][y]; 
        if( c == " ") {
-       	// document.write('<td style="background:#000">'); 
+        // document.write('<td style="background:#000">'); 
        } else {  
-       	// document.write("<td>");        
+        // document.write("<td>");        
        }
        // document.write(c);
        // document.write("</td>");  
@@ -515,14 +459,14 @@ function CrosswordTable() {
        // document.write("</tr>");  
     }
        // document.write("</table>");
-	   // document.write('Down:<br>');
-	 for(var i = 0; i < Vertical.length; i++) { 
-	 	// document.write((i+1)+'. ('+Vertical[i]+')<br>'); 
-	 }
-	 	// document.write('Across:<br>');
-	 for(var i = 0; i < Horizontal.length; i++) {
-	 	// document.write((i+1)+'. ('+Horizontal[i]+')<br>'); 
-	 }
+     // document.write('Down:<br>');
+   for(var i = 0; i < Vertical.length; i++) { 
+    // document.write((i+1)+'. ('+Vertical[i]+')<br>'); 
+   }
+    // document.write('Across:<br>');
+   for(var i = 0; i < Horizontal.length; i++) {
+    // document.write((i+1)+'. ('+Horizontal[i]+')<br>'); 
+   }
 
 
 }
@@ -534,264 +478,28 @@ function CrosswordTable() {
 BuildCrossword();
 CrosswordTable();
 
-	// console.log(clues)
+  // console.log(clues)
 
-	var oygCrosswordPuzzle = new oyCrosswordPuzzle (
-	      "5748185539682739085",
-	      "./oy-cword-1.0",
-	      "/a/a",
-	      "",
-	      "",
-	      clues,
-	      14,
-	      14
-	);
+  var oygCrosswordPuzzle = new oyCrosswordPuzzle (
+        "5748185539682739085",
+        "./oy-cword-1.0",
+        "/a/a",
+        "",
+        "",
+        clues,
+        14,
+        14
+  );
 
+oygCrosswordPuzzle.canTalkToServer = false;
 //*****************************************************************************************************
 //*****************************************************************************************************
 //****************************************END-WEAVER***************************************************
-oygCrosswordPuzzle.canTalkToServer = false;
+
 
 </script>
 
 <script src="/assets/oyEpilogue.js?body=1" type="text/javascript"></script>
-
-</body>  
-
-
-<script>
-
-  // $(function(){
-  //   $("img[src*='_s.jpg']").thumbPopup({
-  //     imgSmallFlag: "_s",
-  //     imgLargeFlag: "_l"
-  //   });
-  // });
-
-  // $(document).on('mouseover', ".oy-cell-cool", function(){
-  //     var imageUrl = $(this).css('background-image');
-  //     imageUrl2 = imageUrl.replace('url(','').replace(')','');
-  //     console.log (imageUrl2)
-  // });
-
-
-// $(document).ready(function()
-// {
-//     $('.oyCellEmpty').qtip({
-//         content: {
-//             text: "TESTSETSETSETSETSET"
-//         },
-//     });
-// });
-
-
-
-// $(document).on('mouseover', ".oyCellFull .oyCellInput .oyCellFocused .oy-cell-cool", function(){
-//   var imageUrl = $(this).css('background-image');
-//   imageUrl2 = imageUrl.replace('url(','').replace(')','');
-//     $(".oy-cell-cool").qtip({
-//         content: {
-//             text: '<img src="' + imageUrl2 + '" />'
-//     
-
-// $(document).on('mouseover', ".oyCellFull", function(){
-//   var imageUrl = $(this).css('background-image');
-//   imageUrl2 = imageUrl.replace('url(','').replace(')','');
-//     $(".oyCellFull").qtip({
-//         content: {
-//             text: '<img src="' + imageUrl2 + '" />'
-//         },
-//          style: {
-//         classes: 'qtip-dark qtip-rounded'
-//   },
-//     });
-// });
-
-
-
-// $('.selector').qtip({
-//   content: 'Hello World!'
-//   style: {s
-//     classes: 'qtip-bootstrap'
-//   }
-// })
-
-
-// $(document).on('mouseover', ".oyCellFull", function(){
-//   var imageUrl = $(this).css('background-image');
-//   imageUrl2 = imageUrl.replace('url(','').replace(')','');
-//     $(".oy-cell-cool").qtip({
-//         content: {
-//             text: 'testseteste'
-//         },
-//     });
-// });
-
-
-
-
-
-// $(document).on('mouseover', ".oy-cell-cool", function(){
-//       var imageUrl = $(this).css('background-image');
-//       imageUrl2 = imageUrl.replace('url(','\"').replace(')','\"');
-//       this.qtip( {content: imageUrl2 }
-//       console.log (imageUrl2)
-//   });
-
-
- // $(document).ready(function()
- // {
- //     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
- //     $(".oy-cell-cool".qtip({
-
- //      content: 'bad'
- //         // Your config here
- //     });
- // });
-
-
-// $('ul:last li.active').qtip({
-//    content: 'This is an active list element',
-//    show: 'mouseover',
-//    hide: 'mouseout'
-// })
-// $(function() {
-// 	$('td.oyCellFull td.oyCellInput td.oyCellFocused td.oy-cell-cool').qtip({
-// 	   content: 'This works!',
-// 	   show: 'mouseover',
-// 	   hide: 'mouseout'
-// 	})
-// });
-
-cleanUrl = function(_this) {
-	var imageUrl = $(_this).css('background-image');
-	var clean_imageUrl = imageUrl.replace('url(','').replace(')','');
-	return clean_imageUrl
-}
-
-$(document).on('mouseover', ".oyCellFull", function(){
-	var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: '<img src="' + cleanUrl(_this) + '" />',
-	    style: {
-        classes: 'qtip-dark qtip-rounded'
-  },
-	   show: 'mouseover',
-	   hide: 'mouseout'
-	})
-});
-
-$(document).on('mouseover', ".oyCellInput", function(){
-	var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: '<img src="' + cleanUrl(_this) + '" />',
-	    style: {
-        classes: 'qtip-dark qtip-rounded'
-  },
-	   show: 'mouseover',
-	   hide: 'mouseout'
-	})
-});
-
-$(document).on('mouseover', ".oyCellFocused", function(){
-	var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: '<img src="' + cleanUrl(_this) + '" />',
-	    style: {
-        classes: 'qtip-dark qtip-rounded'
-  },
-	   show: 'mouseover',
-	   hide: 'mouseout'
-	})
-});
-
-$(document).on('mouseover', ".oyCellFocused", function(){
-	var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: '<img src="' + cleanUrl(_this) + '" />',
-	    style: {
-        classes: 'qtip-dark qtip-rounded'
-  },
-	   show: 'mouseover',
-	   hide: 'mouseout'
-	})
-});
-
-$(document).on('mouseover', ".info", function(){
-	var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: 'Do I reallly have to tell you how to tell you how to solve a crossword puzzle?',
-	    style: {
-        classes: 'qtip-dark qtip-rounded'
-  },
-	   show: 'mouseover',
-	   hide: 'mouseout'
-	})
-});
-
-$(document).on('mouseover', ".high_score", function(){
-	
-  var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: 'coming soon',
-	    style: {
-        classes: 'qtip-dark .qtip-content'
-  },
-	   show: 'mouseover',
-	   hide: 'mouseout'
-	})
-});
-
-// ************************ Parallax ********************************
-// $(document).ready(function() {
-//   $(window).scroll(function(e){
-//     parallax();
-//   });
-//   function parallax() {
-//     var scrolled = $(window).scrollTop();
-//     $('.bg').css('top', -(scrolled * 0.15) + 'px');
-//   }
-
-
-
-</script>
-<!-- 
-<script>
-
-function repos(imgs) {
-    imgs.each(function (i, o) {
-        var imgw = $(o).width()
-        var boxw = $(o).parent('div').width()
-        var imgh = $(o).height()
-        var boxh = $(o).parent('div').outerHeight()
-
-        if (imgw > boxw) {
-            $(o).css('left', ((imgw / 2) - (boxw / 2)) * -1)
-        } else {
-            $(o).css('left', 0)
-        }
-
-        if (imgh > boxh) {
-            $(o).css('top', ((imgh / 2) - (boxh / 2)) * -1)
-        } else {
-            $(o).css('top', 0)
-        }
-
-    })
-}
-$(window).resize(function () {
-    repos($('.oyCellFull img'))
-})
-
-</script>
- -->
-
 
 
 

@@ -10,9 +10,10 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
+// = require jquery
+// = require jquery_ujs
 // = require progress_bar.js
+// = require weaver.js
 // = require jquery.qtip.js
 // = require oyPrologue.js
 // = require oyJsrAjax.js
@@ -22,5 +23,6 @@
 // = require oyServer.js
 // = require oySign.js
 // = require oyMisc.js
-// = require weaver.js
 // = require oyEpilogue.js
+// = require qtip.js
+// = require_tree .

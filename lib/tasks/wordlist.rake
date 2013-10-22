@@ -9,7 +9,7 @@ namespace :wordlist do
         Photo.delete_all
         Word.delete_all
 
-        puts "Flossword is being seeded. This may take a few moments"
+        puts "Flosswords is being seeded. This may take a few moments"
 
 
         # categories = ["front", "sports"]
