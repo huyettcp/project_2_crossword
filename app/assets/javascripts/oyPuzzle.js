@@ -309,9 +309,10 @@ oyCrosswordPuzzle.prototype.fillHorz = function(clue, idx) {
 
 
 oyCrosswordPuzzle.prototype.fillIn = function(cell, clue, x, y, i, j, idx, dir) {
-	
+
 		cell.style.backgroundImage="url("+return_data[j].photos[i]+")";
 		cell.style.backgroundSize="46px 46px";
+
 		
 
 		cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
