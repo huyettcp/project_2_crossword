@@ -51,11 +51,10 @@ onLoad = function() {
       $pics.fadeIn(1000);
       // Run masonry on the image containers for super shnazzy layout
     } else {
-
       // Move progress bar
-      //$progress_bar.css('width', ((done / $images.length) * 100) + '%');
+      // $progress_bar.css('width', ((done / $images.length) * 100) + '%');
       // Move progress bar smoothly
-      //$progress_bar.stop().animate({width: ((done / count) * 100) + '%'}, 300);
+      $progress_bar.stop().animate({width: ((done / count) * 100) + '%'}, 300);
     }
   }
 
@@ -115,13 +114,13 @@ startLoad = function() {
       // Fade out the progress bar
       $progress_bar.fadeOut(500);
       // Fade in the loaded images
-      $pics.fadeIn(5000);
+      $pics.fadeIn(1000);
       // Run masonry on the image containers for super shnazzy layout
     } else {
       // Move progress bar
-      //$progress_bar.css('width', ((done / $images.length) * 100) + '%');
+      // $progress_bar.css('width', ((done / $images.length) * 100) + '%');
       // Move progress bar smoothly
-      // $progress_bar.stop().animate({width: ((done / count) * 100) + '%'}, 5000);
+      $progress_bar.stop().animate({width: ((done / count) * 100) + '%'}, 300);
     }
   }
 
