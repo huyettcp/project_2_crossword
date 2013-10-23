@@ -14,7 +14,6 @@
 // = require jquery_ujs
 // = require jquery.qtip.js
 // = require qtip.js
-
 // = require oyPrologue.js
 // = require oyJsrAjax.js
 // = require oyClue.js
