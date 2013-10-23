@@ -254,6 +254,7 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 			} 
 		});
 	}
+
 oyCrosswordPuzzle.prototype.renderHorz = function(clue){
 	databaseRenderGrab(function(data){
 		for (var i = 0; i < clue.len; i++){	
@@ -316,8 +317,6 @@ oyCrosswordPuzzle.prototype.fillIn = function(cell, clue, x, y, i, j, idx, dir) 
 		
 
 		cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
-
-	
 }
 
 //******************************************************************************************
