@@ -11,9 +11,10 @@ $(document).on('mouseover', ".oyCellFull", function(){
 	   content: '<img src="' + cleanUrl(_this) + '" />',
 	    style: {
         classes: 'qtip-dark qtip-rounded'
-  },
-	   show: 'mouseover',
-	   hide: 'mouseout'
+  	},
+	  	show: {
+      		ready: true
+    	}
 	})
 });
 
@@ -25,8 +26,9 @@ $(document).on('mouseover', ".oyCellInput", function(){
 	    style: {
         classes: 'qtip-dark qtip-rounded'
   },
-	   show: 'mouseover',
-	   hide: 'mouseout'
+	  show: {
+      		ready: true
+    	}
 	})
 });
 
@@ -38,8 +40,9 @@ $(document).on('mouseover', ".oyCellFocused", function(){
 	    style: {
         classes: 'qtip-dark qtip-rounded'
   },
-	   show: 'mouseover',
-	   hide: 'mouseout'
+	   show: {
+      		ready: true
+    	}
 	})
 });
 
@@ -51,8 +54,9 @@ $(document).on('mouseover', ".oyCellFocused", function(){
 	    style: {
         classes: 'qtip-dark qtip-rounded'
   },
-	   show: 'mouseover',
-	   hide: 'mouseout'
+	   show: {
+      		ready: true
+    	}
 	})
 });
 
@@ -64,8 +68,9 @@ $(document).on('mouseover', ".info", function(){
 	    style: {
         classes: 'qtip-dark qtip-rounded'
   },
-	   show: 'mouseover',
-	   hide: 'mouseout'
+	  show: {
+      		ready: true
+    	}
 	})
 });
 
@@ -78,7 +83,8 @@ $(document).on('mouseover', ".high_score", function(){
 	    style: {
         classes: 'qtip-dark .qtip-content'
   },
-	   show: 'mouseover',
-	   hide: 'mouseout'
+	   show: {
+      		ready: true
+    	}
 	})
 });

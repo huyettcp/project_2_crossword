@@ -220,7 +220,7 @@ databaseGrab = function(oThis) {
 			
 			oThis.footer.stateOk("");
 
-			startLoad();	
+			onLoad();	
 		}
 	});
 	// return return_data;
@@ -235,7 +235,7 @@ databaseRenderGrab = function(fnc) {
 		success: function(data) {
 			return_data = data
 			fnc(data)
-			onLoad();
+			//onLoad();
 			}	
 	});
 	return return_data;
@@ -314,7 +314,6 @@ oyCrosswordPuzzle.prototype.fillIn = function(cell, clue, x, y, i, j, idx, dir) 
 		cell.style.backgroundImage="url("+return_data[j].photos[i]+")";
 		cell.style.backgroundSize="46px 46px";
 
-		
 
 		cell.innerHTML = "<input id='oyInput" + x + "_" + y + "' class='oyCellInput' autocomplete='off' type='text' size='1' maxlength='1' value=''>";
 }
