@@ -12,15 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-// = require progress_bar.js
-// = require jquery.qtip.js
-// = require oyPrologue.js
-// = require oyJsrAjax.js
-// = require oyClue.js
-// = require oyMenu.js
-// = require oyPuzzle.js
-// = require oyServer.js
-// = require oySign.js
-// = require oyMisc.js
-// = require weaver.js
-// = require oyEpilogue.js
+//= require jquery.qtip.js
+//= require qtip.js
+//= require progress_bar.js
+//= require oyPrologue.js
+//= require oyJsrAjax.js
+//= require oyClue.js
+//= require oyMenu.js
+//= require oyPuzzle.js
+//= require oyServer.js
+//= require oySign.js
+//= require oyMisc.js
+//= require oyEpilogue.js
+
+
+
+

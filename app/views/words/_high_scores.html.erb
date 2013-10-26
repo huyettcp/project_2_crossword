@@ -1,0 +1,45 @@
+
+<script>
+//var word_list = <%= @words_array.to_json.html_safe %>
+
+$(function(){
+$.ajax({
+  url: '/highscores',
+  method: 'GET',
+  dataType: 'json',
+
+  }).done(function(data){
+    int = x 
+    x = 0
+$(document).on('mouseover', ".high_score", function(){
+  var _this = this;
+  $(this).qtip({
+     overwrite: false,
+     content:
+    while( x < 10 ){
+    
+      $("#high_score").append("<tr><td>" + data[x].game_score + "  :  " + "</td><td>" + data[x].user_name + "</td></tr>");
+      x++;
+    }
+
+  })
+})
+
+
+  
+</script>
+
+
+
+<!-- $(document).on('mouseover', ".high_score", function(){
+  var _this = this;
+  $(this).qtip({
+     overwrite: false,
+     content: 'Coming soon...',
+      style: {
+        classes: 'qtip-dark .qtip-content'
+  },
+     show: 'mouseover',
+     hide: 'mouseout'
+  })
+}); -->

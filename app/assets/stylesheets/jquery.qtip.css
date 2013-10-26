@@ -10,6 +10,14 @@
  * Plugins: tips modal viewport svg imagemap ie6
  * Styles: basic css3
  */
+
+.info {
+	color: #29d6bb;
+	font-size: 15px;
+	margin-left: 15px;
+	font-family: arial;
+}
+
 .qtip{
 	position: absolute;
 	left: -28000px;
@@ -165,6 +173,7 @@
 	background-color: #505050;
 	border-color: #303030;
 	color: #f3f3f3;
+
 }
 
 	.qtip-dark .qtip-titlebar{
@@ -266,6 +275,7 @@
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
+	text-size: 30px;
 }
 
 .qtip-rounded .qtip-titlebar{

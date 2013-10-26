@@ -9,7 +9,7 @@ namespace :wordlist do
         Photo.delete_all
         Word.delete_all
 
-        puts "Welcome to the Crossword"
+        puts "Flosswords is being seeded. This may take a few moments"
 
 
         # categories = ["front", "sports"]
@@ -20,7 +20,7 @@ namespace :wordlist do
 
 
         
-        exclude_words = ["a", "and", "are", "but", "it", "I", "you", "he", "they", "we", "she", "who", "them", "me", "him", "one", "her", "us", "something", "nothing", "anything", "himself", "everything", "someone", "themselves", "everyone", "itself", "anyone", "myself",'the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he','as','you','do','at','this','but','his','by','from','they','we','say','her','she','or','an','will','my','one','all','would','there','their','what','so','up','out','if','about','who','get','which','go','me','when','make','can','like','time','no','just','him','know','take','person','into','year','your','good','some','could','them','see','other','than','then','now','look','only','come','its','over','think','also','back','after','use','two','how','our','work','first','well','way','even','new','want','because','any','these','give','day','most','us', 'should', 'exceed', 'puts']
+        exclude_words = ["a", "and", "are", "but", "it", "I", "you", "he", "they", "we", "she", "who", "them", "me", "him", "one", "her", "us", "something", "nothing", "anything", "himself", "everything", "someone", "themselves", "everyone", "itself", "anyone", "myself",'the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he','as','you','do','at','this','but','his','by','from','they','we','say','her','she','or','an','will','my','one','all','would','there','their','what','so','up','out','if','about','who','get','which','go','me','when','make','can','like','time','no','just','him','know','take','person','into','year','your','good','some','could','them','see','other','than','then','now','look','only','come','its','over','think','also','back','after','use','two','how','our','work','first','well','way','even','new','want','because','any','these','give','day','most','us', 'should', 'exceed', 'puts', 'almost', 'enough']
         exclude_names = ["James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Charles", "Thomas", "Christopher", "Daniel", "Matthew", "Donald", "Anthony", "Paul", "Mark", "George", "Steven", "Kenneth", "Andrew", "Edward", "Brian", "Joshua", "Kevin", "Ronald", "Timothy", "Jason", "Jeffrey", "Gary", "Ryan", "Nicholas", "Eric", "Stephen","Jacob","Larry","Frank","Jonathan","Scott","Justin","Raymond","Brandon","Gregory","Samuel","Patrick","Benjamin","Jack","Dennis","Jerry","Alexander","Tyler","Douglas","Henry","Peter","Walter","Aaron","Jose","Adam","Harold","Zachary","Nathan","Carl","Kyle","Arthur","Gerald","Lawrence","Roger","Albert","Keith","Jeremy","Terry","Joe","Sean","Willie","Jesse","Ralph","Billy","Austin","Bruce","Christian","Roy","Bryan","Eugene","Louis","Harry","Wayne","Ethan","Jordan","Russell","Alan","Philip","Randy","Juan","Howard","Vincent","Bobby","Dylan","Johnny","Phillip","Craig"]
         exclude_girls_names = ["Mary", "Patricia", "Elizabeth", "Jennifer","Linda","Barbara","Susan","Margaret","Jessica","Dorothy","Sarah","Karen","Nancy","Betty","Lisa","Sandra","Helen","Donna","Ashley","Kimberly","Carol","Michelle","Amanda","Emily","Melissa","Laura","Deborah","Stephanie","Rebecca","Sharon","Cynthia","Ruth","Kathleen","Anna","Shirley","Amy","Angela","Virginia","Brenda","Pamela","Catherine","Katherine","Nicole","Christine","Janet","Debra","Carolyn","Samantha","Rachel","Heather","Maria","Diane","Frances","Joyce","Julie","Martha","Joan","Evelyn","Kelly","Christina","Emma","Lauren","Alice","Judith","Marie","Doris","Ann","Jean","Victoria","Cheryl","Megan","Kathryn","Andrea","Jacqueline","Gloria","Teresa","Janice","Sara","Rose","Julia","Hannah","Theresa","Judy","Mildred","Grace","Beverly","Denise","Marilyn","Amber","Danielle","Brittany","Diana","Jane","Lori","Olivia","Tiffany","Kathy","Tammy","Crystal","Madison"]
         sampler = (0..30).to_a;
@@ -215,7 +215,9 @@ namespace :wordlist do
         # google_arr = []
         # google_arr.push google_news_text.split(" ")
         # google_arr = google_arr.flatten.uniq
-        # google_arr.delete_if { |x| x.length <= 10 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
+
+        # google_arr.delete_if { |x| x.length <= 4 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
+
         # google_arr = google_arr.sample(150)
         # count_google = google_arr.length
         # google_arr_index = 0
@@ -235,10 +237,12 @@ namespace :wordlist do
         #             secret = photos_google['photos']['photo'][counter_google]['secret']
         #             imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
                   
+
         #                 google_word.photos << Photo.create(url: imgUrl)
                     
 
         #             end
+
         #           end
         #         counter_google += 1
         #         end
@@ -254,20 +258,20 @@ namespace :wordlist do
         front_arr = []
         front_arr.push front_story_text.split(" ")
         front_arr = front_arr.flatten.uniq
-        front_arr.delete_if { |x| x.length <= 4 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
-        front_arr = front_arr.sample(150)
+        front_arr.delete_if { |x| x.length <= 3 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
+        front_arr = front_arr.sample(100)
         count_front = front_arr.length
         front_arr_index = 0
 
     
-        
-        
         while front_arr_index < count_front
 
             photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
               counter_front = 0
               front_word = Word.create(name: front_arr[front_arr_index])
-              unless photos_front.empty?
+              
+            unless photos_front.empty?
+                
                 while counter_front < front_arr[front_arr_index].length
                   if photos_front['photos'] && photos_front['photos']['photo'] && photos_front['photos']['photo'][counter_front]
                     farmId = photos_front['photos']['photo'][counter_front]['farm']
@@ -275,14 +279,20 @@ namespace :wordlist do
                     id = photos_front['photos']['photo'][counter_front]['id'];
                     secret = photos_front['photos']['photo'][counter_front]['secret']
                     imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
-                  
-                 
-                        front_word.photos << Photo.create(url: imgUrl)
                 
+                    puts imgUrl
+                    puts imgUrl.length
+                    
+                    front_word.photos << Photo.create(url: imgUrl)
+
                   end
-                counter_front += 1
+                  counter_front += 1
                 end
-          end
+
+                if front_word.photos.empty?
+                    front_word.destroy
+                end
+            end
           front_arr_index += 1
         end
 
