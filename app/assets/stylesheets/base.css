@@ -31,7 +31,8 @@ body { filter: grayscale(50%) }
 }
 */
 body {
-	background: url('classy_fabric.png');
+	background-color: #ffffff;
+	/*background: url('classy_fabric.png');*/
 /*	background-image: url('newspaper2bw.jpg'); 
   background-size: 100%;
 	background-color: #2B2A2B;
