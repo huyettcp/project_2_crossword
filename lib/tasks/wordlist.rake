@@ -257,8 +257,6 @@ namespace :wordlist do
         front_arr_index = 0
 
     
-        
-        
         while front_arr_index < count_front
 
             photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")

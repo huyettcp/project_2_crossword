@@ -10,20 +10,20 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-// = require jquery
-// = require jquery_ujs
-// = require jquery.qtip.js
-// = require qtip.js
-// = require progress_bar.js
-// = require oyPrologue.js
-// = require oyJsrAjax.js
-// = require oyClue.js
-// = require oyMenu.js
-// = require oyPuzzle.js
-// = require oyServer.js
-// = require oySign.js
-// = require oyMisc.js
-// = require oyEpilogue.js
+//= require jquery
+//= require jquery_ujs
+//= require jquery.qtip.js
+//= require qtip.js
+//= require progress_bar.js
+//= require oyPrologue.js
+//= require oyJsrAjax.js
+//= require oyClue.js
+//= require oyMenu.js
+//= require oyPuzzle.js
+//= require oyServer.js
+//= require oySign.js
+//= require oyMisc.js
+//= require oyEpilogue.js
 
 
 
