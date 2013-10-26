@@ -215,7 +215,9 @@ namespace :wordlist do
         # google_arr = []
         # google_arr.push google_news_text.split(" ")
         # google_arr = google_arr.flatten.uniq
+
         # google_arr.delete_if { |x| x.length <= 4 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
+
         # google_arr = google_arr.sample(150)
         # count_google = google_arr.length
         # google_arr_index = 0
@@ -235,7 +237,12 @@ namespace :wordlist do
         #             secret = photos_google['photos']['photo'][counter_google]['secret']
         #             imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
                   
-        #             google_word.photos << Photo.create(url: imgUrl)
+
+        #                 google_word.photos << Photo.create(url: imgUrl)
+                    
+
+        #             end
+
         #           end
         #         counter_google += 1
         #         end
@@ -272,10 +279,12 @@ namespace :wordlist do
                     id = photos_front['photos']['photo'][counter_front]['id'];
                     secret = photos_front['photos']['photo'][counter_front]['secret']
                     imgUrl = "http://farm#{farmId}.staticflickr.com/#{serverId}/#{id}_#{secret}.jpg"
+                
                     puts imgUrl
                     puts imgUrl.length
                     
                     front_word.photos << Photo.create(url: imgUrl)
+
                   end
                   counter_front += 1
                 end
