@@ -116,14 +116,16 @@ filter: blur(.03px) grayscale(100%);
 	font-size: 15px;
 	padding-left: 20px;
 	padding-top: 10px;
-	margin-left: 50px;
+	margin-left: 30px;
 	font-family: arial;
 }
 
 .high_score {
 	color: #29d6bb;
 	font-size: 15px;
-	margin-left: 15px;
+	padding-left: 20px;
+	padding-top: 10px;
+	margin-left: 30px;
 	font-family: arial;
 }
 
@@ -272,7 +274,7 @@ div img {
 	margin-top: 4px;
 	margin-bottom: 4px;
 	color: #2B2A2B;
-	background-color: #29D6BB;
+	background-color: lightgrey;
 	font-size: 14px;
 	width: 100px;
 	/*width: 100px;*/

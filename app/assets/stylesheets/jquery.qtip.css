@@ -12,7 +12,7 @@
  */
 
 .sidebar_items {
-	color: #29d6bb;
+	color: #ffffff;
 	font-size: 15px;
 	margin-left: 15px;
 	font-family: arial;
@@ -39,6 +39,18 @@
 
 	box-shadow: none;
 	padding-right: 0px;
+}
+
+.qtip-info div{
+	max-width: 450px;
+	min-width: 200px;
+
+	max-height: 450px;
+	min-height: 200px;
+	
+	text-align: left;
+	font-size: 15px;
+	line-height: 0px;
 }
 
 	.qtip-content{

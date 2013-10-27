@@ -63,26 +63,27 @@ $(document).on('mouseover', ".oyCellFocused", function(){
 });
 
 $(document).on('mouseover', ".info", function(){
-	var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: '<div><p>Instructions coming</p><br><p>soon</p></div>',
-	   style: {
-          classes: 'qtip-light .qtip-content'
+  var _this = this;
+  $(this).qtip({
+     overwrite: false,
+     content: '<div><p>Flosswords is a visual crossword puzzle generated from</p><br><p> up-to-the-minute New York Times headlines and Flickr</p><br><p>photos. The object of the game is to complete the puzzle</p><br><p>in the shortest amount of time and achieve the highest</p><br><p>score. All photos in a row represent a single word. Hover</p><br><p>over a picture to view it close-up. Type your answers</p><br><p>directly in the grid, then click "Check answer" to see if</p><br><p>you are correct. Each letter in a word earns you one</p><br><p>point.Click "Reveal" if you are stumped, however be</p><br><p>warned that you will lose points!</p></div>',
+     style: {
+          classes: 'qtip-info qtip-light .qtip-content'
       },
-	  show: {
-      	  ready: true
-    	},
+    show: {
+          ready: true
+      },
       position: {
           my: 'center',
           at: 'center',
           target: $(window)
         },
        show: {
-             modal: true
+          ready: true,
+            modal: true
          },
        hide: true
-	})
+  })
 });
 
 $(function() {
