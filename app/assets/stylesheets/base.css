@@ -69,6 +69,9 @@ body {
     /*background-color: Red;*/
     float: left;
     width: 300px;
+    height: 100%;
+    padding-bottom: 1000px;
+    background-color: lightgrey;
 }
 
 .right {
@@ -112,7 +115,7 @@ filter: blur(.03px) grayscale(100%);
 }
 
 .info {
-	color: #29d6bb;
+	color: #425F70;
 	font-size: 15px;
 	padding-left: 20px;
 	padding-top: 10px;
@@ -121,7 +124,7 @@ filter: blur(.03px) grayscale(100%);
 }
 
 .high_score {
-	color: #29d6bb;
+	color: #425F70;
 	font-size: 15px;
 	padding-left: 20px;
 	padding-top: 10px;
@@ -219,7 +222,7 @@ div img {
 	/*text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;*/
 	clear: both;
 	float: left;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 	padding-left: 4px;
 	padding-right: 4px;
 	padding-top: 4px;
@@ -264,7 +267,7 @@ div img {
 .oyMenuAction {		
 	clear: both;
 	float: left;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 	padding-left: 14px;
 	padding-right: 4px;
 	padding-top: 4px;
@@ -289,7 +292,7 @@ div img {
 	clear: both;
 	float: left;
 	width: 100px;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 	padding-left: 4px;
 	padding-right: 4px;
 	padding-top: 4px;
@@ -303,7 +306,7 @@ div img {
 .oyMenuActionNone{
 	padding-left: 4px;
 	padding-right: 4px; 
-	color: #6DDDCB; 
+	color: #425F70; 
 	font-size: smaller;
 	text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
 }
@@ -380,12 +383,12 @@ A.oyMenuAction:hover {
 	/*border-collapse: collapse;*/
 	width: 46px; 
 	height: 46px;
-	-webkit-border-radius: 5px;
+	/*-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 5px;*/
 	overflow:hidden;
-	padding: 0px;
-	margin: 0px;
+	padding: -5px;
+	margin: -5px;
 	border-collapse: collapse;
 /*	filter: saturate(80%);
 	-webkit-filter: saturate(80%);
@@ -404,9 +407,9 @@ A.oyMenuAction:hover {
 	visibility: hidden;
 	width: 46px;
 	height: 46px;
-	-webkit-border-radius: 5px;
+	/*-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 5px;*/
 	overflow:hidden;
 	padding: 0px;
 	margin: 0px;
@@ -422,9 +425,9 @@ A.oyMenuAction:hover {
 	text-align: center;			
 	width: 46px; 
 	height: 46px;
-	-webkit-border-radius: 5px;
+	/*-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 5px;*/
 	overflow:hidden;
 	padding: 0px;
 	margin: 0px;
@@ -484,9 +487,9 @@ A.oyMenuAction:hover {
 	font-family: Courier New; 				
 	font-weight: bold;
 	text-align: center;	
-	-webkit-border-radius: 5px;
+	/*-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;			
+	border-radius: 5px;		*/	
 	width: 46px; 
 	height: 46px;
 	overflow:hidden;
@@ -501,10 +504,9 @@ A.oyMenuAction:hover {
 	font-family: Courier New; 				
 	font-weight: bold;
 	text-align: center;	
-	b
-	-webkit-border-radius: 5px;
+	/*-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;			
+	border-radius: 5px;			*/
 	overflow:hidden;
 
 	width: 46px; 
@@ -519,9 +521,9 @@ A.oyMenuAction:hover {
 	font-family: Courier New; 				
 	font-weight: bold;
 	text-align: center;	
-	-webkit-border-radius: 5px;
+	/*-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;			
+	border-radius: 5px;*/			
 	overflow:hidden;
 	
 	width: 46px; 

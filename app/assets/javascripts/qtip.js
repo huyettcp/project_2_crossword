@@ -12,7 +12,7 @@ $(document).on('mouseover', ".oyCellFull", function(){
 	   overwrite: false,
 	   content: '<img src="' + cleanUrl(_this) + '" />',
 	    style: {
-        classes: 'qtip-dark qtip-rounded'
+        classes: 'qtip-dark'
   	},
 	  	show: {
       		ready: true
@@ -26,7 +26,7 @@ $(document).on('mouseover', ".oyCellInput", function(){
 	   overwrite: false,
 	   content: '<img src="' + cleanUrl(_this) + '" />',
 	    style: {
-        classes: 'qtip-dark qtip-rounded'
+        classes: 'qtip-dark'
   },
 	  show: {
       		ready: true
@@ -40,7 +40,7 @@ $(document).on('mouseover', ".oyCellFocused", function(){
 	   overwrite: false,
 	   content: '<img src="' + cleanUrl(_this) + '" />',
 	    style: {
-        classes: 'qtip-dark qtip-rounded'
+        classes: 'qtip-dark'
   },
 	   show: {
       		ready: true
@@ -54,7 +54,7 @@ $(document).on('mouseover', ".oyCellFocused", function(){
 	   overwrite: false,
 	   content: '<img src="' + cleanUrl(_this) + '" />',
 	    style: {
-        classes: 'qtip-dark qtip-rounded'
+        classes: 'qtip-dark'
   },
 	   show: {
       		ready: true

@@ -24,11 +24,12 @@
 	top: -28000px;
 	display: none;
 
-	max-width: 280px;
+	max-width: 425px;
 	min-width: 280px;
 
-	min-height: 200px;
-	max-height: 200px;
+	max-height: 425px;
+	min-height: 280px;
+	
 
 
 	font-size: 25px;
@@ -42,12 +43,7 @@
 }
 
 .qtip-info div{
-	max-width: 450px;
-	min-width: 200px;
-
-	max-height: 450px;
-	min-height: 200px;
-	
+	width: 500px;
 	text-align: left;
 	font-size: 15px;
 	line-height: 0px;
