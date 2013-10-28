@@ -6,33 +6,47 @@ cleanUrl = function(_this) {
 	return clean_imageUrl
 }
 
-$(document).on('mouseover', ".oyCellFull", function(){
-	var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: '<img src="' + cleanUrl(_this) + '" />',
-	    style: {
+// $(document).on('mouseover', ".oyCellFull", function(){
+// 	var _this = this;
+// 	$(this).qtip({
+// 	   overwrite: false,
+// 	   content: '<img src="' + cleanUrl(_this) + '" />',
+// 	    style: {
+//         classes: 'qtip-dark'
+//   	},
+// 	  	show: {
+//       		ready: true
+//     	}
+// 	})
+// });
+
+$(document).on('mouseover', ".oyCellActive", function(){
+  var _this = this;
+  $(this).qtip({
+     overwrite: false,
+     content: '<img src="' + cleanUrl(_this) + '" />',
+      style: {
         classes: 'qtip-dark'
-  	},
-	  	show: {
-      		ready: true
-    	}
-	})
+    },
+      show: {
+          ready: true
+      }
+  })
 });
 
-$(document).on('mouseover', ".oyCellInput", function(){
-	var _this = this;
-	$(this).qtip({
-	   overwrite: false,
-	   content: '<img src="' + cleanUrl(_this) + '" />',
-	    style: {
-        classes: 'qtip-dark'
-  },
-	  show: {
-      		ready: true
-    	}
-	})
-});
+// $(document).on('mouseover', ".oyCellInput", function(){
+// 	var _this = this;
+// 	$(this).qtip({
+// 	   overwrite: false,
+// 	   content: '<img src="' + cleanUrl(_this) + '" />',
+// 	    style: {
+//         classes: 'qtip-dark'
+//   },
+// 	  show: {
+//       		ready: true
+//     	}
+// 	})
+// });
 
 $(document).on('mouseover', ".oyCellFocused", function(){
 	var _this = this;
@@ -48,7 +62,7 @@ $(document).on('mouseover', ".oyCellFocused", function(){
 	})
 });
 
-$(document).on('mouseover', ".oyCellFocused", function(){
+$(document).on('mouseover', ".oy-cell-cool", function(){
 	var _this = this;
 	$(this).qtip({
 	   overwrite: false,
