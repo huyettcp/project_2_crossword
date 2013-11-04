@@ -5,18 +5,34 @@
 //*****************************************************************************************************
 //*****************************************************************************************************
 
-  var board = [];
-  var wordlist = word_list;
 
+
+
+
+ function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor(i * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+  }
+
+
+  var board = [];
+  // var wordlist = word_list;
+  var wordlist= getRandomSubarray(word_list, 30);
   var board_width = 14;
   var board_board = 14;
-
   var Horizontal = [];
   var Vertical = [];
   var clues = [];
+  var crossings = 0
+
 
    
-
   // MG - builds the empty board.
   function ClearBoard(){
      board = [];
@@ -263,8 +279,9 @@
 
   function BuildCrossword(){
     ClearBoard();
-    unconnected = 0;
-    xwordlist = wordlist;  
+    // unconnected = 0;
+    xwordlist = wordlist; 
+    console.log(xwordlist.sort());
     var Retry = [];
     var Retry2 = [];
     while(xwordlist.length > 0) {
@@ -273,6 +290,8 @@
         if (places.length > 0) {   
        // document.write(word+":best("+places.length+" results)<br>");
          PlaceAtBestCrossing(places,word);  //so Mia could cross both Mike and Ann..
+         crossings++;
+         console.log(crossings);
        } else {
          if (Retry.indexOf(word) == -1) {
           Retry.push(word); xwordlist.push(word);
@@ -331,9 +350,8 @@
       // document.write('Across:<br>');
      for(var i = 0; i < Horizontal.length; i++) {
       // document.write((i+1)+'. ('+Horizontal[i]+')<br>'); 
+
      }
-
-
   }
 
   // console.log(oygCrosswordPuzzle);

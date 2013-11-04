@@ -7,7 +7,7 @@ class WordsController < ApplicationController
       @words.each do |word_obj|
       @words_array_large << word_obj.name
     end
-      @words_array = @words_array_large.sample(30)
+      @words_array = @words_array_large.sample(100)
   end
 
   def show
