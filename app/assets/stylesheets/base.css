@@ -32,12 +32,14 @@ body { filter: grayscale(50%) }
 */
 body {
 	background-color: #ffffff;
+	font-family: Arial;
 	/*background: url('classy_fabric.png');*/
 /*	background-image: url('newspaper2bw.jpg'); 
   background-size: 100%;
 	background-color: #2B2A2B;
 	color: white;
-	font-family: Arial;*/
+
+	*/
 
 	font-size: 30px;
 	height: 100%;
@@ -46,6 +48,12 @@ body {
 #progress-bar {
 	color: #ffffff;
 	z-index: 99999;
+}
+
+
+h2 {
+	font-size: 20px;
+	text-align: center;
 }
 
 .bg {
@@ -72,6 +80,12 @@ body {
     height: 100%;
     padding-bottom: 1000px;
     background-color: lightgrey;
+    font: Arial;
+}
+
+.left img {
+	/*	position: center;*/
+		margin-left: auto;
 }
 
 .right {
