@@ -195,7 +195,6 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 			}	
 		}
 		 
-		
 		var oThis = this;
 		this.addAction(target, "Check <b>All</b>", "Checking All...", "chkll",
 			function(){				
@@ -470,7 +469,6 @@ oyCrosswordMenu.prototype.checkWordStatus = function(clue){
 		} else {		
 			status.buf += value;
 		}
-		
 		if (value != clue.answer.charAt(i).toUpperCase()){
 			status.wrong++; 
 		}
@@ -504,7 +502,7 @@ oyCrosswordMenu.prototype.askNickName = function(score){
 	
 	if (this.name != null && this.name != ""){  
 		oySetCookieForPeriod("OYG_NICK_NAME", this.name.substring(0,3).toUpperCase(), 1000*60*60*24*360, "/");
-		return result.substring(0,3);
+		return result.substring(0,3).toUpperCase();
 	} else {  
 		this.name = "Enter initials";
 		return false; 
