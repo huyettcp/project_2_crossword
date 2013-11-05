@@ -24,5 +24,3 @@ production:
   host: localhost
   username: ubuntu
   password: ubuntu
-
-
