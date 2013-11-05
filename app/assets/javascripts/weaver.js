@@ -322,7 +322,7 @@
      }
   }
 
-  while(crossings < 16){
+  while(crossings < 15){
     BuildCrossword();
     }
   CrosswordTable(); 
