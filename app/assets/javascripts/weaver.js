@@ -1,9 +1,4 @@
 
-// var crossings = 0
-
-// RunWeaver();
-
-// function RunWeaver(){
  
 //********************************************WEAVER***************************************************
 //*****************************************************************************************************
@@ -279,7 +274,6 @@
         if (places.length > 0) {   
        // document.write(word+":best("+places.length+" results)<br>");
          PlaceAtBestCrossing(places,word);  //so Mia could cross both Mike and Ann..
-         // scrossings++
        } else {
          if (Retry.indexOf(word) == -1) {
           Retry.push(word); xwordlist.push(word);
@@ -372,4 +366,3 @@
   oygCrosswordPuzzle.canTalkToServer = false;
 
 
-// }
