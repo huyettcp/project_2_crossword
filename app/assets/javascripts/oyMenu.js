@@ -540,7 +540,8 @@ oyCrosswordMenu.prototype.revealWord = function(clue){
 	clue.matched = false; 	
  
 	var status = this.checkWordStatus(clue);	  	
-	this.footer.stateOk("Revealed [" + status.buf + "]!");
+	this.footer.stateError("Revealed [" + status.buf + "]!");
+			setTimeout('$("#oygState").hide()',3000);
 }  
 
 oyCrosswordMenu.prototype.checkAll = function(){

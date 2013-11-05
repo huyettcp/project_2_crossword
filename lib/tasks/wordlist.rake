@@ -75,7 +75,7 @@ namespace :wordlist do
         google_arr.push google_news_text.split(" ")
         google_arr = google_arr.flatten.uniq
 
-        google_arr.delete_if { |x| x.length <= 5 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
+        google_arr.delete_if { |x| x.length <= 2 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
 
         google_arr = google_arr.sample(200)
         count_google = google_arr.length
