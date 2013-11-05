@@ -258,7 +258,7 @@ namespace :wordlist do
         front_arr = []
         front_arr.push front_story_text.split(" ")
         front_arr = front_arr.flatten.uniq
-        front_arr.delete_if { |x| x.length <= 3 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
+        front_arr.delete_if { |x| x.length <= 5 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
         front_arr = front_arr.sample(200)
         count_front = front_arr.length
         front_arr_index = 0
