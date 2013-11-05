@@ -2,7 +2,7 @@ html, body {
  /* background: #000000;*/
 }
 #progress-bar {
-  background-color: #29D6BB;
+  background-color: #E82C0C;
   height: 30px;
   left: 0px;
   position: absolute;
@@ -13,7 +13,7 @@ html, body {
 #container {
   margin: auto;
   position: relative;
-  width: 940px;
+  width: 400px;
 }
 .image {
   float: left;
