@@ -492,22 +492,21 @@ oyCrosswordMenu.prototype.askNickName = function(score){
 
 	var oldName = this.name;
 	this.name = window.prompt(  
-		score + "Enter your NICK NAME or E-MAIL.\n" +  
-		"Without e-mail, the score is recorded, but you aren't eligible for the prizes.",
-		this.name 
+		score + "Enter your initials.",
+		this.name.substring(0,3).toUpperCase()
 	);
 	 
 	var result = true; 
 	if (this.name == null || this.name == ""){
-		this.name = oldName;     
+		this.name = oldName.substring(0,3).toUpperCase();     
 		result = false; 
 	} 
 	
 	if (this.name != null && this.name != ""){  
-		oySetCookieForPeriod("OYG_NICK_NAME", this.name, 1000*60*60*24*360, "/");
-		return result;
+		oySetCookieForPeriod("OYG_NICK_NAME", this.name.substring(0,3).toUpperCase(), 1000*60*60*24*360, "/");
+		return result.substring(0,3);
 	} else {  
-		this.name = "Click to enter you name";
+		this.name = "Enter initials";
 		return false; 
 	}
 }

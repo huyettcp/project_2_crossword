@@ -64,9 +64,10 @@ body {
 
 
 .left {
+	/*background: url('header_pattern.jpg');*/
     float: left;
     width: 220px;
-    height: 109vh;
+    height: 115vh;
   	margin: -20px 0px 0px -20px;
   	padding: 0px 0px 0px 0px;
     background-color: #ffffff;
