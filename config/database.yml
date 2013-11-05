@@ -4,23 +4,25 @@ development:
   database: crossword_development
   pool: 5
   host: localhost
+  username: ubuntu
+  password: ubuntu
 
-# test:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: crossword_test
-#   pool: 5
-#   host: localhost
-#   username: ubuntu
-#   password: ubuntu
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: crossword_test
+  pool: 5
+  host: localhost
+  username: ubuntu
+  password: ubuntu
 
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: crossword_production
-#   pool: 5
-#   host: localhost
-#   username: ubuntu
-#   password: ubuntu
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: crossword_production
+  pool: 5
+  host: localhost
+  username: ubuntu
+  password: ubuntu
 
 
