@@ -6,18 +6,16 @@
 //*****************************************************************************************************
 
 
+
   var board = [];
   var wordlist = word_list;
-
   var board_width = 14;
   var board_board = 14;
-
   var Horizontal = [];
   var Vertical = [];
   var clues = [];
- 
 
-
+   
   // MG - builds the empty board.
   function ClearBoard(){
      board = [];
@@ -264,8 +262,9 @@
 
   function BuildCrossword(){
     ClearBoard();
-    unconnected = 0;
-    xwordlist = wordlist;  
+    // unconnected = 0;
+    xwordlist = wordlist; 
+    console.log(xwordlist.sort());
     var Retry = [];
     var Retry2 = [];
     while(xwordlist.length > 0) {
@@ -332,9 +331,8 @@
       // document.write('Across:<br>');
      for(var i = 0; i < Horizontal.length; i++) {
       // document.write((i+1)+'. ('+Horizontal[i]+')<br>'); 
+
      }
-
-
   }
 
 

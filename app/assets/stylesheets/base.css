@@ -36,17 +36,32 @@ body {
 	/*background: url('lightpaperfibers.png');*/
 	/*	background-image: url('newspaper2bw.jpg'); 
 	  background-size: 100%;
+=======
+	background-color: #ffffff;
+	font-family: Arial;
+/*	background: url('classy_fabric.png');
+	background-image: url('newspaper2bw.jpg'); 
+  background-size: 100%;
+	background: url('lightpaperfibers.png');
+	background-image: url('newspaper2bw.jpg'); 
+	background-size: 100%;
+>>>>>>> c6df1ddbb1d211c5ec5ecba4b1c4f8024dea492d
 	background-color: #2B2A2B;
 	color: white;
-	font-family: Arial;*/
-
 	font-size: 30px;
-	height: 100%;
+	height: 100%;*/
 }
 
 #progress-bar {
 	color: #ffffff;
 	z-index: 99999;
+}
+
+
+.h2 {
+	font-size: 40px;
+	margin-top: 30px;
+	text-align: center;
 }
 
 .bg {
@@ -75,9 +90,19 @@ body {
     height: 100vh;
   	margin: -20px 0px 0px -20px;
   	padding: 0px 0px 0px 0px;
+
     background-color: #ffffff;
    /* bottom: -20px;
     left: -20px;*/
+    font: Arial;
+}
+
+
+.left img {
+	/*	position: center;*/
+	margin-left: auto;
+    bottom: -20px;
+    left: -20px;
 }
 
 .right {
