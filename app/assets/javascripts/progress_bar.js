@@ -46,15 +46,13 @@ onLoad = function() {
       // // Set the progress bar to full width
       $progress_bar.css('width', '0%');
       // // Fade out the progress bar
-      $progress_bar.fadeOut(500);
+      $progress_bar.fadeOut(200);
       // // Fade in the loaded images
-      $pics.fadeIn(1000);
+      $pics.fadeIn(3000);
       // Run masonry on the image containers for super shnazzy layout
     } else {
       // Move progress bar
-      // $progress_bar.css('width', ((done / $images.length) * 100) + '%');
-      // Move progress bar smoothly
-      $progress_bar.stop().animate({width: ((done / count) * 100) + '%'}, 300);
+      $progress_bar.stop().animate({width: ((done / count) * 100) + '%'}, 3000);
     }
   }
 
