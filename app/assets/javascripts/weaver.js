@@ -267,7 +267,7 @@
     board_width = 14;
     board_board = 14;
     xwordlist = []
-    xwordlist = getRandomSubarray(wordlist, 50);   
+    xwordlist = getRandomSubarray(wordlist, 100);   
     var Retry = [];
     var Retry2 = [];
     while(xwordlist.length > 0) {
@@ -322,8 +322,18 @@
      }
   }
 
-  while(crossings < 15){
+  var threshold = 19
+  var attempts = 0
+
+  while(crossings < threshold){
     BuildCrossword();
+    // console.log(crossings);
+    console.log(threshold);
+     if(attempts > 50){
+        threshold -= 1
+        attempts = 0
+      }
+    attempts++;
     }
   CrosswordTable(); 
   

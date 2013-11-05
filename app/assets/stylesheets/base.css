@@ -119,12 +119,15 @@ filter: blur(.03px) grayscale(100%);
 
 .info {
 	color: #425F70;
-	font-size: 15px;
+	font-size: 14px;
+	font-position: center;
 	padding-left: 20px;
 	padding-top: 10px;
 	margin-left: 30px;
 	font-family: arial;
 }
+
+
 
 .high_score {
 	color: #425F70;
@@ -289,6 +292,7 @@ div img {
 	color: #808080; 
 	background-color: #E0E0E0;
 	font-size: smaller;
+	text-align: center;
 	border: solid 1px #808080;	
 	/*text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;*/
 	clear: both;
@@ -299,7 +303,7 @@ div img {
 	padding-right: 4px;
 	padding-top: 4px;
 	padding-bottom: 4px;
-	margin-left: 16px;
+	margin-left: 4px;
 	margin-right: 4px;
 	margin-top: 4px;
 	margin-bottom: 4px;
