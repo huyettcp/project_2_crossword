@@ -93,10 +93,16 @@ $(document).on('mouseover', ".info", function(){
           target: $(window)
         },
        show: {
+          effect: function() {
+            $(this).show().css({ opacity: 0 }).animate({ opacity: 1 }, { duration: 2000 }); // Setting initial conditions (opacity in this case) is a good idea too
+          },
           ready: true,
-            modal: true
+          modal: true
+
          },
-       hide: true
+       hide: {
+        effect: function() {$(this).animate({ opacity: 0 }, { duration: 500 }); }
+       }
   })
 });
 
@@ -120,16 +126,19 @@ $(document).on('mouseover', ".high_score", function() {
           classes: 'qtip-light .qtip-content'
       },
 	   show: {
-      	  ready: true
+          effect: function() {
+            $(this).show().css({ opacity: 0 }).animate({ opacity: 1 }, { duration: 2000 }); // Setting initial conditions (opacity in this case) is a good idea too
+          },
+      	  ready: true,
+          modal: true
     	},
        position: {
           my: 'center',
           at: 'center',
           target: $(window)
         },
-       show: {
-          modal: true
-        },
-       hide: true
+       hide: {
+        effect: function() {$(this).animate({ opacity: 0 }, { duration: 500 }); }
+       }
 	})
 });

@@ -31,7 +31,8 @@ body { filter: grayscale(50%) }
 }
 */
 body {
-	background-color: #ffffff;
+	background-image:url("assault.png");
+	/*background-color: #ffffff;*/
 	/*background: url('lightpaperfibers.png');*/
 	/*	background-image: url('newspaper2bw.jpg'); 
 	  background-size: 100%;
@@ -50,7 +51,7 @@ body {
 
 .bg {
 	
-	/*background-image:url("assault.png");*/
+ 
   position: fixed;
   /*width: 100%;
   height: 100%;*/
@@ -69,21 +70,20 @@ body {
 
 
 .left {
-    /*background-color: Red;*/
     float: left;
-    width: 300px;
+    width: 220px;
     height: 100vh;
   	margin: -20px 0px 0px -20px;
   	padding: 0px 0px 0px 0px;
-    background-color: lightgrey;
-    bottom: -20px;
-    left: -20px;
+    background-color: #ffffff;
+   /* bottom: -20px;
+    left: -20px;*/
 }
 
 .right {
 /*    background-color: Aqua;*/
 	float: left;
-	margin-left: 130px;
+	margin-left: 100px;
     height: 100vh;
     z-index: 1;
     position: relative;
@@ -114,8 +114,8 @@ filter: blur(.03px) grayscale(100%);
 -moz-filter: blur(2px) grayscale(100%)
 }
 #logo {
-	width: 200px;
-	height: 200px;
+	width: 180px;
+	height: 180px;
 	margin-left: 25px;
 	margin-top: 60px;
 }
@@ -282,7 +282,7 @@ div img {
 	margin-top: 4px;
 	margin-bottom: 4px;
 	color: #2B2A2B;
-	background-color: lightgrey;
+	background-color: #ffffff;
 	font-size: 14px;
 	width: 100px;
 	/*width: 100px;*/
@@ -324,8 +324,9 @@ A.oyMenuActionDis {
 }		
 A.oyMenuAction:hover {
 	background-color: #425F70;
+	border-radius: 5px;
 	border: solid 1px #808080;	
-	text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
+	/*text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;*/
 }	
 .oyListCell { 
 	visibility: hidden;

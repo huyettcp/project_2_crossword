@@ -1,9 +1,15 @@
-// $(function() {
 
+// var crossings = 0
+
+// RunWeaver();
+
+// function RunWeaver(){
+ 
 //********************************************WEAVER***************************************************
 //*****************************************************************************************************
 //*****************************************************************************************************
 //*****************************************************************************************************
+
 
   var board = [];
   var wordlist = word_list;
@@ -14,8 +20,8 @@
   var Horizontal = [];
   var Vertical = [];
   var clues = [];
+ 
 
-   
 
   // MG - builds the empty board.
   function ClearBoard(){
@@ -273,6 +279,7 @@
         if (places.length > 0) {   
        // document.write(word+":best("+places.length+" results)<br>");
          PlaceAtBestCrossing(places,word);  //so Mia could cross both Mike and Ann..
+         // scrossings++
        } else {
          if (Retry.indexOf(word) == -1) {
           Retry.push(word); xwordlist.push(word);
@@ -336,12 +343,15 @@
 
   }
 
+
   // console.log(oygCrosswordPuzzle);
   // console.log(clues.length);
 
   //**********************************************************
+ 
   BuildCrossword();
   CrosswordTable();
+ 
 
     // console.log(clues)
 
@@ -362,4 +372,4 @@
   oygCrosswordPuzzle.canTalkToServer = false;
 
 
-// })
+// }
