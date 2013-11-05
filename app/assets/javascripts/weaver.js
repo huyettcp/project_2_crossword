@@ -324,6 +324,7 @@
 
   while(crossings < 15){
     BuildCrossword();
+    console.log(crossings)
     }
   CrosswordTable(); 
   
