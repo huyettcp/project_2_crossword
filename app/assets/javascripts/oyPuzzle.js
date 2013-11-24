@@ -212,15 +212,11 @@ databaseGrab = function(oThis) {
 		success: function(data) {
 			return_data = data
 			oThis.puzz.bind();	
-
 			oThis.puzz.hlist.clickItem(0);			
 			oThis.installContextMenu();
-			
 			document.getElementById("oygStatic").innerHTML = "";
-			
 			oThis.footer.stateOk("");
-
-			onLoad();	
+			// onLoad();	
 		}
 	});
 	// return return_data;
@@ -235,7 +231,7 @@ databaseRenderGrab = function(fnc) {
 		success: function(data) {
 			return_data = data
 			fnc(data)
-			//onLoad();
+			// onLoad();
 			}	
 	});
 	return return_data;
