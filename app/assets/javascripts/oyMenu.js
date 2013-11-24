@@ -62,7 +62,7 @@ function oyCrosswordMenu(puzz){
 	
 	this.name = oyGetCookie("OYG_NICK_NAME"); 
 	if (this.name == null || this.name == ""){
-		this.name = "Click to enter your name";
+		this.name = "Click";
 	}
 	
 	this.server = new oyServer(this.puzz.appHome, this.puzz.ns, this.puzz.canTalkToServer);
@@ -107,7 +107,7 @@ oyCrosswordMenu.prototype.installWelcomeMenu = function(){
 
 	var oThis = this;	
 	
-	dispName = escape(this.name);
+	var dispName = escape(this.name);
 	dispName = dispName.replace(/%20/g, " ");
 	this.addNoneWordAction( 
 		target, 
@@ -240,28 +240,29 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 	 
 	this.addNoneWordAction(target, "Game Over!");	 
 	this.addNewLine(target);	     
-	var msg = "<b id='player_name'>" + dispName + "</b>" + ", you scored <b id='player_score'>" + this.score + "</b> points!";
+	var msg = "You have <b>" + this.score + "</b> points";
 	if (this.rank != -1){
 		msg += " (rank <b>" +  this.rank + "</b>)";
 	}  
 	msg += ".";
 
-	$.ajax({
-		url: '/scores',
-		dataType: 'json',
-		type: 'POST',
-		data: {
-			score: {
-				game_score: this.score,
-				user_name: dispName 
+	// $.ajax({
+	// 	url: '/scores',
+	// 	dataType: 'json',
+	// 	type: 'POST',
+	// 	data: {
+	// 		score: {
+	// 			game_score: this.score,
+	// 			user_name: dispName 
 
 
-			}
-		},
-		complete: function(data){
-			console.log(data)
-		}
-	});
+	// 		}
+	// 	},
+	// 	complete: function(data){
+	// 		console.log(data)
+	// 	}
+	// });
+
 	this.addNoneWordAction(target, msg);	  
 	this.addNewLine(target); 
 	
@@ -537,8 +538,7 @@ oyCrosswordMenu.prototype.revealWord = function(clue){
 	clue.matched = false; 	
  
 	var status = this.checkWordStatus(clue);	  	
-	this.footer.stateError("Revealed [" + status.buf + "]!");
-			setTimeout('$("#oygState").hide()',3000);
+	this.footer.stateOk("Revealed [" + status.buf + "]!");
 }  
 
 oyCrosswordMenu.prototype.checkAll = function(){
@@ -573,16 +573,17 @@ oyCrosswordMenu.prototype.checkAll = function(){
 }  
   
 oyCrosswordMenu.prototype.checkWord = function(clue){
+	var that = this
 	var status = this.checkWordStatus(clue);	  
 	if (!status.isComplete){
 		this.footer.stateError("The word [" + status.buf + "] is incomplete!");
-		setTimeout('$("#oygState").hide()',3000);
+		setTimeout('$("#oygState").empty()',3000);
 	} else { 
 		this.checks++; 
 		this.deducts += this.getDeductionForCheck(clue);			
 		if (status.wrong != 0){		  
 			this.footer.stateError("[" + status.buf + "] didn't match!");
-			setTimeout('$("#oygState").hide()',3000);
+			setTimeout('$("#oygState").empty()',3000);
 		} else { 
 			this.matches++; 
 			this.showAnswer(clue, 1);	 	
@@ -590,7 +591,7 @@ oyCrosswordMenu.prototype.checkWord = function(clue){
 			clue.revealed = false; 	
 			clue.matched = true; 	 
 			this.footer.stateError("[" + status.buf + "] matched!");
-			setTimeout('$("#oygState").hide()',3000);
+			setTimeout('$("#oygState").empty()',3000);
 		}
 	}
 }
