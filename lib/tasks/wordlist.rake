@@ -8,7 +8,7 @@ namespace :wordlist do
         require 'open-uri'
 
         # Word.destroy_all()
-        Word.destroy_all(["created_at < ?", 2.days.ago])
+        # Word.destroy_all(["created_at < ?", 2.days.ago])
       
         puts "Flosswords is being seeded. This may take a few moments"
 
