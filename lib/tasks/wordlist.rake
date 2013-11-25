@@ -42,8 +42,6 @@ namespace :wordlist do
               counter_front = 0
               front_word = Word.create(name: front_arr[front_arr_index])
               
-
-              &is_getty
             unless photos_front.empty?
                 
                 while counter_front < front_arr[front_arr_index].length
