@@ -55,7 +55,7 @@ module Crossword
 
     # Enable the asset pipeline
     config.assets.enabled = true
-    config.assets.compile = true
+    # config.assets.compile = true
 
     config.assets.precompile += %w( weaver.js )
     config.assets.precompile += %w( oyEpilogue.js )
