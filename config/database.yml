@@ -20,5 +20,4 @@ production:
   database: crossword_production
   pool: 5
   host: localhost
-  username: ubuntu
-  password: ubuntu
+  
