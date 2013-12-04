@@ -32,7 +32,7 @@ body { filter: grayscale(50%) }
 */
 body {
 	background-image:url("assault.png");
-	/*background-color: #ffffff;*/
+	/*background-color: #333333;*/
 	/*background: url('lightpaperfibers.png');*/
 	/*	background-image: url('newspaper2bw.jpg'); 
 	  background-size: 100%;
@@ -42,6 +42,11 @@ body {
 
 	font-size: 30px;
 	height: 100%;
+}
+
+h3 {
+	color: #92dce0;
+	margin: 60px 0px 0px 40px
 }
 
 
@@ -70,19 +75,20 @@ body {
     height: 115vh;
   	margin: -20px 0px 0px -20px;
   	padding: 0px 0px 0px 0px;
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
    /* bottom: -20px;
     left: -20px;*/
 }
 
 .right {
-/*    background-color: Aqua;*/
 	float: left;
 	margin-left: 100px;
-    height: 100vh;
-    z-index: 1;
-    position: relative;
-    /* filter: blur(2px) grayscale(100%); -webkit-filter: blur(2px) grayscale(100%); -moz-filter: blur(2px) grayscale(100%)*/
+	margin-top: -30px;
+  height: 100vh;
+  z-index: 1;
+  position: relative;
+
+   /* filter: blur(2px) grayscale(100%); -webkit-filter: blur(2px) grayscale(100%); -moz-filter: blur(2px) grayscale(100%)*/
 	}
 
 /*.right .bg2 {
@@ -118,7 +124,7 @@ filter: blur(.03px) grayscale(100%);
 }
 
 .info {
-	color: #425F70;
+	color: #92dce0;
 	font-size: 14px;
 	font-position: center;
 	padding-left: 20px;
@@ -130,7 +136,7 @@ filter: blur(.03px) grayscale(100%);
 
 
 .high_score {
-	color: #425F70;
+	color: #92dce0;
 	font-size: 15px;
 	padding-left: 20px;
 	padding-top: 10px;
@@ -172,7 +178,7 @@ div img {
 	/*background-color: #2B2A2B;*/
 	margin-top: 10px;
 	padding: 20px; 
-	font-family: Arial;
+	/*font-family: Arial;*/
 	text-align: left;		
 	line-height: 1.4;
 	width: 300px;
@@ -180,7 +186,7 @@ div img {
 }
 .ousStateOk {
 	text-align: left;		
-	font-family: Arial;
+	/*font-family: Arial;*/
 	font-size: 0;
 	margin:0 auto;
 	/*background-color: #2B2A2B;*/
@@ -188,13 +194,13 @@ div img {
 }
 .ousStateBusy {
 	text-align: left;		
-	font-family: Arial;
+	/*font-family: Arial;*/
 	font-size: smaller;
 	color: #0000FF;
 }
 .ousStateError {
 	text-align: left;		
-	font-family: Arial;
+	/*font-family: Arial;*/
 	font-size: smaller;
 	color: #FF0000;
 }		
@@ -205,7 +211,7 @@ div img {
 	/*text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;*/
 }
 .oyHeaderTitle{
-	font-family: 'Trebuchet MS','Lucida Grande',Verdana,Arial,Sans-Serif;
+	/*font-family: 'Trebuchet MS','Lucida Grande',Verdana,Arial,Sans-Serif;*/
 	color: #A30F10;
 	text-align: center;
 	font-size: 100%; 
@@ -222,7 +228,7 @@ div img {
 	/*background-color: #2B2A2B;*/
 	font-family: Arial;
 	font-size: 70%;
-	color: #425F70;
+	color: #92dce0;
 	/*text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;*/
 	clear: both;
 	float: left;
@@ -260,7 +266,7 @@ div img {
 }
 
 .oysTextLink{
-	color: #E82C0C;
+	color: #f5eacd;
 	text-decoration: none;
 }
 
@@ -272,8 +278,7 @@ div img {
 .oyMenuAction {		
 	clear: both;
 	float: left;
-	/*border-radius: 5px;*/
-	padding-left: 14px;
+	padding-left: 10px;
 	padding-right: 4px;
 	padding-top: 4px;
 	padding-bottom: 4px;
@@ -282,11 +287,9 @@ div img {
 	margin-top: 4px;
 	margin-bottom: 4px;
 	color: #2B2A2B;
-	background-color: #ffffff;
+	background-color: #f5eacd;
 	font-size: 14px;
-	width: 100px;
-	/*width: 100px;*/
-	/*border: solid 1px #808080;	*/
+	width: 80px;
 } 
 .oyMenuActionDis {		
 	color: #808080; 
@@ -312,11 +315,12 @@ div img {
 .oyMenuActionNone{
 	padding-left: 4px;
 	padding-right: 4px; 
-	color: #425F70; 
+	color: #f5eacd; 
 	font-size: smaller;
 	/*text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;*/
 }
 A.oyMenuAction {
+	margin-left: 30px;
 	text-decoration: none;
 	text-align: center;
 }	
@@ -324,9 +328,8 @@ A.oyMenuActionDis {
 	text-decoration: none;
 }		
 A.oyMenuAction:hover {
-	background-color: #425F70;
-	border-radius: 5px;
-	border: solid 1px #808080;	
+	background-color: #fdd085;
+	/*border-radius: 5px;*/
 	/*text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;*/
 }	
 .oyListCell { 
