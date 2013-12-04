@@ -110,7 +110,6 @@ oyCrosswordMenu.prototype.installWelcomeMenu = function(){
 	var oThis = this;	
 	
 	dispName = escape(this.name);
-	console.log(dispName)
 	dispName = dispName.replace(/%20/g, " ");
 	this.addNoneWordAction( 
 		target, 
@@ -236,8 +235,6 @@ oyCrosswordMenu.prototype.installContextMenu = function(){
 } 
  
 oyCrosswordMenu.prototype.installDoneMenu = function(){	
-	console.log('yo')
-	console.log(dispName)
 	this.currentMenu = this.installDoneMenu;
 
 	var target = document.getElementById("oygPuzzleFooter");
@@ -252,7 +249,6 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 	}  
 	msg += ".";
 
-	console.log(msg)
 
 	$.ajax({
 		url: '/scores',
@@ -265,7 +261,6 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 			}
 		},
 		complete: function(data){
-			console.log(data)
 		}
 	});
 

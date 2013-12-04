@@ -4,8 +4,7 @@ development:
   database: crossword_development
   pool: 5
   host: localhost
-  username: ubuntu
-  password: ubuntu
+ 
 
 test:
   adapter: postgresql
@@ -13,8 +12,7 @@ test:
   database: crossword_test
   pool: 5
   host: localhost
-  username: ubuntu
-  password: ubuntu
+ 
 
 production:
   adapter: postgresql

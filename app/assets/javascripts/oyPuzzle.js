@@ -242,7 +242,6 @@ oyCrosswordPuzzle.prototype.renderVert = function(clue){
 		for (var i = 0; i < clue.len; i++) {
 			var key = "oyCell" + clue.xpos + "_" + (clue.ypos + i);
 			var cell = document.getElementById(key);
-			// console.log(cell)
 			cell.className = "oyCellFull";
 			cell.className += " black_and_white";
 			cell.style.backgroundImage="url("+data[Math.floor(Math.random() * 40 + 1)].photos[Math.floor(Math.random() * 4 + 1)]+")";
@@ -473,8 +472,7 @@ oyCrosswordPuzzle.prototype.focusNewCell = function(x, y, focus, clue){
 		);		
 	}
 	  
-	var target = document.getElementById("oyCell" + x + "_" + y);
-	console.log(target)		
+	var target = document.getElementById("oyCell" + x + "_" + y);	
 	if (target != null){
 		target.className = "oyCellActive";	 	
 		this.focusLists(x, y);
@@ -514,7 +512,6 @@ oyCrosswordPuzzle.prototype.restoreCellState = function(target, x, y){
 			target.className = "oyCellEmpty";
 			break; 	
 		case 0:
-			// console.log(target)
 			target.className = "oyCellFull";
 			// target.style.background="background-image: url('madden50.png') no-repeat";
 			break; 

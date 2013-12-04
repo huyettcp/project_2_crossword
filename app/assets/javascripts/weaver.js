@@ -327,8 +327,6 @@
 
   while(crossings < threshold){
     BuildCrossword();
-    // console.log(crossings);
-    console.log(threshold);
      if(attempts > 50){
         threshold -= 1
         attempts = 0

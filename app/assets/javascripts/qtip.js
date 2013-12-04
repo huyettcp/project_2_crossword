@@ -1,5 +1,7 @@
 var top_scores
 
+$(function() {
+  
 cleanUrl = function(_this) {
 	var imageUrl = $(_this).css('background-image');
 	var clean_imageUrl = imageUrl.replace('url(','').replace(')','');
@@ -106,7 +108,7 @@ $(document).on('mouseover', ".info", function(){
   })
 });
 
-$(function() {
+
   $.ajax({
     url: '/highscores',
     method: 'GET',
