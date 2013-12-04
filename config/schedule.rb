@@ -20,8 +20,8 @@
 # Learn more: http://github.com/javan/whenever
 
 
-every 1.day, :at => '4:45 pm' do
-  rake "wordlist:seed"
+every 1.day, :at => "7:50 pm" do
+   rake "rake wordlist:seed"
 end
 
 # rake "my:rake:task"

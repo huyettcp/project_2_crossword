@@ -8,11 +8,9 @@ namespace :wordlist do
         require 'open-uri'
 
         # Word.destroy_all()
-        Word.destroy_all(["created_at < ?", 2.days.ago])
+        Word.destroy_all(["created_at < ?", 5.days.ago])
       
         puts "Flosswords is being seeded. This may take a few moments"
-
-
 
 
         exclude_words = ["a", "and", "are", "but", "it", "I", "you", "he", "harding" "they", "we", "she", "who", "them", "me", "him", "one", "her", "us", "something", "nothing", "anything", "himself", "everything", "someone", "themselves", "everyone", "itself", "anyone", "myself",'the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he','as','you','do','at','this','but','his','by','from','they','we','say','her','she','or','an','will','my','one','all','would','there','their','what','so','up','out','if','about','who','get','which','go','me','when','make','can','like','time','no','just','him','know','take','person','into','year','your','good','some','could','them','see','other','than','then','now','look','only','come','its','over','think','also','back','after','use','two','how','our','work','first','well','way','even','new','want','because','any','these','give','day','most','us', 'should', 'exceed', 'puts', 'almost', 'enough', "labeling",  "expecting",  "raises", "defiled", "question", "source", "potential", "question", "three", "100", "taylor", "three", "hails", "kepler", "weeks", "snares", "1000", "ipo", "every", "possible", "decisiveness", "every",  "mediator", "finding", "three", "three", "effort", "trip", "decline", "answers", "critchley", "against", "three", "all", "reassures", "jane ", "among", "analysis ", "twtr ", "least", "clears ", "bill", "guard", "role", "trading", "ipos", "isro", "alternatives ", "six", "ongoing", "off", "assuring", "report ", "says", "policy", "insider", "chaz", "answers ", "wickham ", "2016" ,"ing", "doj"]
@@ -40,7 +38,7 @@ namespace :wordlist do
     
         while front_arr_index < count_front
 
-            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
               counter_front = 0
               front_word = Word.create(name: front_arr[front_arr_index])
               
@@ -81,14 +79,14 @@ namespace :wordlist do
 
         google_arr.delete_if { |x| x.length <= 2 || exclude_words.include?(x) || exclude_names.include?(x) || exclude_girls_names.include?(x) }
 
-        google_arr = google_arr.sample(200)
+        google_arr = google_arr.sample(300)
         count_google = google_arr.length
         google_arr_index = 0
      
         
         while google_arr_index < count_google
 
-            photos_google = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{google_arr[google_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+            photos_google = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{google_arr[google_arr_index]}&tag_mode=all&is_getty=true&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
               counter_google = 0
               google_word = Word.create(name: google_arr[google_arr_index])
               unless photos_google.empty?
