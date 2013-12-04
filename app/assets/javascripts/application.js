@@ -15,8 +15,6 @@
 //= require jquery.qtip.js
 //= require qtip.js
 //= require progress_bar.js
-//= require weaver.js
-//= require oyEpilogue.js
 //= require oyPrologue.js
 //= require oyJsrAjax.js
 //= require oyClue.js
