@@ -1,4 +1,4 @@
-
+flickr_key = ENV["FLICKR_API_KEY"]
 
 namespace :wordlist do
       desc "Generate wordlist"
@@ -8,7 +8,7 @@ namespace :wordlist do
         require 'open-uri'
 
         # Word.destroy_all()
-        Word.destroy_all(["created_at < ?", 5.days.ago])
+        # Word.destroy_all(["created_at < ?", 5.days.ago])
       
         puts "Flosswords is being seeded. This may take a few moments"
 
@@ -38,7 +38,7 @@ namespace :wordlist do
     
         while front_arr_index < count_front
 
-            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=flickr_key&nojsoncallback=1")
               counter_front = 0
               front_word = Word.create(name: front_arr[front_arr_index])
               
@@ -86,7 +86,7 @@ namespace :wordlist do
         
         while google_arr_index < count_google
 
-            photos_google = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{google_arr[google_arr_index]}&tag_mode=all&is_getty=true&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+            photos_google = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{google_arr[google_arr_index]}&tag_mode=all&is_getty=true&api_key=flickr_key&nojsoncallback=1")
               counter_google = 0
               google_word = Word.create(name: google_arr[google_arr_index])
               unless photos_google.empty?
@@ -128,7 +128,7 @@ namespace :wordlist do
         
         # while sports_arr_index < count_sports
 
-        #   photos_sports = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&per_page=50&page=1&method=flickr.photos.search&tags=#{sports_arr[sports_arr_index]}&tag_mode=all&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+        #   photos_sports = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&per_page=50&page=1&method=flickr.photos.search&tags=#{sports_arr[sports_arr_index]}&tag_mode=all&api_key=flickr_key&nojsoncallback=1")
         #         counter_sports = 0
         #         sport_word = Word.create(name: sports_arr[sports_arr_index])
         #         unless photos_sports.empty?
