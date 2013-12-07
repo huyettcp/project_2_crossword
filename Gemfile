@@ -24,7 +24,6 @@ end
 
 gem 'jquery-rails'
 
-gem "figaro"
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

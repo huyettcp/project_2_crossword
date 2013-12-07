@@ -5,7 +5,10 @@
 
 # Example:
 #
-set :output, "/path/to/my/cron_log.log"
+# set :output, "/path/to/my/cron_log.log"
+
+set :environment, "development"
+set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
 
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -20,8 +23,58 @@ set :output, "/path/to/my/cron_log.log"
 # Learn more: http://github.com/javan/whenever
 
 
-every 1.day, :at => "7:50 pm" do
-   rake "rake wordlist:seed"
+every 1.day, :at => "12:23 pm" do
+   rake "wordlist:seed"
+   puts "it worked!"
 end
 
 # rake "my:rake:task"
+
+# every 1.minute do
+# 	rake "wordlist:seed"
+# 	puts "test test 123"
+# end
+
+# every 1.day, :at => '4:30 am' do
+#   runner "MyModel.task_to_run_at_four_thirty_in_the_morning"
+# end
+
+# every :hour do # Many shortcuts available: :hour, :day, :month, :year, :reboot
+#   runner "SomeModel.ladeeda"
+# end
+
+# every :sunday, :at => '12pm' do # Use any day of the week or :weekend, :weekday
+#   runner "Task.do_something_great"
+# end
+
+# every '0 0 27-31 * *' do
+#   command "echo 'you can use raw cron syntax too'"
+# end
+
+# # run this task only on servers with the :app role in Capistrano
+# # see Capistrano roles section below
+# every :day, :at => '12:20am', :roles => [:app] do
+#   rake "app_server:task"
+# end
+
+# every 1.day, :at => '4:30 am' do
+#   runner "MyModel.task_to_run_at_four_thirty_in_the_morning"
+# end
+
+# every :hour do # Many shortcuts available: :hour, :day, :month, :year, :reboot
+#   runner "SomeModel.ladeeda"
+# end
+
+# every :sunday, :at => '12pm' do # Use any day of the week or :weekend, :weekday
+#   runner "Task.do_something_great"
+# end
+
+# every '0 0 27-31 * *' do
+#   command "echo 'you can use raw cron syntax too'"
+# end
+
+# # run this task only on servers with the :app role in Capistrano
+# # see Capistrano roles section below
+# every :day, :at => '12:20am', :roles => [:app] do
+#   rake "app_server:task"
+# end
