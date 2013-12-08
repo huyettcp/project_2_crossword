@@ -24,6 +24,8 @@
 //
 // Actions menu
 //
+var dispName;
+
 function oyCrosswordMenu(puzz){
 	this.puzz = puzz;
 	
@@ -107,7 +109,7 @@ oyCrosswordMenu.prototype.installWelcomeMenu = function(){
 
 	var oThis = this;	
 	
-	var dispName = escape(this.name);
+	dispName = escape(this.name);
 	dispName = dispName.replace(/%20/g, " ");
 	this.addNoneWordAction( 
 		target, 
@@ -247,6 +249,7 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 	}  
 	msg += ".";
 
+
 	$.ajax({
 		url: '/scores',
 		dataType: 'json',
@@ -255,12 +258,9 @@ oyCrosswordMenu.prototype.installDoneMenu = function(){
 			score: {
 				game_score: this.score,
 				user_name: dispName 
-
-
 			}
 		},
 		complete: function(data){
-			console.log(data)
 		}
 	});
 
