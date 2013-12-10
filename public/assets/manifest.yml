@@ -21,11 +21,7 @@ logopuzzle.gif: logopuzzle-8806c04634f7bc34890ec98895a088cf.gif
 logopuzzle/index.gif: logopuzzle-8806c04634f7bc34890ec98895a088cf.gif
 application.js: application-dd63d00a88e99552dba082784cdf9d75.js
 application/index.js: application-dd63d00a88e99552dba082784cdf9d75.js
-oyEpilogue.js: oyEpilogue-622c669ffe06cb94d61a59163336bc8d.js
-oyEpilogue/index.js: oyEpilogue-622c669ffe06cb94d61a59163336bc8d.js
-weaver.js: weaver-4816daa6072edf0c2cda68c538b2d90c.js
-weaver/index.js: weaver-4816daa6072edf0c2cda68c538b2d90c.js
-application.css: application-e355d296a843304342cb4c09a2ba622c.css
-application/index.css: application-e355d296a843304342cb4c09a2ba622c.css
+application.css: application-f79fb00850db603275384279fe8f5b37.css
+application/index.css: application-f79fb00850db603275384279fe8f5b37.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
