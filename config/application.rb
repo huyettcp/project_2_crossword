@@ -57,11 +57,11 @@ module Crossword
     config.serve_static_assets = true
     config.assets.compress = false
     config.assets.enabled = true
-    config.assets.compile = false
+    config.assets.compile = true
     config.assets.digest = true
 
-    # config.assets.precompile += %w( weaver.js )
-    # config.assets.precompile += %w( oyEpilogue.js )
+    config.assets.precompile += %w( weaver.js )
+    config.assets.precompile += %w( oyEpilogue.js )
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

@@ -4,8 +4,8 @@ development:
   database: crossword_development
   pool: 5
   host: localhost
-  username: ubuntu
-  password: ubuntu
+  # username: ubuntu
+  # password: ubuntu
 
 
 test:

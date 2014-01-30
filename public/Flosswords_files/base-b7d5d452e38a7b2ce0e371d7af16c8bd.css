@@ -21,17 +21,16 @@
 
 */
 
+
 body {
 	background-image:url("assault.png");
 	font-size: 30px;
 	height: 100%;
 }
 
-h4 {
-	color: #f8f8f8;
-  font-family: 'Chivo', sans-serif;
-  font-size: 12px;
-  margin-left: 60px;
+h3 {
+	color: #92dce0;
+	margin: 60px 0px 0px 40px
 }
 
 
@@ -44,16 +43,15 @@ h4 {
 
 .container {
 	height: 100vh;
-  min-width: 1200px;
 }
 
 
 .left {
-  float: left;
-  width: 220px;
-  height: 115vh;
-  margin: -20px 0px 0px -20px;
-  padding: 0px 0px 0px 0px;
+    float: left;
+    width: 220px;
+    height: 115vh;
+  	margin: -20px 0px 0px -20px;
+  	padding: 0px 0px 0px 0px;
 }
 
 .right {
@@ -67,9 +65,9 @@ h4 {
 }
 
 .black_and_white {
-  filter: blur(.03px) grayscale(100%);
-  -webkit-filter: blur(.03px) grayscale(100%);
-  -moz-filter: blur(2px) grayscale(100%)
+filter: blur(.03px) grayscale(100%);
+-webkit-filter: blur(.03px) grayscale(100%);
+-moz-filter: blur(2px) grayscale(100%)
 }
 
 
@@ -87,24 +85,24 @@ h4 {
 }
 
 .info {
-	color: #f8f8f8;
-	font-size: 15px;
+	color: #92dce0;
+	font-size: 14px;
 	font-position: center;
 	padding-left: 20px;
 	padding-top: 10px;
 	margin-left: 30px;
-	font-family: 'Chivo', sans-serif;
+	font-family: arial;
 }
 
 
 
 .high_score {
-	color: #f8f8f8;
+	color: #92dce0;
 	font-size: 15px;
 	padding-left: 20px;
 	padding-top: 10px;
 	margin-left: 30px;
-	font-family: 'Chivo', sans-serif;
+	font-family: arial;
 }
 
 
@@ -125,42 +123,37 @@ h4 {
 	width: 300px;
 }
 .ousStateOk {
-	font-family: 'Chivo', sans-serif;
 	text-align: left;		
 	font-size: 0;
 	margin:0 auto;
 }
 .ousStateBusy {
-	font-family: 'Chivo', sans-serif;;
 	text-align: left;		
 	font-size: smaller;
 	color: #0000FF;
 }
 .ousStateError {
-	font-family: 'Chivo', sans-serif;
 	text-align: left;		
 	font-size: smaller;
 	color: #FF0000;
 }		
 .oyHeader{
-	font-family: 'Chivo', sans-serif;
 	padding: 8px;
 	color: #f8f8f8;
 }
 .oyHeaderTitle{
-	font-family: 'Chivo', sans-serif;
 	color: #f8f8f8;
 	text-align: center;
 	font-size: 100%; 
 	font-weight: bold;
 }
 .oyHeaderDesc{
-	font-family: 'Chivo', sans-serif;
+	font-family: Arial;
 	font-weight: normal;
 	font-size: 70%;
 }	
 .oyFooter{ 
-	font-family: 'Chivo', sans-serif;
+	font-family: Arial;
 	font-size: 70%;
 	color: #f8f8f8;
 	clear: both;
@@ -176,9 +169,7 @@ h4 {
 
 }
 #oygFooterClock {
-  font-family: 'Chivo', sans-serif;
 	margin-left:  40px;
-	color: #f8f8f8;
 }
 #oygFooterStatus {
 	margin-top: 10px;
@@ -197,7 +188,6 @@ h4 {
 .oysTextLink{
 	color: #f8f8f8;
 	text-decoration: none;
-	font-family: 'Chivo', sans-serif;
 }
 
 .oysTextLink:hover{
@@ -206,10 +196,9 @@ h4 {
 }
 .oyMenuAction {		
 	clear: both;
-  font-family: 'Chivo', sans-serif;
 	float: left;
 	padding-left: 10px;
-	padding-right: 20px;
+	padding-right: 4px;
 	padding-top: 4px;
 	padding-bottom: 4px;
 	margin-left: 14px;
@@ -220,7 +209,6 @@ h4 {
 	background-color: #f8f8f8;
 	font-size: 14px;
 	width: 80px;
-
 } 
 .oyMenuActionDis {		
 	clear: both;
@@ -241,10 +229,8 @@ h4 {
 .oyMenuActionNone{
 	padding-left: 4px;
 	padding-right: 4px; 
-	color: #f8f8f8; 
+	color: #f5eacd; 
 	font-size: smaller;
-	font-family: 'Chivo', sans-serif;
-
 }
 A.oyMenuAction {
 	margin-left: 30px;
@@ -256,7 +242,6 @@ A.oyMenuActionDis {
 }		
 A.oyMenuAction:hover {
 	background-color: #fdd085;
-  font-family: 'Chivo', sans-serif;
 }	
 .oyListCell { 
 	visibility: hidden;
@@ -269,7 +254,7 @@ A.oyMenuAction:hover {
 	height: 0;
 }
 .oyPanelDiv {
-	font-family: arial;				
+	font-family:Arial;				
 	background-color: #F7F7FF;
 	padding: 4px;
 	text-align: center;

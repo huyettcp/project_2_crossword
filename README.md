@@ -4,7 +4,7 @@
 
 ####Description:
 
-** Flosswords is a dynamically generated crossword puzzle created with words from today's New York Times headlines and picture clues from Flickr. It can be played at   [Flosswords.com](http://www.flowsswords.com) **
+Flosswords is a dynamically generated crossword puzzle created with words from today's New York Times headlines and picture clues from Flickr. It can be played at   [Flosswords.com](http://www.flowsswords.com)
 
 #####Flosswords is Ruby application comprised of five main elements: 
 1. A Nokogiri scrape, that collects words daily from New York Times headlines (and also, for the moment, Google News). These results are filtered to exclude common and other undesirable words.
