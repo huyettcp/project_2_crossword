@@ -22,17 +22,18 @@
 */
 
 body {
-	background-image:url("assault.png");
+/*	background-image:url("assault.png");*/
 	font-size: 30px;
 	height: 100%;
   min-width: 1200px;
 }
 
 h4 {
-	color: #f8f8f8;
+	color: #2B2A2B;
   font-family: 'Chivo', sans-serif;
   font-size: 12px;
   margin-left: 60px;
+  margin-bottom: -40px;
 }
 
 
@@ -62,7 +63,7 @@ h4 {
 .right {
   position: absolute;
 	float: left;
-	margin-left: 300px;
+	margin-left: 240px;
 	margin-top: -30px;
   height: 100vh;
   z-index: 1;
@@ -91,7 +92,7 @@ h4 {
 }
 
 .info {
-	color: #f8f8f8;
+	color: #2B2A2B;
 	font-size: 15px;
 	font-position: center;
 	padding-left: 20px;
@@ -103,7 +104,7 @@ h4 {
 
 
 .high_score {
-	color: #f8f8f8;
+	color: #2B2A2B;
 	font-size: 15px;
 	padding-left: 20px;
 	padding-top: 10px;
@@ -149,11 +150,11 @@ h4 {
 .oyHeader{
 	font-family: 'Chivo', sans-serif;
 	padding: 8px;
-	color: #f8f8f8;
+	color: #2B2A2B;
 }
 .oyHeaderTitle{
 	font-family: 'Chivo', sans-serif;
-	color: #f8f8f8;
+	color: #2B2A2B;
 	text-align: center;
 	font-size: 100%; 
 	font-weight: bold;
@@ -166,7 +167,7 @@ h4 {
 .oyFooter{ 
 	font-family: 'Chivo', sans-serif;
 	font-size: 70%;
-	color: #f8f8f8;
+	color: #2B2A2B;
 	clear: both;
 	float: left;
 	padding-left: 4px;
@@ -182,7 +183,7 @@ h4 {
 #oygFooterClock {
   font-family: 'Chivo', sans-serif;
 	margin-left:  40px;
-	color: #f8f8f8;
+	color: #2B2A2B;
 }
 #oygFooterStatus {
 	margin-top: 10px;
@@ -199,13 +200,13 @@ h4 {
 }
 
 .oysTextLink{
-	color: #f8f8f8;
+	color: #2B2A2B;
 	text-decoration: none;
 	font-family: 'Chivo', sans-serif;
 }
 
 .oysTextLink:hover{
-	color: #f8f8f8;
+	color: #2B2A2B;
 	text-decoration: none;
 }
 .oyMenuAction {		
@@ -245,7 +246,7 @@ h4 {
 .oyMenuActionNone{
 	padding-left: 4px;
 	padding-right: 4px; 
-	color: #f8f8f8; 
+	color: #2B2A2B;
 	font-size: smaller;
 	font-family: 'Chivo', sans-serif;
 
@@ -345,6 +346,9 @@ A.oyMenuAction:hover {
 	overflow:hidden;
 	padding: 0px;
 	margin: 0px;
+  -webkit-box-shadow: 15px 15px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 15px 15px 12px 0px rgba(0,0,0,0.75);
+  box-shadow: 15px 15px 12px 0px rgba(0,0,0,0.75);
 }		
 
 .oyCellRevealed {
