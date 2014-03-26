@@ -37,7 +37,8 @@ namespace :wordlist do
     
         while front_arr_index < count_front
             puts flickr_key
-            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=#{flickr_key}&nojsoncallback=1")
+            # photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=#{flickr_key}&nojsoncallback=1")
+            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
               counter_front = 0
               front_word = Word.create(name: front_arr[front_arr_index])
               
