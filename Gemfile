@@ -23,7 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'flickraw', '~> 0.9.8'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

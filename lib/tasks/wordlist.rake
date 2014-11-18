@@ -6,7 +6,7 @@ namespace :wordlist do
         require 'nokogiri'
         require 'open-uri'
 
-        flickr_key= ENV["FLICKR_API_KEY"]
+        # flickr_key= ENV["FLICKR_API_KEY"]
 
         # Word.destroy_all()
         # Word.destroy_all(["created_at < ?", 5.days.ago])
@@ -29,6 +29,7 @@ namespace :wordlist do
 
         ####### This adjusts the amount of words ################
         front_arr = front_arr.sample(200)
+        p front_arr
         #########################################################
 
         count_front = front_arr.length
@@ -36,9 +37,10 @@ namespace :wordlist do
 
     
         while front_arr_index < count_front
-            puts flickr_key
+            # puts flickr_key
             # photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=#{flickr_key}&nojsoncallback=1")
-            photos_front = HTTParty.get("http://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+            photos_front = HTTParty.get("https://api.flickr.com/services/rest/?format=json&sort=relevance&method=flickr.photos.search&tags=#{front_arr[front_arr_index]}&tag_mode=all&is_getty=true&api_key=0e2b6aaf8a6901c264acb91f151a3350&nojsoncallback=1")
+              p photos_front
               counter_front = 0
               front_word = Word.create(name: front_arr[front_arr_index])
               

@@ -1,12 +1,11 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: crossword_development
+  database: crossword_test
   pool: 5
   host: localhost
-  username: ubuntu
-  password: ubuntu
-
+  username: postgres
+  password: postgres
 
 test:
   adapter: postgresql
@@ -14,8 +13,7 @@ test:
   database: crossword_test
   pool: 5
   host: localhost
-  username: ubuntu
-  password: ubuntu
+
 
 production:
   adapter: postgresql
@@ -23,6 +21,4 @@ production:
   database: crossword_production
   pool: 5
   host: localhost
-  username: ubuntu
-  password: ubuntu
 
